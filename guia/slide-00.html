@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia Prático da Carta de Serviços — Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png" />
+  <link rel="stylesheet" href="../vendor/fontes.css" />
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(150deg, #071A2E 0%, #0C2D50 45%, #103C6B 100%);
+      overflow: hidden;
+    }
+
+    .accent-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 6px;
+      height: 100%;
+      background: #0090C0;
+      z-index: 5;
+    }
+
+    .accent-bar-thin {
+      position: absolute;
+      left: 6px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: #0070C0;
+      z-index: 5;
+    }
+
+    .deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .deco-circle-1 {
+      width: 70vw;
+      height: 70vw;
+      border: 1px solid rgba(0, 144, 192, 0.08);
+      right: -20vw;
+      top: -15vw;
+    }
+
+    .deco-circle-2 {
+      width: 45vw;
+      height: 45vw;
+      border: 1px solid rgba(0, 144, 192, 0.06);
+      right: -8vw;
+      top: 2vw;
+    }
+
+    .deco-circle-3 {
+      width: 20vw;
+      height: 20vw;
+      background: rgba(0, 144, 192, 0.04);
+      bottom: -6vw;
+      left: 10vw;
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 6vw;
+      animation: fadeIn .8s ease both;
+    }
+
+    .logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3.4rem;
+      animation: fadeInDown .7s ease .1s both;
+    }
+
+    .logos img {
+      display: block;
+    }
+
+    .logo-antaq {
+      height: 98px;
+      width: auto;
+    }
+
+    .logo-sep {
+      width: 1px;
+      height: 82px;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .logo-ouvidoria {
+      height: 78px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .main-title {
+      font-size: 5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      color: #ffffff;
+      line-height: 1;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+      animation: fadeInDown .7s ease .3s both;
+    }
+
+    .main-title .accent {
+      color: #0090C0;
+    }
+
+    .subtitle {
+      margin-top: 1.2rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #c8dff5;
+      letter-spacing: .04em;
+      animation: fadeInUp .7s ease .45s both;
+    }
+
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #0090C0, rgba(0, 144, 192, 0));
+      border-radius: 2px;
+      margin: 1.6rem auto 0;
+      animation: fadeIn .7s ease .55s both;
+    }
+
+    .badge {
+      position: absolute;
+      bottom: 1.6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-family: 'Open Sans', sans-serif;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.28);
+      animation: fadeIn 1s ease .8s both;
+      white-space: nowrap;
+    }
+
+    .ocean {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .ocean-scrim {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 190px;
+      z-index: 3;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(7, 26, 46, 0) 0%, rgba(7, 26, 46, .30) 60%, rgba(7, 26, 46, .58) 100%);
+    }
+
+    @keyframes waveMove {
+      0% {
+        transform: translateX(0) scaleY(1);
+      }
+
+      50% {
+        transform: translateX(3%) scaleY(1.06);
+      }
+
+      100% {
+        transform: translateX(0) scaleY(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="base.css" />
+</head>
+
+<body>
+  <main class="slide">
+
+
+    <div class="accent-bar"></div>
+    <div class="accent-bar-thin"></div>
+    <div class="deco-circle deco-circle-1"></div>
+    <div class="deco-circle deco-circle-2"></div>
+    <div class="deco-circle deco-circle-3"></div>
+
+
+    <div class="content">
+
+
+      <div class="logos">
+        <img class="logo-ouvidoria" src="Imagens/logomarca_Ouvidoria.png" alt="Ouvidoria da ANTAQ" />
+        <div class="logo-sep"></div>
+        <img class="logo-antaq" src="Imagens/Logo Horizontal_Branca_C_N.png" alt="Logo ANTAQ" />
+      </div>
+
+
+      <h1 class="main-title">
+        Guia Prático da<br />
+        <span class="accent">Carta de Serviços</span>
+      </h1>
+
+
+      <p class="subtitle">Revisão e atualização · Ouvidoria da ANTAQ</p>
+
+      <div class="divider"></div>
+
+    </div>
+
+
+    <canvas class="ocean" id="ocean" aria-hidden="true"></canvas>
+    <div class="ocean-scrim"></div>
+
+
+    <p class="badge">Brasília · 2026 &nbsp;·&nbsp; Versão 1.0 · Base: Guia Orientativo da CGU</p>
+
+  </main>
+
+  <script>
+
+    const CAMADAS = [
+      { y: 604, amp: 8, freq: .0062, hach: 4, passo: 9, fill: '#0B2C4E', op: .30, w: 1.0, resp: 0, vel: .22 },
+      { y: 663, amp: 12, freq: .0052, hach: 5, passo: 12, fill: '#0A2745', op: .40, w: 1.2, resp: 3, vel: .30 },
+      { y: 738, amp: 17, freq: .0044, hach: 6, passo: 16, fill: '#09223C', op: .52, w: 1.5, resp: 7, vel: .40 },
+      { y: 832, amp: 23, freq: .0036, hach: 7, passo: 21, fill: '#081D33', op: .64, w: 1.9, resp: 10, vel: .54 },
+      { y: 946, amp: 31, freq: .0030, hach: 8, passo: 27, fill: '#07182A', op: .76, w: 2.3, resp: 13, vel: .72 },
+      { y: 1078, amp: 41, freq: .0025, hach: 9, passo: 34, fill: '#061421', op: .88, w: 2.8, resp: 16, vel: .95 }
+    ];
+
+    const MOV = {
+      VELOCIDADE: 1.0,
+      FPS: 30,
+      SOPRO: 1.0,
+      ALCANCE: 180,
+      PARALLAX: 26,
+      RESPINGO: true,
+      PASSO: 12
+    };
+
+    (function oceano() {
+      const cv = document.getElementById('ocean');
+      if (!cv || !cv.getContext) return;
+      const ctx = cv.getContext('2d');
+
+      let s = 20260721;
+      const rnd = () => (s = (s * 1664525 + 1013904223) % 4294967296) / 4294967296;
+
+      const X0 = -320, X1 = 2240, FUNDO = 1200, W = 1920, H = 1080;
+      const parado = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const P = { x: 960, alvo: 960, forca: 0, alvoForca: 0, px: 0, alvoPx: 0 };
+      let fase = 0, escala = 1;
+
+
+      function medir(qualidade) {
+        const r = cv.getBoundingClientRect();
+        const dpr = qualidade || window.devicePixelRatio || 1;
+        cv.width = Math.round(r.width * dpr);
+        cv.height = Math.round(r.height * dpr);
+
+        escala = cv.width / W;
+        ctx.setTransform(escala, 0, 0, escala, 0, cv.height - H * escala);
+      }
+
+
+      const F = [], PH = [];
+      CAMADAS.forEach(c => {
+        F.push([c.freq, c.freq * 2.17, c.freq * 3.61]);
+        PH.push([rnd() * 6.28, rnd() * 6.28, rnd() * 6.28]);
+      });
+
+      function surf(x, k, damp) {
+        const c = CAMADAS[k], f = F[k], ph = PH[k], t = fase * c.vel;
+        const th = x * f[0] + ph[0] + t;
+        let v = Math.sin(th) + 0.14 * Math.sin(2 * th + 0.4);
+        v += 0.34 * Math.sin(x * f[1] + ph[1] + t * 1.35);
+        v += 0.16 * Math.sin(x * f[2] + ph[2] + t * 0.70);
+        let y = c.y - c.amp * (damp === undefined ? 1 : damp) * v;
+        if (P.forca > 0.002) {
+          const d = x - P.x;
+          y -= P.forca * MOV.SOPRO * c.amp * 0.6 *
+            Math.exp(-(d * d) / (2 * MOV.ALCANCE * MOV.ALCANCE)) * (0.3 + 0.7 * k / 5);
+        }
+        return y;
+      }
+
+      function traco(k, damp, desce) {
+        ctx.beginPath();
+        for (let x = X0; x <= X1; x += MOV.PASSO) {
+          const y = surf(x, k, damp) + (desce || 0);
+          x === X0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+      }
+
+
+      const camadas = CAMADAS.map((c, k) => {
+        const resp = [];
+        for (let n = 0; n < c.resp; n++)
+          resp.push({ x: rnd() * 1920, alt: 3 + rnd() * c.amp * 0.85, t: rnd() * 6.28, r: 0.9 + rnd() * 1.6, a: 0.25 + rnd() * 0.5 });
+        return { c, k, resp };
+      });
+
+      const gotas = [], aneis = [];
+
+
+      function desenhar(dt) {
+        ctx.clearRect(-400, -200, W + 800, H + 400);
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+
+
+        const g = ctx.createRadialGradient(960, 576, 0, 960, 576, 900);
+        g.addColorStop(0, 'rgba(0,144,192,.30)');
+        g.addColorStop(.55, 'rgba(0,144,192,.08)');
+        g.addColorStop(1, 'rgba(0,144,192,0)');
+        ctx.save();
+        ctx.translate(0, 576); ctx.scale(1, .16); ctx.translate(0, -576);
+        ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+        ctx.restore();
+
+
+        ctx.strokeStyle = 'rgba(191,231,250,.18)';
+        ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(0, 576); ctx.lineTo(W, 576); ctx.stroke();
+
+        camadas.forEach(L => {
+          const c = L.c, k = L.k;
+          ctx.save();
+          ctx.translate(P.px * (k + 1) / 6, 0);
+
+
+          traco(k, 1, 0);
+          ctx.lineTo(X1, FUNDO); ctx.lineTo(X0, FUNDO); ctx.closePath();
+          ctx.fillStyle = c.fill; ctx.fill();
+
+
+          ctx.strokeStyle = '#9ED8F2';
+          ctx.lineWidth = c.w * 0.5;
+          for (let j = 1; j <= c.hach; j++) {
+            ctx.globalAlpha = c.op * 0.34 * Math.pow(0.82, j);
+            traco(k, Math.pow(0.70, j), j * c.passo);
+            ctx.stroke();
+          }
+          ctx.globalAlpha = 1;
+
+
+          ctx.strokeStyle = '#DCF1FC';
+          ctx.lineWidth = c.w;
+          ctx.globalAlpha = c.op;
+          traco(k, 1, 0);
+          ctx.stroke();
+
+
+          ctx.fillStyle = '#DCF1FC';
+          L.resp.forEach(r => {
+            r.x -= c.vel * MOV.VELOCIDADE * dt * 55;
+            if (r.x < -40) r.x += 2000;
+            r.t += dt * 3;
+            ctx.globalAlpha = c.op * r.a;
+            ctx.beginPath();
+            ctx.arc(r.x, surf(r.x, k) - r.alt - Math.sin(r.t) * 3, r.r, 0, 6.2832);
+            ctx.fill();
+          });
+
+          ctx.globalAlpha = 1;
+          ctx.restore();
+        });
+
+
+        ctx.strokeStyle = '#EAF7FF';
+        for (let i = aneis.length - 1; i >= 0; i--) {
+          const a = aneis[i];
+          a.t += dt;
+          if (a.t < 0) continue;
+          const p = a.t / .9;
+          if (p >= 1) { aneis.splice(i, 1); continue; }
+          ctx.globalAlpha = .85 * (1 - p);
+          ctx.lineWidth = 2 * (1 - p * .6);
+          ctx.beginPath();
+          ctx.ellipse(a.x, a.y, 6 + p * 150, 2 + p * 42, 0, 0, 6.2832);
+          ctx.stroke();
+        }
+        ctx.fillStyle = '#EAF7FF';
+        for (let i = gotas.length - 1; i >= 0; i--) {
+          const d = gotas[i];
+          d.t += dt;
+          if (d.t > 1.1) { gotas.splice(i, 1); continue; }
+          ctx.globalAlpha = Math.max(0, 1 - d.t / 1.1);
+          ctx.beginPath();
+          ctx.arc(d.x + d.vx * d.t, d.y + d.vy * d.t + 520 * d.t * d.t, d.r, 0, 6.2832);
+          ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+      }
+
+
+      medir();
+      window.addEventListener('resize', () => { medir(); if (parado) desenhar(0); });
+
+      if (parado || MOV.VELOCIDADE === 0) { desenhar(0); }
+      else {
+        let ultimo = 0, intervalo = 1000 / MOV.FPS;
+        (function quadro(ts) {
+          requestAnimationFrame(quadro);
+          if (document.hidden || ts - ultimo < intervalo) return;
+          const dt = Math.min((ts - ultimo) / 1000, .1);
+          ultimo = ts;
+          fase += dt * MOV.VELOCIDADE * 1.5;
+          P.x += (P.alvo - P.x) * 0.12;
+          P.forca += (P.alvoForca - P.forca) * 0.08;
+          P.px += (P.alvoPx - P.px) * 0.06;
+          desenhar(dt);
+        })(0);
+      }
+
+
+      const posX = e => ((e.touches ? e.touches[0] : e).clientX / window.innerWidth) * W;
+      const mover = e => {
+        P.alvo = posX(e);
+        P.alvoForca = 1;
+        P.alvoPx = ((P.alvo - 960) / 960) * MOV.PARALLAX;
+      };
+      window.addEventListener('mousemove', mover, { passive: true });
+      window.addEventListener('touchmove', mover, { passive: true });
+      window.addEventListener('mouseleave', () => { P.alvoForca = 0; P.alvoPx = 0; });
+
+      if (MOV.RESPINGO) {
+        window.addEventListener('pointerdown', e => {
+          const x = (e.clientX / window.innerWidth) * W;
+          const y = (e.clientY / window.innerHeight) * H;
+          if (y < 560) return;
+          for (let i = 0; i < 3; i++) aneis.push({ x: x, y: y, t: -i * .13 });
+          for (let i = 0; i < 9; i++)
+            gotas.push({ x: x, y: y, vx: (rnd() - .5) * 420, vy: -110 - rnd() * 190, r: 1 + rnd() * 2, t: 0 });
+        });
+      }
+
+
+      window.addEventListener('beforeprint', () => { medir(3); desenhar(0); });
+      window.addEventListener('afterprint', () => { medir(); desenhar(0); });
+    })();
+
+    function goToSlide(n) {
+      window.parent.postMessage({ type: "slide-goto", slide: n }, "*");
+    }
+    function goToFile(file) {
+      window.parent.postMessage({ type: "slide-goto-file", file: file }, "*");
+    }
+    document.addEventListener("keydown", function (e) {
+      if (["ArrowRight", "ArrowLeft", "PageDown", "PageUp", "Home", "End", " ", "f", "F"].indexOf(e.key) !== -1) {
+        e.preventDefault();
+        window.parent.postMessage({ type: "slide-nav", key: e.key }, "*");
+      }
+    });
+  </script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+# Publica o guia no GitHub Pages a cada push na main — só se a verificação
+# estática passar. Mesmo fluxo do relatorio-antaq (static.yml).
+name: Publicar no GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# uma publicação por vez; não cancela a que já está em andamento
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  verificar:
+    name: Verificação estática
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/validar.mjs
+
+  deploy:
+    name: Publicar
+    needs: verificar
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Montar o site (só o que é público)
+        run: |
+          mkdir -p _site
+          cp -r index.html img_porto_web.jpeg Imagens guia vendor .nojekyll _site/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

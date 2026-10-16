@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico da Carta da ANTAQ — Guia da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <style>
+    .kpi.cartao { padding: .55rem .7rem; }
+    .kpi-num small { color: #64748b; }
+    .barras { display: flex; flex-direction: column; gap: .3rem; margin-top: .15rem; }
+    .bl { display: grid; grid-template-columns: 9rem 1fr 2.4rem; gap: .4rem; align-items: center; font-size: .48rem; color: #334155; }
+    .bl .v { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--brand-primary); text-align: right; }
+    .achados { list-style: none; padding: 0 !important; gap: .4rem !important; }
+    .achados li { display: flex; gap: .45rem; align-items: flex-start; }
+    .achados i { color: var(--dourado); margin-top: .12rem; font-size: .55rem; }
+    .achados b { color: #fff; }
+    code { font-size: .85em; background: #f1f5f9; border-radius: 4px; padding: 0 .2rem; }
+  </style>
+</head>
+
+<body>
+  <main class="slide">
+    <div class="top-accent"></div>
+    <div class="top-accent-2"></div>
+
+    <header class="cab">
+      <div class="cab-titulo">
+        <h1>Diagnóstico da Carta da ANTAQ</h1>
+      </div>
+      <div class="cab-cap">
+        <i class="fas fa-chart-line" aria-hidden="true"></i>
+        <div>
+          <p class="n">CAPÍTULO 05</p>
+          <p class="t">Monitoramento</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="corpo">
+      <p class="lead">Retrato da Carta publicada no Portal gov.br em <b id="dataColeta">—</b>. É a <b>linha de base</b> do primeiro ciclo: os números são recalculados a partir de <code>dados/servicos.js</code>.</p>
+      <div class="grade g4" id="kpis">
+        <div class="cartao kpi"><span class="kpi-num" data-k="total">—</span><span class="kpi-rot">serviços publicados</span></div>
+        <div class="cartao kpi"><span class="kpi-num" data-k="comMax">—</span><span class="kpi-rot">com <b>prazo máximo</b> ("Até…") ou atendimento imediato</span></div>
+        <div class="cartao kpi"><span class="kpi-num" data-k="ouv">—</span><span class="kpi-rot">indicam a <b>Ouvidoria / Fala.BR</b> para manifestação</span></div>
+        <div class="cartao kpi"><span class="kpi-num" data-k="aval">—</span><span class="kpi-rot">com <b>avaliação</b> de usuários no Painel gov.br</span></div>
+      </div>
+      <div class="grade cresce" style="grid-template-columns:1fr 1.15fr;gap:1rem;margin-top:.6rem">
+        <section class="cartao">
+          <h2>Serviços por unidade gestora</h2>
+          <div id="porUnidade" class="barras"></div>
+          <h2 style="margin-top:.5rem">Como o prazo aparece</h2>
+          <div id="porPrazo" class="barras"></div>
+        </section>
+        <section class="cartao cartao--escuro">
+          <h2>O que corrigir primeiro</h2>
+          <ul id="achados" class="achados"></ul>
+          <p class="pequeno" style="color:rgba(255,255,255,.6);margin-top:auto">Leitura automática do PDF gerado pelo Portal. Confirme cada caso na página do serviço antes de pedir a correção.</p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="rodape">
+      <span>Guia Prático da Carta de Serviços — Ouvidoria — Agência Nacional de Transportes Aquaviários - ANTAQ</span>
+      <span class="dica"></span>
+    </footer>
+    <i class="fas fa-chart-line marca-dagua" aria-hidden="true"></i>
+  </main>
+
+  <script src="dados/servicos.js"></script>
+  <script>
+    var C = window.CARTA, R = C.resumo();
+    var maxOuImed = R.prazo.maximo + R.prazo.imediato;
+    document.getElementById('dataColeta').textContent = C.coleta.split('-').reverse().join('/');
+    var K = { total: R.total, comMax: maxOuImed, ouv: R.total - R.semOuvidoria, aval: R.comAvaliacao };
+    document.querySelectorAll('[data-k]').forEach(function (el) {
+      var k = el.dataset.k, v = K[k];
+      el.innerHTML = k === 'total' ? String(v) : v + '<small>/' + R.total + '</small>';
+      el.setAttribute('aria-label', k === 'total' ? v + ' serviços' : v + ' de ' + R.total);
+    });
+    function barras(id, itens, max) {
+      var box = document.getElementById(id);
+      itens.forEach(function (it) {
+        var d = document.createElement('div'); d.className = 'bl';
+        d.innerHTML = '<span>' + it[0] + '</span><span class="barra' + (it[2] ? ' barra--ouro' : '') + '"><span style="width:' + (it[1] / max * 100) + '%"></span></span><span class="v">' + it[1] + '</span>';
+        box.appendChild(d);
+      });
+    }
+    barras('porUnidade', Object.keys(C.unidades).map(function (u) { return [u + ' · ' + C.unidades[u].replace('Superintendência de ', ''), R.porUnidade[u] || 0]; }), R.total);
+    barras('porPrazo', [
+      ['Prazo máximo ("Até…")', R.prazo.maximo], ['Atendimento imediato', R.prazo.imediato],
+      ['Só média ("Em média…")', R.prazo.media, true], ['Intervalo ("Entre…")', R.prazo.intervalo, true], ['Sem prazo', R.prazo.ausente, true]
+    ], R.total);
+    var A = [
+      [R.total - maxOuImed, 'serviços sem prazo máximo — a lei pede previsão do prazo máximo (art. 7º, §2º, IV).'],
+      [R.semOuvidoria, 'serviços não dizem onde registrar manifestação (art. 7º, §2º, VI).'],
+      [R.total, 'serviços com texto de prioridades sem a Lei nº 14.626/2023 (texto padrão do Portal).'],
+      [R.nomeFora, 'nomes com grafia da Agência fora do padrão ou ponto final.'],
+      [R.semLegislacao, 'serviços sem a seção Legislação preenchida.'],
+      [R.comSigla, 'nomes com sigla; ' + R.comHttp + ' serviços com link sem HTTPS.']
+    ];
+    var ul = document.getElementById('achados');
+    A.forEach(function (a) { var li = document.createElement('li'); li.innerHTML = '<i class="fas fa-circle-exclamation" aria-hidden="true"></i><span><b>' + a[0] + '</b> ' + a[1] + '</span>'; ul.appendChild(li); });
+  </script>
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>

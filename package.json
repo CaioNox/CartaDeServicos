@@ -1,0 +1,15 @@
+{
+  "name": "guia-carta-servicos-antaq",
+  "private": true,
+  "description": "Guia Prático da Carta de Serviços ao Usuário — Ouvidoria da ANTAQ. Site estático; este arquivo existe só para as ferramentas de verificação.",
+  "type": "module",
+  "scripts": {
+    "servir": "node scripts/servir.mjs",
+    "validar": "node scripts/validar.mjs",
+    "testar": "node scripts/testar-telas.mjs",
+    "verificar": "node scripts/validar.mjs && node scripts/testar-telas.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.0"
+  }
+}

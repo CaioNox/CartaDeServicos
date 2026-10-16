@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>As 11 etapas em um olhar — Guia da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <style>
+    .fluxo { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto .8fr; align-items: stretch; gap: .5rem; }
+    .seta-fase { align-self: center; color: #94a3b8; font-size: .8rem; }
+    .fase { border-radius: 18px; padding: .6rem .6rem .7rem; background: #f8fafc; border-top: 6px solid var(--c); display: flex; flex-direction: column; }
+    .fase h2 { margin: 0 0 .45rem; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--c); }
+    .fase ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .4rem; flex: 1; }
+    .fase li { flex: 1; display: flex; }
+    .fase-preparar { --c: #0070C0; } .fase-construir { --c: #103050; } .fase-publicar { --c: #0090C0; } .fase-manter { --c: #b07a00; }
+    .no { flex: 1; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; gap: .1rem .45rem; align-items: center; text-align: left; font: inherit; cursor: pointer; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: .4rem .5rem; box-shadow: 0 2px 6px rgba(16,48,80,.05); transition: border-color .15s, transform .15s; }
+    .no:hover { border-color: var(--c); transform: translateY(-2px); }
+    .no b { grid-row: span 2; width: 1.35rem; height: 1.35rem; border-radius: 50%; display: grid; place-items: center; background: var(--c); color: #fff; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: .55rem; }
+    .fase-manter .no b { color: #1e293b; background: var(--dourado); }
+    .no i { color: var(--c); font-size: .5rem; }
+    .no span { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: .5rem; color: var(--brand-primary); line-height: 1.2; }
+  </style>
+</head>
+
+<body>
+  <main class="slide">
+    <div class="top-accent"></div>
+    <div class="top-accent-2"></div>
+
+    <header class="cab">
+      <div class="cab-titulo">
+        <h1>As 11 etapas em um olhar</h1>
+      </div>
+      <div class="cab-cap">
+        <i class="fas fa-route" aria-hidden="true"></i>
+        <div>
+          <p class="n">CAPÍTULO 03</p>
+          <p class="t">Passo a passo</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="corpo">
+      <p class="lead">O ciclo tem <b>quatro fases</b>. As quatro primeiras etapas preparam o terreno; as três seguintes constroem o conteúdo; três publicam; a última mantém a Carta viva até o próximo ciclo.</p>
+      <div class="fluxo cresce">
+      <section class="fase fase-preparar">
+        <h2>Preparar</h2>
+        <ol>
+          <li><button type="button" class="no" data-ir-etapa="1"><b>1</b><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i><span>Diagnóstico preliminar</span></button></li>
+          <li><button type="button" class="no" data-ir-etapa="2"><b>2</b><i class="fas fa-bullhorn" aria-hidden="true"></i><span>Comunicação à alta gestão</span></button></li>
+          <li><button type="button" class="no" data-ir-etapa="3"><b>3</b><i class="fas fa-sitemap" aria-hidden="true"></i><span>Forma de atuação</span></button></li>
+          <li><button type="button" class="no" data-ir-etapa="4"><b>4</b><i class="fas fa-list-check" aria-hidden="true"></i><span>Plano de ação</span></button></li>
+        </ol>
+      </section>
+      <i class="fas fa-chevron-right seta-fase" aria-hidden="true"></i>
+      <section class="fase fase-construir">
+        <h2>Construir</h2>
+        <ol>
+          <li><button type="button" class="no" data-ir-etapa="5"><b>5</b><i class="fas fa-filter" aria-hidden="true"></i><span>Identificar os serviços</span></button></li>
+          <li><button type="button" class="no" data-ir-etapa="6"><b>6</b><i class="fas fa-file-pen" aria-hidden="true"></i><span>Levantar as informações</span></button></li>
+          <li><button type="button" class="no" data-ir-etapa="7"><b>7</b><i class="fas fa-stamp" aria-hidden="true"></i><span>Validar</span></button></li>
+        </ol>
+      </section>
+      <i class="fas fa-chevron-right seta-fase" aria-hidden="true"></i>
+      <section class="fase fase-publicar">
+        <h2>Publicar</h2>
+        <ol>
+          <li><button type="button" class="no" data-ir-etapa="8"><b>8</b><i class="fas fa-cloud-arrow-up" aria-hidden="true"></i><span>Cadastrar no Portal gov.br</span></button></li>
+          <li><button type="button" class="no" data-ir-etapa="9"><b>9</b><i class="fas fa-globe" aria-hidden="true"></i><span>Atualizar o site da ANTAQ</span></button></li>
+          <li><button type="button" class="no" data-ir-etapa="10"><b>10</b><i class="fas fa-share-nodes" aria-hidden="true"></i><span>Divulgar</span></button></li>
+        </ol>
+      </section>
+      <i class="fas fa-chevron-right seta-fase" aria-hidden="true"></i>
+      <section class="fase fase-manter">
+        <h2>Manter</h2>
+        <ol>
+          <li><button type="button" class="no" data-ir-etapa="11"><b>11</b><i class="fas fa-arrows-rotate" aria-hidden="true"></i><span>Manter e revisar todo ano</span></button></li>
+        </ol>
+      </section>
+      </div>
+      <p class="fonte">Clique em uma etapa para ver o detalhe. Fonte: <cite>Cartas de Serviços: Guia Orientativo ao SisOuv</cite>, CGU, dez/2025, item 3.</p>
+    </div>
+
+    <footer class="rodape">
+      <span>Guia Prático da Carta de Serviços — Ouvidoria — Agência Nacional de Transportes Aquaviários - ANTAQ</span>
+      <span class="dica"></span>
+    </footer>
+    <i class="fas fa-route marca-dagua" aria-hidden="true"></i>
+  </main>
+
+  <script>
+    document.querySelectorAll('[data-ir-etapa]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var alvo = 'slide-etapas.html#e' + b.dataset.irEtapa;
+        if (window.parent !== window) window.parent.postMessage({ type: 'slide-goto-file', file: 'slide-etapas.html' }, '*');
+        try { sessionStorage.setItem('guia-etapa', b.dataset.irEtapa); } catch (e) { /* sem armazenamento: abre na etapa 1 */ }
+        if (window.parent === window) location.href = alvo;
+      });
+    });
+  </script>
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha técnica e como usar — Guia da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <style>
+    .ficha { display: grid; grid-template-columns: 6.2rem 1fr; gap: .35rem .7rem; margin: .3rem 0 0; font-size: .54rem; }
+    .ficha dt { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--brand-secondary); text-transform: uppercase; font-size: .42rem; letter-spacing: .08em; padding-top: .08rem; }
+    .ficha dd { margin: 0; color: #334155; line-height: 1.4; }
+    .usar { list-style: none; padding: 0 !important; margin: .3rem 0 0; gap: .55rem !important; }
+    .usar li { display: flex; gap: .55rem; align-items: flex-start; }
+    .usar i { color: #7fd3f2; width: 1rem; text-align: center; margin-top: .15rem; font-size: .6rem; }
+    .usar span { color: rgba(255,255,255,.82) !important; font-size: .54rem; line-height: 1.45; }
+    .usar b { color: #fff; }
+    kbd { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .42rem; background: rgba(255,255,255,.15); border-radius: 4px; padding: 0 .2rem; }
+  </style>
+</head>
+
+<body>
+  <main class="slide">
+    <div class="top-accent"></div>
+    <div class="top-accent-2"></div>
+
+    <header class="cab">
+      <div class="cab-titulo">
+        <h1>Ficha técnica e como usar</h1>
+      </div>
+      <div class="cab-cap">
+        <i class="fas fa-book-open" aria-hidden="true"></i>
+        <div>
+          <p class="n">ABERTURA</p>
+          <p class="t">Guia da Carta de Serviços</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="corpo">
+      <div class="grade g2 cresce" style="grid-template-columns:1.05fr 1fr;gap:1.1rem">
+        <section class="cartao" aria-labelledby="fichaT">
+          <h2 id="fichaT"><i class="fas fa-id-card" aria-hidden="true"></i> Ficha técnica</h2>
+          <dl class="ficha">
+            <dt>Título</dt><dd>Guia Prático de Revisão e Atualização da Carta de Serviços ao Usuário da ANTAQ</dd>
+            <dt>Versão</dt><dd>1.0 — outubro de 2026</dd>
+            <dt>Elaboração</dt><dd>Ouvidoria da ANTAQ</dd>
+            <dt>Ouvidor(a)</dt><dd><span class="a-validar">Nome a confirmar</span></dd>
+            <dt>Equipe</dt><dd><span class="a-validar">Nomes a confirmar</span></dd>
+            <dt>Aprovação</dt><dd><span class="a-validar">Ato e data a confirmar</span></dd>
+            <dt>Base</dt><dd>Lei nº 13.460/2017 · Decreto nº 9.094/2017 · Portaria Normativa CGU nº 116/2024 · <cite>Cartas de Serviços: Guia Orientativo ao SisOuv</cite> (CGU, dez/2025)</dd>
+            <dt>Reprodução</dt><dd>Permitida, sem fins lucrativos, desde que citada a fonte.</dd>
+          </dl>
+        </section>
+        <section class="cartao cartao--escuro" aria-labelledby="usoT">
+          <h2 id="usoT"><i class="fas fa-compass" aria-hidden="true"></i> Como usar este guia</h2>
+          <ul class="usar">
+            <li><i class="fas fa-arrow-right-arrow-left" aria-hidden="true"></i><span><b>Navegue</b> com as setas ← →, espaço ou clique nas laterais. <kbd>F</kbd> abre em tela cheia.</span></li>
+            <li><i class="fas fa-list-ol" aria-hidden="true"></i><span><b>Pule para um tema</b> pelo sumário ou pela lista de tópicos de cada capa.</span></li>
+            <li><i class="fas fa-hand-pointer" aria-hidden="true"></i><span><b>Telas interativas</b> mostram uma etapa por vez; os cartões abrem o detalhe.</span></li>
+            <li><i class="fas fa-print" aria-hidden="true"></i><span><b>Versão A4</b> para imprimir ou salvar em PDF — com tudo o que fica escondido nas telas interativas.</span></li>
+            <li><i class="fas fa-file-pen" aria-hidden="true"></i><span><b>Ferramentas prontas:</b> teste "é serviço?", ficha padrão, checklist de 16 itens e formulário de atualização que gera o texto para o SEI.</span></li>
+            <li><i class="fas fa-universal-access" aria-hidden="true"></i><span><b>Acessível:</b> funciona com teclado e leitor de tela, respeita "reduzir movimento" e não depende de serviços de terceiros.</span></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <footer class="rodape">
+      <span>Guia Prático da Carta de Serviços — Ouvidoria — Agência Nacional de Transportes Aquaviários - ANTAQ</span>
+      <span class="dica"></span>
+    </footer>
+    <i class="fas fa-book-open marca-dagua" aria-hidden="true"></i>
+  </main>
+
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>
