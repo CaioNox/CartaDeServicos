@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deveres de cada um — Guia da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <style>
+    .deveres th[scope="row"] { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .46rem; color: var(--brand-primary); background: transparent; text-transform: none; letter-spacing: 0; border-bottom: 1px solid #e2e8f0; }
+    .deveres td { font-size: .47rem; }
+    .dev-ouv { margin: 0; padding-left: 1rem; display: flex; flex-direction: column; gap: .32rem; }
+    .dev-ouv li::marker { color: var(--accent); font-family: 'Montserrat', sans-serif; font-weight: 900; }
+    .dev-ouv b { display: block; color: #fff; font-size: .52rem; }
+    .dev-ouv span { display: block; font-size: .42rem; color: rgba(255,255,255,.6); }
+    .nota-ouv { margin-top: auto !important; font-size: .48rem !important; border-top: 1px solid rgba(255,255,255,.15); padding-top: .4rem; }
+    .nota-ouv b { color: #fff; }
+  </style>
+</head>
+
+<body>
+  <main class="slide">
+    <div class="top-accent"></div>
+    <div class="top-accent-2"></div>
+
+    <header class="cab">
+      <div class="cab-titulo">
+        <h1>Deveres de cada um</h1>
+      </div>
+      <div class="cab-cap">
+        <i class="fas fa-people-group" aria-hidden="true"></i>
+        <div>
+          <p class="n">CAPÍTULO 02</p>
+          <p class="t">Papéis e responsabilidades</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="corpo">
+      <div class="grade g2 cresce" style="grid-template-columns:1.2fr 1fr;gap:1rem">
+        <section class="cartao">
+          <p class="sub"><i class="fas fa-building" aria-hidden="true"></i> Unidade gestora do serviço · Portaria SGD/MGI 1.083/2025, art. 6º, II</p>
+          <table class="tabela deveres">
+            <caption class="sr-only">Deveres da unidade gestora por dimensão</caption>
+            <thead><tr><th scope="col">Dimensão</th><th scope="col">Dever</th><th scope="col">Na prática</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Elaboração</th><td>Mapear serviços; descrever requisitos, prazos e documentos; definir compromissos de atendimento</td><td>Inventário de serviços; linguagem simples; padrão de tempo de resposta</td></tr>
+              <tr><th scope="row">Atualização</th><td>Atualizar sempre que mudar norma, fluxo ou canal; revisar periodicamente</td><td>Refletir mudança normativa no Portal; responder à consulta anual</td></tr>
+              <tr><th scope="row">Monitoramento</th><td>Acompanhar os compromissos; usar satisfação e manifestações para corrigir</td><td>Painel gov.br; dados da Ouvidoria; plano de ação corretivo</td></tr>
+              <tr><th scope="row">Responsabilidade</th><td>Garantir que a informação é verdadeira, clara e precisa</td><td>Ponto focal e editor definidos; validação pelo gestor</td></tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="cartao cartao--escuro">
+          <p class="sub" style="color:#7fd3f2"><i class="fas fa-headset" aria-hidden="true"></i> Ouvidoria da ANTAQ</p>
+          <ol class="dev-ouv">
+            <li><b>Participar da elaboração e da revisão periódica</b><span>Decreto nº 9.492/2018, art. 5º, IV · Portaria CGU nº 116/2024, art. 65</span></li>
+            <li><b>Garantir a participação social no processo</b><span>Lei nº 13.460/2017, art. 13, I</span></li>
+            <li><b>Zelar pela adequação, atualidade e qualidade das informações</b><span>Portaria CGU nº 116/2024, art. 7º, VII</span></li>
+            <li><b>Fornecer dados e relatórios de manifestações para subsidiar melhorias</b><span>Lei nº 13.460/2017, art. 14, II</span></li>
+            <li><b>Monitorar o cumprimento do que a Carta promete</b><span>Lei nº 13.460/2017, art. 13, IV · Decreto nº 9.492/2018, art. 10, V</span></li>
+            <li><b>Consultar as unidades gestoras todo ano</b><span>Portaria CGU nº 116/2024, art. 65, §2º</span></li>
+          </ol>
+          <p class="nota-ouv"><i class="fas fa-circle-info" aria-hidden="true"></i> A Ouvidoria <b>não</b> descreve o fluxo do serviço nem fixa seus padrões de qualidade — isso é da unidade que presta o serviço.</p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="rodape">
+      <span>Guia Prático da Carta de Serviços — Ouvidoria — Agência Nacional de Transportes Aquaviários - ANTAQ</span>
+      <span class="dica"></span>
+    </footer>
+    <i class="fas fa-people-group marca-dagua" aria-hidden="true"></i>
+  </main>
+
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>

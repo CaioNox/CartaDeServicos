@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia Prático da Carta de Serviços — Ouvidoria da ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png" />
+  <link rel="stylesheet" href="vendor/fontes.css" />
+  <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" />
+  <style>
+    :root {
+
+      --antaq-azul-100: #DBEFF6;
+
+      --antaq-azul-300: #94D0E5;
+
+      --antaq-azul-500: #0090C0;
+
+      --antaq-azul-600: #0278A2;
+
+      --antaq-azul-700: #045E82;
+
+      --antaq-azul-900: #103050;
+
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      min-height: 100vh;
+      background: #0A2236 url('img_porto_web.jpeg') center bottom / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10, 34, 54, 0.72) 0%, rgba(16, 48, 80, 0.55) 50%, rgba(22, 70, 110, 0.45) 100%);
+      z-index: 0;
+    }
+
+    .header-bar {
+      background-color: #103050;
+      height: 12px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .secondary-bar {
+      background-color: #0070C0;
+      height: 6px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .org-bar {
+      padding: 16px 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .org-bar-logo--ouvidoria {
+      height: 84px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .org-bar-logo--antaq {
+      height: 76px;
+      width: auto;
+    }
+
+    .org-bar-divider {
+      border-left: 1px solid rgba(255, 255, 255, 0.25);
+      padding-left: 16px;
+    }
+
+    .org-bar .org-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .org-bar .org-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: #E2E8F0;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .header-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .header-section .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #0090C0;
+      margin-bottom: 14px;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .header-section .eyebrow::before,
+    .header-section .eyebrow::after {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: #0090C0;
+      opacity: 0.8;
+    }
+
+    .title-wrap {
+      display: inline-block;
+      position: relative;
+    }
+
+    .header-section h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 1.1rem + 3vw, 3.6rem);
+      font-weight: 800;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+    }
+
+    .header-section h1 .gold {
+      color: #0090C0;
+    }
+
+    /* Linha "flecha de duas pontas" sob o título — dourado institucional
+       (#F2A900, o mesmo já usado no foco de teclado dos cards), complementar
+       ao azul do resto da página. Largura = 101% da caixa do título (o
+       .title-wrap encolhe ao tamanho do <h1>). Entra com transition de 0.3s
+       ao carregar a página (classe .in adicionada via JS). */
+    .title-arrow {
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      height: 3px;
+      width: 0%;
+      background: #F2A900;
+      transform: translateX(-50%);
+      transition: width 0.8s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .title-arrow.in {
+      width: 101%;
+    }
+
+    .title-arrow::before,
+    .title-arrow::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      transform: translateY(-50%);
+    }
+
+    .title-arrow::before {
+      left: -1px;
+      border-right: 7px solid #F2A900;
+    }
+
+    .title-arrow::after {
+      right: -1px;
+      border-left: 7px solid #F2A900;
+    }
+
+    .header-section p {
+      display: inline-block;
+      font-size: 14px;
+      color: #FFFFFF;
+      font-weight: 900;
+      padding: 7px 16px;
+      background-color: rgba(16, 48, 80, 0.55);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .report-groups {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 64px;
+      width: 100%;
+      max-width: 1120px;
+    }
+
+    .report-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      flex: 1 1 280px;
+      min-width: 0;
+    }
+
+
+    .report-group.is-empty {
+      display: none;
+    }
+
+    .group-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      max-width: 360px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--antaq-azul-100);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .group-eyebrow-count {
+      font-weight: 600;
+      opacity: 0.85;
+      white-space: nowrap;
+    }
+
+    .group-eyebrow-rule {
+      flex: 0 0 auto;
+      height: 18px;
+      border-radius: 1px;
+    }
+
+
+    .group-eyebrow--anual .group-eyebrow-rule {
+      background-color: var(--antaq-azul-100);
+      width: 4px;
+    }
+
+
+    .group-eyebrow--semestral .group-eyebrow-rule {
+      background-color: var(--antaq-azul-300);
+      width: 3px;
+    }
+
+
+    .group-eyebrow--trimestral .group-eyebrow-rule {
+      background-color: var(--antaq-azul-500);
+      width: 2px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.58);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-left: 5px solid rgba(255, 255, 255, 0.6);
+      border-radius: 14px;
+      width: 100%;
+      max-width: 360px;
+      padding: 22px 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .12s cubic-bezier(.2, .7, .3, 1), background-color .12s ease, box-shadow .12s ease, border-color .12s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      animation: cardIn .55s cubic-bezier(.2, .7, .3, 1) both;
+    }
+
+    .cards .card:nth-child(2) {
+      animation-delay: .1s;
+    }
+
+    .cards .card:nth-child(3) {
+      animation-delay: .2s;
+    }
+
+    .card-pdf {
+      border-left-color: #f2a900;
+    }
+
+    .card-pdf .card-icon {
+      background-color: #FEF3C7;
+      color: #f2a900;
+    }
+
+    .card-pdf:hover {
+      border-color: #f2a900;
+    }
+
+    .card-pdf .card-link {
+      color: #d97706;
+    }
+
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+
+    .card-anual {
+      border-left-color: var(--antaq-azul-900);
+    }
+
+    .card-anual .card-icon {
+      background-color: var(--antaq-azul-100);
+      color: var(--antaq-azul-900);
+    }
+
+    .card-anual:hover {
+      border-color: var(--antaq-azul-900);
+    }
+
+    .card-anual .card-link {
+      color: var(--antaq-azul-900);
+    }
+
+    .card-falabr {
+      border-left-color: #103050;
+    }
+
+
+    .card-semestral {
+      border-left-color: var(--antaq-azul-700);
+    }
+
+    .card-semestral .card-icon {
+      background-color: var(--antaq-azul-100);
+      color: var(--antaq-azul-700);
+    }
+
+    .card-semestral:hover {
+      border-color: var(--antaq-azul-700);
+    }
+
+    .card-semestral .card-link {
+      color: var(--antaq-azul-700);
+    }
+
+
+    .card-trimestral {
+      border-left-color: var(--antaq-azul-500);
+    }
+
+    .card-trimestral .card-icon {
+      background-color: var(--antaq-azul-100);
+      color: var(--antaq-azul-600);
+    }
+
+    .card-trimestral:hover {
+      border-color: var(--antaq-azul-500);
+    }
+
+    .card-trimestral .card-link {
+      color: var(--antaq-azul-600);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      background-color: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 18px 34px rgba(16, 48, 80, 0.28);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: transform .12s ease;
+    }
+
+    .card:hover .card-icon {
+      transform: scale(1.1) rotate(-6deg);
+    }
+
+    .card-falabr .card-icon {
+      background-color: #E0E7FF;
+      color: #103050;
+    }
+
+    .card-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1E293B;
+      margin-bottom: 5px;
+    }
+
+    .card-content h3+.card-link {
+      margin-top: 18px;
+    }
+
+    .card-content p {
+      font-size: 12.5px;
+      color: #1E293B;
+      font-weight: 600;
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+
+    .card-link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s ease;
+    }
+
+    .card-falabr .card-link {
+      color: #103050;
+    }
+
+    .card:hover .card-link {
+      gap: 11px;
+    }
+
+    .footer {
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      background-color: rgba(16, 48, 80, 0.6);
+      backdrop-filter: blur(6px);
+      color: #FFFFFF;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-channels .channels-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #CBD5E1;
+    }
+
+    .footer-channels .channels-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-channels .channels-links a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #BBD2E8;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .footer-channels .channels-links a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-credit {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+
+    .footer-credit .anchor-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background-color: #0090C0;
+      color: #103050;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    \z .footer-credit p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #CBD5E1;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .org-bar {
+        padding: 16px 20px 0;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .org-bar-logo--ouvidoria {
+        height: 64px;
+      }
+
+      .org-bar-logo--antaq {
+        height: 58px;
+      }
+    }
+
+
+    a.card:focus-visible {
+      outline: 3px solid #F2A900;
+      outline-offset: 3px;
+    }
+
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <div class="org-bar">
+    <img src="Imagens/logomarca_Ouvidoria.png" alt="Ouvidoria da ANTAQ" class="org-bar-logo--ouvidoria" />
+    <div class="org-bar-divider">
+      <img src="Imagens/Logo Horizontal_Branca_C_N.png" alt="Logo ANTAQ" class="org-bar-logo--antaq" />
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="header-section">
+      <div class="title-wrap">
+        <h1>Carta de Serviços <span class="gold">da ANTAQ</span></h1>
+      </div>
+      <p>Guia prático de revisão e atualização — selecione como quer acessar</p>
+    </div>
+
+    <div class="report-groups" id="report-groups">
+
+      <section class="report-group" data-periodicity="anual" aria-labelledby="grupo-anual-heading">
+        <h2 id="grupo-anual-heading" class="group-eyebrow group-eyebrow--anual">
+          <span>Guia</span>
+          <span class="group-eyebrow-count"></span>
+          <span class="group-eyebrow-rule" aria-hidden="true"></span>
+        </h2>
+        <div class="cards">
+          <a class="card card-anual" href="guia/index.html" target="_blank" rel="noopener noreferrer">
+            <div class="card-icon">
+              <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            </div>
+            <div class="card-content">
+              <h3>Guia Prático da Carta de Serviços</h3>
+              <p>30 telas em 6 capítulos: base legal, papéis, as 11 etapas, qualidade e monitoramento.</p>
+              <span class="card-link">Abrir apresentação <i class="fa-solid fa-arrow-right" aria-hidden="true"></i><span
+                  class="sr-only"> (abre em nova aba)</span></span>
+            </div>
+          </a>
+          <a class="card card-anual" href="guia/relatorio.html" target="_blank" rel="noopener noreferrer">
+            <div class="card-icon">
+              <i class="fa-solid fa-print" aria-hidden="true"></i>
+            </div>
+            <div class="card-content">
+              <h3>Versão para impressão (A4 / PDF)</h3>
+              <p>Todas as telas e o conteúdo das telas interativas, prontos para imprimir ou exportar.</p>
+              <span class="card-link">Abrir versão A4 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i><span
+                  class="sr-only"> (abre em nova aba)</span></span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="report-group" data-periodicity="semestral" aria-labelledby="grupo-semestral-heading">
+        <h2 id="grupo-semestral-heading" class="group-eyebrow group-eyebrow--semestral">
+          <span>Ferramentas</span>
+          <span class="group-eyebrow-count"></span>
+          <span class="group-eyebrow-rule" aria-hidden="true"></span>
+        </h2>
+        <div class="cards">
+          <a class="card card-semestral" href="guia/index.html?tela=slide-formulario" target="_blank" rel="noopener noreferrer">
+            <div class="card-icon">
+              <i class="fa-solid fa-file-pen" aria-hidden="true"></i>
+            </div>
+            <div class="card-content">
+              <h3>Formulário de atualização</h3>
+              <p>Gera o texto da solicitação para o processo SEI — inclusão, alteração, exclusão ou "sem alteração".</p>
+              <span class="card-link">Abrir formulário <i class="fa-solid fa-arrow-right" aria-hidden="true"></i><span
+                  class="sr-only"> (abre em nova aba)</span></span>
+            </div>
+          </a>
+          <a class="card card-semestral" href="guia/index.html?tela=slide-checklist" target="_blank" rel="noopener noreferrer">
+            <div class="card-icon">
+              <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+            </div>
+            <div class="card-content">
+              <h3>Checklist de qualidade</h3>
+              <p>16 itens com a norma de cada um, pré-marcados a partir do diagnóstico do serviço.</p>
+              <span class="card-link">Abrir checklist <i class="fa-solid fa-arrow-right" aria-hidden="true"></i><span
+                  class="sr-only"> (abre em nova aba)</span></span>
+            </div>
+          </a>
+          <a class="card card-semestral" href="guia/index.html?tela=slide-diagnostico" target="_blank" rel="noopener noreferrer">
+            <div class="card-icon">
+              <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            </div>
+            <div class="card-content">
+              <h3>Diagnóstico da Carta</h3>
+              <p>Situação dos 33 serviços publicados e linha de base dos indicadores.</p>
+              <span class="card-link">Abrir diagnóstico <i class="fa-solid fa-arrow-right" aria-hidden="true"></i><span
+                  class="sr-only"> (abre em nova aba)</span></span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-channels">
+      <span class="channels-title">Canais oficiais ANTAQ</span>
+      <div class="channels-links">
+        <a href="https://www.facebook.com/ANTAQ.oficial" target="_blank" rel="noopener noreferrer"><i
+            class="fa-brands fa-facebook"></i><span>Facebook</span></a>
+        <a href="https://www.instagram.com/antaq_oficial/" target="_blank" rel="noopener noreferrer"><i
+            class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+        <a href="https://www.youtube.com/c/CanalANTAQ/" target="_blank" rel="noopener noreferrer"><i
+            class="fa-brands fa-youtube"></i><span>YouTube</span></a>
+        <a href="https://www.linkedin.com/company/antaq" target="_blank" rel="noopener noreferrer"><i
+            class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+        <a href="https://x.com/ANTAQ_oficial" target="_blank" rel="noopener noreferrer"><i
+            class="fa-brands fa-twitter"></i><span>Twitter</span></a>
+      </div>
+    </div>
+    <div class="footer-credit">
+      <div class="anchor-icon"><i class="fa-solid fa-anchor"></i></div>
+    </div>
+  </div>
+
+  <script>
+
+
+
+    (function () {
+      var grupos = document.querySelectorAll('#report-groups .report-group');
+
+      grupos.forEach(function (grupo) {
+        var cards = grupo.querySelectorAll('.cards > .card');
+        var total = cards.length;
+
+        if (total === 0) {
+          grupo.classList.add('is-empty');
+          return;
+        }
+
+        var contagem = grupo.querySelector('.group-eyebrow-count');
+        if (contagem) {
+          var substantivo = total === 1 ? 'item' : 'itens';
+          contagem.textContent = '· ' + total + ' ' + substantivo;
+        }
+      });
+    })();
+  </script>
+
+</body>
+
+</html>

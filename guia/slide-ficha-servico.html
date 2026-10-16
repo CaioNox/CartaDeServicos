@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha padrão do serviço — Guia da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <style>
+    .ficha-tab th[scope="row"] { width: 17%; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .46rem; color: var(--brand-primary); background: transparent; text-transform: none; letter-spacing: 0; border-bottom: 1px solid #e2e8f0; }
+    .ficha-tab tbody tr:nth-child(even) th { background: #f8fafc; }
+    .ficha-tab td { font-size: .47rem; padding-top: .2rem; padding-bottom: .2rem; }
+    .ficha-tab .base-c { width: 20%; color: #64748b; font-size: .42rem; }
+  </style>
+</head>
+
+<body>
+  <main class="slide">
+    <div class="top-accent"></div>
+    <div class="top-accent-2"></div>
+
+    <header class="cab">
+      <div class="cab-titulo">
+        <h1>Ficha padrão do serviço</h1>
+      </div>
+      <div class="cab-cap">
+        <i class="fas fa-route" aria-hidden="true"></i>
+        <div>
+          <p class="n">CAPÍTULO 03</p>
+          <p class="t">Passo a passo</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="corpo">
+      <p class="lead">Todo serviço — novo ou alterado — é descrito nesta ficha <b>antes</b> de ir ao Portal. Os campos seguem o questionário do gov.br; a coluna do meio é a regra de qualidade que a Ouvidoria vai conferir.</p>
+      <table class="tabela ficha-tab">
+        <caption class="sr-only">Campos da ficha padrão e regra de qualidade de cada um</caption>
+        <thead><tr><th scope="col">Campo do Portal</th><th scope="col">Regra de qualidade</th><th scope="col">Base</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Nome do serviço</th><td>Verbo no infinitivo + objeto. Sem sigla sem explicação. Grafia do nome da Agência igual em todos os serviços. Sem ponto final.</td><td class="base-c">Lei 15.263/2025</td></tr>
+          <tr><th scope="row">O que é?</th><td>Uma a três frases: para que serve e o que o usuário recebe no fim.</td><td class="base-c">Lei 13.460, art. 7º, §2º, I</td></tr>
+          <tr><th scope="row">Quem pode utilizar?</th><td>Público e pré-requisitos (cadastro, representação legal, outorga vigente).</td><td class="base-c">Lei 13.460, art. 7º, §2º, II</td></tr>
+          <tr><th scope="row">Etapas</th><td>Uma etapa por ação do usuário ou da ANTAQ, começando por verbo. A última entrega a resposta definitiva.</td><td class="base-c">Lei 13.460, art. 7º, §2º, III</td></tr>
+          <tr><th scope="row">Documentação</th><td>Lista completa por etapa. O que não estiver aqui não pode ser exigido.</td><td class="base-c">Decreto 9.094, art. 18-A</td></tr>
+          <tr><th scope="row">Custos</th><td>Valor, forma de pagamento (GRU) — ou a frase "Este serviço é gratuito".</td><td class="base-c">Lei 13.460, art. 7º, §2º, II</td></tr>
+          <tr><th scope="row">Canais de prestação</th><td>Link HTTPS do sistema, e-mail ou endereço. Testar cada link.</td><td class="base-c">Lei 13.460, art. 7º, §2º, V</td></tr>
+          <tr><th scope="row">Tempo de cada etapa</th><td>Quanto dura cada etapa, inclusive as do usuário.</td><td class="base-c">Decreto 9.094, art. 11, §3º</td></tr>
+          <tr><th scope="row">Quanto tempo leva?</th><td>PRAZO MÁXIMO: "Até N dias úteis/corridos". Média só como informação adicional.</td><td class="base-c">Lei 13.460, art. 7º, §2º, IV</td></tr>
+          <tr><th scope="row">Para mais informações</th><td>Canal de dúvidas e, sempre, onde registrar manifestação: Ouvidoria / Fala.BR.</td><td class="base-c">Lei 13.460, art. 7º, §2º, VI</td></tr>
+          <tr><th scope="row">Legislação</th><td>Normas com link oficial e HTTPS.</td><td class="base-c">Guia CGU, item 3.6</td></tr>
+          <tr><th scope="row">Compromissos</th><td>Prioridades (Lei 10.048 com Lei 14.626/2023), consulta ao andamento, o que fazer se o sistema cair.</td><td class="base-c">Lei 13.460, art. 7º, §3º</td></tr>
+        </tbody>
+      </table>
+      <p class="fonte">Campos do questionário: <a href="https://www.gov.br/pt-br/guia-de-edicao-de-servicos-do-gov.br/como-cadastrar-e-alterar-servicos/campos-do-questionario-de-servicos" target="_blank" rel="noopener noreferrer">Guia de Edição de Serviços do gov.br</a>.</p>
+    </div>
+
+    <footer class="rodape">
+      <span>Guia Prático da Carta de Serviços — Ouvidoria — Agência Nacional de Transportes Aquaviários - ANTAQ</span>
+      <span class="dica"></span>
+    </footer>
+    <i class="fas fa-route marca-dagua" aria-hidden="true"></i>
+  </main>
+
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>

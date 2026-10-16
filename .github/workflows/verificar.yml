@@ -1,0 +1,54 @@
+# Verifica o Guia a cada push e pull request (qualquer branch).
+#   1. estática  — manifesto deck.js, caminhos (maiúsculas!), acessibilidade básica,
+#                  recursos de terceiros e regra de marca (scripts/validar.mjs)
+#   2. telas     — abre cada tela no Chromium, procura erro de JS e conteúdo
+#                  saindo da tela; publica as capturas como artefato
+name: Verificar o guia
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verificar-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  estatica:
+    name: Verificação estática
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Manifesto, caminhos e acessibilidade
+        run: node scripts/validar.mjs
+
+  telas:
+    name: Teste das telas no navegador
+    needs: estatica
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar Playwright e Chromium
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Testar cada tela
+        run: node scripts/testar-telas.mjs
+      - name: Publicar capturas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: capturas-das-telas
+          path: saida-testes/
+          retention-days: 14

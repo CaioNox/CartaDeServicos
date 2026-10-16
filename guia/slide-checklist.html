@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist de qualidade — Guia da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <style>
+    .topo-check { display: flex; gap: 1rem; align-items: flex-end; margin-bottom: .6rem; }
+    .grupo { border: 1px solid #e2e8f0; border-radius: 14px; margin: 0; padding: .45rem .35rem .4rem; display: flex; flex-direction: column; gap: .1rem; }
+    .grupo legend { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .48rem; letter-spacing: .08em; text-transform: uppercase; color: var(--brand-secondary); padding: 0 .3rem; }
+    .check.auto span b::after { content: ' · diagnóstico'; font-family: 'Montserrat', sans-serif; font-size: .34rem; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+    .placar { display: flex; align-items: center; gap: 1rem; margin-top: .55rem; padding: .45rem .8rem; border-radius: 14px; background: #f1f5f9; }
+    .placar .kpi-num { font-size: 1.4rem; }
+    .parecer { margin: 0; width: 28rem; font-size: .52rem; font-weight: 700; color: var(--brand-primary); }
+  </style>
+</head>
+
+<body>
+  <main class="slide">
+    <div class="top-accent"></div>
+    <div class="top-accent-2"></div>
+
+    <header class="cab">
+      <div class="cab-titulo">
+        <h1>Checklist de qualidade</h1>
+      </div>
+      <div class="cab-cap">
+        <i class="fas fa-spell-check" aria-hidden="true"></i>
+        <div>
+          <p class="n">CAPÍTULO 04</p>
+          <p class="t">Qualidade da informação</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="corpo">
+      <div class="topo-check">
+        <p class="lead" style="margin:0;flex:1">Aplique a cada serviço antes de publicar. Escolha um serviço da Carta para <b>pré-marcar o que o diagnóstico já conferiu</b> — o resto é revisão humana.</p>
+        <div class="campo" style="width:21rem"><label for="svc">Serviço (opcional)</label><select id="svc"><option value="">Avaliar um serviço novo ou genérico</option></select></div>
+      </div>
+      <div class="grade g4 cresce" style="gap:.55rem">
+      <fieldset class="grupo">
+        <legend><i class="fas fa-fingerprint" aria-hidden="true"></i> Identificação</legend>
+          <label class="check"><input type="checkbox" data-item="caract"><span>Tem as <b>5 características</b> de serviço de atendimento<span class="base">Portaria SGD/MGI 1.083/2025, art. 3º</span></span></label>
+          <label class="check"><input type="checkbox" data-item="nome"><span><b>Nome</b> com verbo no infinitivo, sem sigla solta e com grafia padronizada<span class="base">Lei 15.263/2025</span></span></label>
+          <label class="check"><input type="checkbox" data-item="oque"><span><b>"O que é?"</b> em até três frases, em linguagem simples<span class="base">Lei 13.460, art. 7º, §2º, I</span></span></label>
+          <label class="check"><input type="checkbox" data-item="unidade"><span><b>Unidade gestora e ponto focal</b> definidos<span class="base">Portaria SGD/MGI 1.083/2025, art. 6º, II</span></span></label>
+      </fieldset>
+      <fieldset class="grupo">
+        <legend><i class="fas fa-door-open" aria-hidden="true"></i> Acesso</legend>
+          <label class="check"><input type="checkbox" data-item="docs"><span><b>Requisitos e documentos</b> completos, por etapa<span class="base">Decreto 9.094, art. 18-A</span></span></label>
+          <label class="check"><input type="checkbox" data-item="custos"><span><b>Custos</b> explícitos — valor ou "é gratuito"<span class="base">Lei 13.460, art. 7º, §2º, II</span></span></label>
+          <label class="check"><input type="checkbox" data-item="canais"><span><b>Canais</b> com links HTTPS testados<span class="base">Lei 13.460, art. 7º, §2º, V</span></span></label>
+          <label class="check"><input type="checkbox" data-item="etapas"><span><b>Etapas</b> com tempo de duração de cada uma<span class="base">Decreto 9.094, art. 11, §3º</span></span></label>
+      </fieldset>
+      <fieldset class="grupo">
+        <legend><i class="fas fa-clock" aria-hidden="true"></i> Prazos e compromissos</legend>
+          <label class="check"><input type="checkbox" data-item="prazo"><span><b>Prazo máximo</b> ("Até N dias"), não média<span class="base">Lei 13.460, art. 7º, §2º, IV</span></span></label>
+          <label class="check"><input type="checkbox" data-item="andamento"><span>Diz <b>como acompanhar</b> o pedido<span class="base">Lei 13.460, art. 7º, §3º, V</span></span></label>
+          <label class="check"><input type="checkbox" data-item="manif"><span>Diz <b>onde se manifestar</b>: Ouvidoria / Fala.BR<span class="base">Lei 13.460, art. 7º, §2º, VI</span></span></label>
+          <label class="check"><input type="checkbox" data-item="prior"><span><b>Prioridades</b> atualizadas (TEA, mobilidade reduzida, doadores de sangue)<span class="base">Lei 10.048/2000 c/ Lei 14.626/2023</span></span></label>
+      </fieldset>
+      <fieldset class="grupo">
+        <legend><i class="fas fa-arrows-rotate" aria-hidden="true"></i> Manutenção</legend>
+          <label class="check"><input type="checkbox" data-item="indisp"><span>Diz o que fazer se o <b>sistema estiver fora do ar</b><span class="base">Decreto 9.094, art. 11, §3º</span></span></label>
+          <label class="check"><input type="checkbox" data-item="legis"><span><b>Legislação</b> com link oficial<span class="base">Guia CGU, item 3.6</span></span></label>
+          <label class="check"><input type="checkbox" data-item="revisao"><span><b>Revisado</b> nos últimos 12 meses<span class="base">Portaria CGU 116/2024, art. 65, §2º</span></span></label>
+          <label class="check"><input type="checkbox" data-item="painel"><span><b>Nota e utilidade</b> do Painel gov.br acompanhadas<span class="base">Lei 13.460, art. 23</span></span></label>
+      </fieldset>
+      </div>
+      <div class="placar">
+        <div class="kpi"><span class="kpi-num" id="pontos">0<small>/16</small></span><span class="kpi-rot">itens atendidos</span></div>
+        <div class="barra" style="flex:1;height:14px"><span id="barraPontos" style="width:0%"></span></div>
+        <p id="parecer" class="parecer" role="status" aria-live="polite">Marque os itens atendidos.</p>
+      </div>
+    </div>
+
+    <footer class="rodape">
+      <span>Guia Prático da Carta de Serviços — Ouvidoria — Agência Nacional de Transportes Aquaviários - ANTAQ</span>
+      <span class="dica"></span>
+    </footer>
+    <i class="fas fa-spell-check marca-dagua" aria-hidden="true"></i>
+  </main>
+
+  <script src="dados/servicos.js"></script>
+  <script>
+    var C = window.CARTA, sel = document.getElementById('svc');
+    var caixas = document.querySelectorAll('[data-item]');
+    C.servicos.forEach(function (s) { var o = document.createElement('option'); o.value = s.n; o.textContent = s.unidade + ' · ' + s.nome; sel.appendChild(o); });
+    function placar() {
+      var n = Array.prototype.filter.call(caixas, function (c) { return c.checked; }).length;
+      document.getElementById('pontos').innerHTML = n + '<small>/16</small>';
+      document.getElementById('barraPontos').style.width = (n / 16 * 100) + '%';
+      var p = document.getElementById('parecer');
+      var falta = Array.prototype.filter.call(caixas, function (c) { return !c.checked; }).length;
+      p.textContent = n === 16 ? 'Pronto para publicar.' : n >= 12 ? 'Quase lá: ' + falta + ' ajuste(s) antes de publicar.' : n === 0 ? 'Marque os itens atendidos.' : 'Precisa de revisão: ' + falta + ' itens pendentes.';
+    }
+    function pre() {
+      caixas.forEach(function (c) { c.checked = false; c.closest('.check').classList.remove('auto'); });
+      var s = C.servicos.filter(function (x) { return String(x.n) === sel.value; })[0];
+      if (s) {
+        var t = C.tipoPrazo(s.prazo);
+        var auto = {
+          prazo: t === 'maximo' || t === 'imediato',
+          manif: s.citaOuvidoria,
+          legis: s.legislacao,
+          docs: s.documentacao,
+          canais: s.linksHttp === 0,
+          nome: !C.siglas(s.nome).length && !/\.$/.test(s.nome),
+          caract: true,
+          unidade: true
+        };
+        caixas.forEach(function (c) {
+          if (c.dataset.item in auto) { c.checked = !!auto[c.dataset.item]; c.closest('.check').classList.add('auto'); }
+        });
+      }
+      placar();
+    }
+    sel.addEventListener('change', pre);
+    caixas.forEach(function (c) { c.addEventListener('change', placar); });
+    placar();
+  </script>
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>
