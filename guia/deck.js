@@ -22,7 +22,8 @@ window.RELATORIO = {
   blocos: [
     {
       block: 'Abertura', short: 'Abertura', tint: 0.35,
-      files: ['slide-00.html', 'slide-ficha.html', 'slide-sumario.html', 'slide-apresentacao.html'],
+      files: ['slide-00.html', 'slide-ficha.html', 'slide-sumario.html', 'slide-apresentacao.html',
+        'slide-certificado.html'],
     },
     {
       block: 'Capítulo 1 · Entendendo a Carta', short: 'Entendendo a Carta', tint: 1,
