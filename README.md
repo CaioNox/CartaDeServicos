@@ -18,7 +18,7 @@ são os mesmos dos relatórios da Ouvidoria ([`relatorio-antaq`](https://github.
 
 | Capítulo | Conteúdo |
 |---|---|
-| Abertura | Capa, ficha técnica e como usar, sumário clicável, apresentação |
+| Abertura | Capa, o guia em 1 minuto, ficha técnica e como usar, sumário clicável, apresentação, a base no Guia da CGU, reconhecimento da CGU |
 | 1 · Entendendo a Carta | O que é e onde publicar · conteúdo obrigatório (Lei 13.460, art. 7º; Decreto 9.094, art. 11) · teste **"é serviço de atendimento?"** (Portaria SGD/MGI 1.083/2025) |
 | 2 · Papéis | Quem faz cada etapa, segundo o Guia da CGU · deveres da unidade gestora e da Ouvidoria |
 | 3 · Passo a passo | As 11 etapas do Guia da CGU aplicadas à ANTAQ · prazos fixados em norma · ficha padrão do serviço · **formulário de atualização** que gera o texto para o SEI |
