@@ -14,7 +14,7 @@
   <style>
     .ind th[scope="row"] { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .48rem; color: var(--brand-primary); background: transparent; text-transform: none; letter-spacing: 0; border-bottom: 1px solid #e2e8f0; width: 20%; }
     .ind tbody tr:nth-child(even) th { background: #f8fafc; }
-    .ind td { font-size: .48rem; padding-top: .3rem; padding-bottom: .3rem; }
+    .ind td { font-size: .42rem; padding-top: .26rem; padding-bottom: .26rem; }
     .ind td.num { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--brand-primary); white-space: nowrap; }
     code { font-size: .85em; background: #f1f5f9; border-radius: 4px; padding: 0 .2rem; }
   </style>
@@ -39,22 +39,22 @@
     </header>
 
     <div class="corpo">
-      <p class="lead">Poucos indicadores, todos medidos sem esforço extra: a <b>linha de base</b> sai do diagnóstico e as metas valem para o fim do primeiro ciclo.</p>
+      <p class="lead">Poucos indicadores, todos medidos sem esforço extra. A <b>linha de base</b> sai do diagnóstico; a <b>meta</b> só aparece quando a norma a fixa.</p>
       <table class="tabela ind">
-        <caption class="sr-only">Indicadores da Carta de Serviços com linha de base e meta</caption>
-        <thead><tr><th scope="col">Indicador</th><th scope="col">Como calcular</th><th scope="col" class="num">Hoje</th><th scope="col" class="num">Meta</th><th scope="col">Fonte · frequência</th></tr></thead>
+        <caption class="sr-only">Indicadores da Carta de Serviços com linha de base, meta fixada em norma e fonte</caption>
+        <thead><tr><th scope="col">Indicador</th><th scope="col">Como calcular</th><th scope="col" class="num">Hoje</th><th scope="col" class="num">Meta em norma</th><th scope="col">Base</th><th scope="col">Fonte · frequência</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Prazo máximo informado</th><td>Serviços com "Até…" ou atendimento imediato ÷ total</td><td class="num" data-b="prazo">—</td><td class="num"><b>100%</b></td><td>Portal gov.br · ciclo anual</td></tr>
-          <tr><th scope="row">Canal de manifestação informado</th><td>Serviços que citam Ouvidoria / Fala.BR ÷ total</td><td class="num" data-b="ouv">—</td><td class="num"><b>100%</b></td><td>Portal gov.br · ciclo anual</td></tr>
-          <tr><th scope="row">Revisão anual concluída</th><td>Serviços alterados ou confirmados "sem alteração" no ciclo ÷ total</td><td class="num">—</td><td class="num"><b>100%</b></td><td>Formulários no SEI · anual</td></tr>
-          <tr><th scope="row">Nomes no padrão</th><td>Nomes sem sigla solta, sem ponto final e com grafia única ÷ total</td><td class="num" data-b="nome">—</td><td class="num"><b>100%</b></td><td>Portal gov.br · ciclo anual</td></tr>
-          <tr><th scope="row">Atualização após mudança</th><td>Dias entre a vigência de norma/fluxo novo e a atualização no Portal</td><td class="num">—</td><td class="num"><b>≤ 30 dias</b></td><td>Formulário · contínuo</td></tr>
-          <tr><th scope="row">Serviços com avaliação</th><td>Serviços com votos no Painel ÷ total</td><td class="num" data-b="aval">—</td><td class="num"><b>≥ 1/3</b></td><td>Painel de Monitoramento · trimestral</td></tr>
-          <tr><th scope="row">Satisfação média</th><td>Nota média (1 a 5) dos serviços avaliados</td><td class="num">sem dados</td><td class="num"><b>≥ 4,5</b></td><td>Painel de Monitoramento · trimestral</td></tr>
-          <tr><th scope="row">Informação útil</th><td>% de "sim" em "As informações desta página foram úteis?"</td><td class="num">a medir</td><td class="num"><b>≥ 80%</b></td><td>Painel de Monitoramento · trimestral</td></tr>
+          <tr><th scope="row">Prazo máximo informado</th><td>Serviços com "Até…" ou atendimento imediato ÷ total</td><td class="num" data-b="prazo">—</td><td class="num"><b>100%</b></td><td>Lei 13.460, art. 7º, §2º, IV</td><td>Portal gov.br · revisão anual</td></tr>
+          <tr><th scope="row">Canal de manifestação informado</th><td>Serviços que citam Ouvidoria / Fala.BR ÷ total</td><td class="num" data-b="ouv">—</td><td class="num"><b>100%</b></td><td>Lei 13.460, art. 7º, §2º, VI</td><td>Portal gov.br · revisão anual</td></tr>
+          <tr><th scope="row">Prioridades atualizadas</th><td>Serviços com os grupos da Lei 14.626/2023 no texto de prioridades ÷ total</td><td class="num" data-b="prior">—</td><td class="num"><b>100%</b></td><td>Lei 10.048, art. 1º</td><td>Portal gov.br · revisão anual</td></tr>
+          <tr><th scope="row">Revisão anual concluída</th><td>Serviços revisados na consulta anual ÷ total</td><td class="num">—</td><td class="num"><b>100%</b></td><td>Portaria CGU 116/2024, art. 65, §2º</td><td>Consulta anual da Ouvidoria · anual</td></tr>
+          <tr><th scope="row">Publicação antes da exigência</th><td>Requisitos ou documentos novos publicados no Portal antes de serem exigidos</td><td class="num">—</td><td class="num"><b>Sempre</b></td><td>Decreto 9.094, art. 18-A, §2º</td><td>Portal gov.br · contínuo</td></tr>
+          <tr><th scope="row">Serviços com avaliação</th><td>Serviços com votos no Painel ÷ total</td><td class="num" data-b="aval">—</td><td class="num"><b>Não fixada</b></td><td>—</td><td>Painel de Monitoramento · contínuo (Portaria SGD/MGI 1.083/2025, art. 6º, IV)</td></tr>
+          <tr><th scope="row">Satisfação média</th><td>Nota média dos serviços avaliados</td><td class="num">sem dados</td><td class="num"><b>Não fixada</b></td><td>—</td><td>Painel de Monitoramento · contínuo</td></tr>
+          <tr><th scope="row">Informação útil</th><td>% de "sim" em "As informações desta página foram úteis?"</td><td class="num">a medir</td><td class="num"><b>Não fixada</b></td><td>—</td><td>Painel de Monitoramento · contínuo</td></tr>
         </tbody>
       </table>
-      <p class="fonte"><span class="a-validar">Metas propostas</span> — confirmar no plano de ação (etapa 4) e publicar no relatório de gestão. "Hoje" calculado de <code>dados/servicos.js</code>.</p>
+      <p class="fonte">Onde a norma não fixa meta, ela pode ser definida no plano de ação (Guia CGU, item 2.1: "definir indicadores"). "Hoje" calculado de <code>dados/servicos.js</code>, conferido no Portal em 19/10/2026.</p>
     </div>
 
     <footer class="rodape">
@@ -68,7 +68,7 @@
   <script>
     var C = window.CARTA, R = C.resumo();
     function pct(n) { return Math.round(n / R.total * 100) + '% (' + n + '/' + R.total + ')'; }
-    var B = { prazo: pct(R.prazo.maximo + R.prazo.imediato), ouv: pct(R.total - R.semOuvidoria), nome: pct(R.total - R.nomeFora), aval: pct(R.comAvaliacao) };
+    var B = { prazo: pct(R.prazo.maximo + R.prazo.imediato), ouv: pct(R.total - R.semOuvidoria), prior: pct(C.prioridadesAtualizadas), aval: pct(R.comAvaliacao) };
     document.querySelectorAll('[data-b]').forEach(function (td) { td.textContent = B[td.dataset.b]; });
   </script>
   <script src="guia.js" defer></script>

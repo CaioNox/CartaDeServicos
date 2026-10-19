@@ -61,7 +61,7 @@
         <section class="cartao cartao--escuro">
           <h2>O que corrigir primeiro</h2>
           <ul id="achados" class="achados"></ul>
-          <p class="pequeno" style="color:rgba(255,255,255,.6);margin-top:auto">Leitura automática do PDF gerado pelo Portal. Confirme cada caso na página do serviço antes de pedir a correção.</p>
+          <p class="pequeno" style="color:rgba(255,255,255,.6);margin-top:auto">Fonte: PDF da Carta gerado pelo Portal gov.br, conferido serviço a serviço em 19/10/2026. Confirme cada caso na página do serviço antes de pedir a correção.</p>
         </section>
       </div>
     </div>
@@ -100,11 +100,15 @@
     var A = [
       [R.total - maxOuImed, 'serviços sem prazo máximo — a lei pede previsão do prazo máximo (art. 7º, §2º, IV).'],
       [R.semOuvidoria, 'serviços não dizem onde registrar manifestação (art. 7º, §2º, VI).'],
-      [R.total, 'serviços com texto de prioridades sem a Lei nº 14.626/2023 (texto padrão do Portal).'],
-      [R.nomeFora, 'nomes com grafia da Agência fora do padrão ou ponto final.'],
-      [R.semLegislacao, 'serviços sem a seção Legislação preenchida.'],
-      [R.comSigla, 'nomes com sigla; ' + R.comHttp + ' serviços com link sem HTTPS.']
+      [R.total - C.prioridadesAtualizadas, 'serviços com texto de prioridades sem os grupos incluídos pela Lei nº 14.626/2023 (Lei nº 10.048/2000, art. 1º).'],
+      [R.comSigla, 'nomes com sigla — conferir se o nome completo vem antes (Lei nº 15.263/2025, art. 5º, VIII).'],
+      [R.semLegislacao, 'serviços sem a seção Legislação (campo opcional; o Guia de Edição gov.br orienta indicar as normas do serviço).']
     ];
+    if (R.unidadeAConfirmar) {
+      var nota = document.createElement('p'); nota.className = 'pequeno';
+      nota.innerHTML = '<span class="a-validar">' + R.unidadeAConfirmar + ' serviço(s) sem unidade citada na página do Portal — atribuição a confirmar</span>';
+      document.getElementById('porUnidade').appendChild(nota);
+    }
     var ul = document.getElementById('achados');
     A.forEach(function (a) { var li = document.createElement('li'); li.innerHTML = '<i class="fas fa-circle-exclamation" aria-hidden="true"></i><span><b>' + a[0] + '</b> ' + a[1] + '</span>'; ul.appendChild(li); });
   </script>

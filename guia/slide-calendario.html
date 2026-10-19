@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendário do ciclo anual — Guia da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Prazos fixados em norma — Guia da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
@@ -12,15 +12,10 @@
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
   <style>
-    .ano { list-style: none; margin: .2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(12, 1fr); gap: .25rem; }
-    .mes { border-radius: 12px; padding: .45rem .35rem .55rem; min-height: 5.4rem; display: flex; flex-direction: column; gap: .3rem; color: #fff; }
-    .mes-n { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: .72rem; letter-spacing: .04em; }
-    .mes-t { font-size: .46rem; line-height: 1.3; font-weight: 600; }
-    .m-prep { background: #0070C0; } .m-cons { background: #103050; } .m-pub { background: #0090C0; }
-    .m-rel { background: var(--dourado); color: #1e293b; } .m-cont { background: #e2e8f0; color: #334155; }
-    .leg-ano { display: flex; gap: .8rem; margin-top: .45rem; font-size: .44rem; font-weight: 700; color: #334155; }
-    .leg-ano span::before { content: ''; display: inline-block; width: .5rem; height: .5rem; border-radius: 3px; margin-right: .25rem; vertical-align: -1px; }
-    .l-prep::before { background: #0070C0; } .l-cons::before { background: #103050; } .l-pub::before { background: #0090C0; } .l-rel::before { background: var(--dourado); } .l-cont::before { background: #cbd5e1; }
+    .prazos .cartao { display: flex; flex-direction: column; gap: .25rem; }
+    .prazos .quando { margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: .78rem; line-height: 1.1; color: var(--brand-primary); }
+    .prazos .cartao p { margin: 0; }
+    .prazos .base { margin-top: auto; }
   </style>
 </head>
 
@@ -31,7 +26,7 @@
 
     <header class="cab">
       <div class="cab-titulo">
-        <h1>Calendário do ciclo anual</h1>
+        <h1>Prazos fixados em norma</h1>
       </div>
       <div class="cab-cap">
         <i class="fas fa-route" aria-hidden="true"></i>
@@ -43,30 +38,16 @@
     </header>
 
     <div class="corpo">
-      <p class="lead">Proposta de calendário para que a <b>revisão anual obrigatória</b> (Portaria CGU nº 116/2024, art. 65, §2º) termine a tempo de entrar no <b>relatório de gestão</b> da Ouvidoria, publicado até 1º de abril (art. 60, VII).</p>
-      <ol class="ano" aria-label="Meses do ciclo">
-        <li class="mes m-cont"><span class="mes-n">Jan</span><span class="mes-t">Atualização contínua</span></li>
-        <li class="mes m-rel"><span class="mes-n">Fev</span><span class="mes-t">Consolidar o ciclo anterior</span></li>
-        <li class="mes m-rel"><span class="mes-n">Mar</span><span class="mes-t">Relatório de gestão — até 1º/abr</span></li>
-        <li class="mes m-prep"><span class="mes-n">Abr</span><span class="mes-t">Diagnóstico + consulta anual</span></li>
-        <li class="mes m-prep"><span class="mes-n">Mai</span><span class="mes-t">Alta gestão, ato e plano</span></li>
-        <li class="mes m-cons"><span class="mes-n">Jun</span><span class="mes-t">Oficinas: identificar serviços</span></li>
-        <li class="mes m-cons"><span class="mes-n">Jul</span><span class="mes-t">Fichas e formulários</span></li>
-        <li class="mes m-cons"><span class="mes-n">Ago</span><span class="mes-t">Fichas e formulários</span></li>
-        <li class="mes m-cons"><span class="mes-n">Set</span><span class="mes-t">Análise da Ouvidoria</span></li>
-        <li class="mes m-cons"><span class="mes-n">Out</span><span class="mes-t">Validação final</span></li>
-        <li class="mes m-pub"><span class="mes-n">Nov</span><span class="mes-t">Portal, site e divulgação</span></li>
-        <li class="mes m-pub"><span class="mes-n">Dez</span><span class="mes-t">Balanço do ciclo</span></li>
-      </ol>
-      <div class="leg-ano" aria-hidden="true">
-        <span class="l-prep">Preparar</span><span class="l-cons">Construir</span><span class="l-pub">Publicar</span><span class="l-rel">Prestar contas</span><span class="l-cont">Manter</span>
+      <p class="lead">Estes são os únicos prazos e periodicidades que as normas fixam para a Carta. Os meses de cada etapa do ciclo <b>não</b> estão em norma: são definidos no plano de ação (etapa 4; Guia CGU, item 3.4).</p>
+      <div class="grade g3 prazos">
+        <div class="cartao"><p class="quando">Até 1º de abril, todo ano</p><p>A Ouvidoria publica no site o <b>relatório anual de gestão</b>, com informações sobre a atualização da Carta.</p><p class="base">Portaria CGU nº 116/2024, art. 60, caput e §1º, VII</p></div>
+        <div class="cartao"><p class="quando">Uma vez por ano</p><p><b>Revisão anual</b> das informações da Carta, mediante consulta da Ouvidoria às unidades gestoras. A norma não fixa o mês.</p><p class="base">Portaria CGU nº 116/2024, art. 65, §2º</p></div>
+        <div class="cartao"><p class="quando">Sempre que necessário</p><p><b>Atualização contínua</b>: as unidades gestoras mantêm atualizadas no Portal gov.br as informações dos serviços.</p><p class="base">Portaria CGU nº 116/2024, art. 65, §1º, VII · Portaria SGD/MGI nº 1.083/2025, art. 6º, II</p></div>
+        <div class="cartao"><p class="quando">Antes de exigir</p><p>Criar ou alterar requisito, documento, informação ou procedimento exige <b>publicação prévia</b> no Portal gov.br.</p><p class="base">Decreto nº 9.094/2017, art. 18-A, §2º</p></div>
+        <div class="cartao"><p class="quando">No mínimo uma vez por ano</p><p><b>Avaliação dos serviços</b> por pesquisa de satisfação ou outro meio com significância estatística.</p><p class="base">Lei nº 13.460/2017, art. 23, §1º</p></div>
+        <div class="cartao"><p class="quando">De forma contínua</p><p>As unidades gestoras <b>monitoram e avaliam</b> os resultados das avaliações de satisfação dos usuários.</p><p class="base">Portaria SGD/MGI nº 1.083/2025, art. 6º, IV</p></div>
       </div>
-      <div class="grade g3" style="margin-top:.7rem">
-        <div class="cartao"><h3><i class="fas fa-bolt" aria-hidden="true"></i> Fora do calendário</h3><p>Mudou norma, fluxo, canal ou taxa? A unidade gestora atualiza o Portal em <b>até 30 dias</b> e avisa a Ouvidoria pelo formulário.</p></div>
-        <div class="cartao"><h3><i class="fas fa-hourglass-half" aria-hidden="true"></i> Prazo de resposta</h3><p>Na consulta anual, cada unidade tem <b>30 dias</b> para responder — inclusive para dizer "sem alteração".</p></div>
-        <div class="cartao"><h3><i class="fas fa-file-lines" aria-hidden="true"></i> Prestação de contas</h3><p>O relatório de gestão traz: serviços revisados, incluídos, excluídos e a evolução dos indicadores do capítulo 5.</p></div>
-      </div>
-      <p class="fonte"><span class="a-validar">Proposta</span> — meses e prazos internos a confirmar no plano de ação do primeiro ciclo.</p>
+      <p class="fonte">Textos conferidos nas normas oficiais (planalto.gov.br e Diário Oficial da União).</p>
     </div>
 
     <footer class="rodape">

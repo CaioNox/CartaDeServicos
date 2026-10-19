@@ -20,10 +20,10 @@ são os mesmos dos relatórios da Ouvidoria ([`relatorio-antaq`](https://github.
 |---|---|
 | Abertura | Capa, ficha técnica e como usar, sumário clicável, apresentação |
 | 1 · Entendendo a Carta | O que é e onde publicar · conteúdo obrigatório (Lei 13.460, art. 7º; Decreto 9.094, art. 11) · teste **"é serviço de atendimento?"** (Portaria SGD/MGI 1.083/2025) |
-| 2 · Papéis | Matriz de quem faz o quê · deveres da unidade gestora e da Ouvidoria |
-| 3 · Passo a passo | As 11 etapas do Guia da CGU adaptadas à ANTAQ · calendário do ciclo anual · ficha padrão do serviço · **formulário de atualização** que gera o texto para o SEI |
-| 4 · Qualidade | **Checklist de 16 itens** (pré-marcado a partir do diagnóstico) · linguagem simples com nomes reais · erros comuns em outras Cartas |
-| 5 · Monitoramento | **Diagnóstico** da Carta da ANTAQ · indicadores e metas · de onde vêm as melhorias |
+| 2 · Papéis | Quem faz cada etapa, segundo o Guia da CGU · deveres da unidade gestora e da Ouvidoria |
+| 3 · Passo a passo | As 11 etapas do Guia da CGU aplicadas à ANTAQ · prazos fixados em norma · ficha padrão do serviço · **formulário de atualização** que gera o texto para o SEI |
+| 4 · Qualidade | **Checklist de 16 itens** (pré-marcado a partir do diagnóstico) · linguagem simples com nomes reais · erros comuns nas Cartas |
+| 5 · Monitoramento | **Diagnóstico** da Carta da ANTAQ · indicadores e metas fixadas em norma · de onde vêm as melhorias |
 | 6 · Apêndice | Normas · inventário dos 33 serviços · glossário e links · contatos |
 
 ### Bases
@@ -33,18 +33,24 @@ são os mesmos dos relatórios da Ouvidoria ([`relatorio-antaq`](https://github.
   Lei nº 14.129/2021, Portaria SGD/MGI nº 1.083/2025, Lei nº 15.263/2025 (linguagem simples),
   Lei nº 10.048/2000 com a redação da Lei nº 14.626/2023 (prioridades).
 - Boas práticas do *Guia Prático da Carta de Serviços* da Anvisa (2026): canal único de
-  atualização, confirmação anual "sem alteração", ficha padrão e exclusão reversível.
+  atualização, confirmação anual "sem alteração" e ficha padrão.
+
+### Regra dos dados
+
+Só entra no guia dado com base em lei, decreto, portaria ou fato publicado, com a fonte
+citada na tela. Nada de mês, prazo, meta ou número sem norma ou documento que o comprove.
+A lista das fontes, onde foram conferidas e em que data está em [`FONTES.md`](FONTES.md).
 
 ### O que ainda precisa de confirmação
 
 Itens marcados na tela com o selo tracejado **`.a-validar`**:
 
-- nomes da Ouvidora/Ouvidor e da equipe; ato e data de aprovação (`slide-ficha.html`);
-- meses e prazos internos do calendário (`slide-calendario.html`);
-- metas dos indicadores (`slide-indicadores.html`).
+- ato e data de aprovação do guia (`slide-ficha.html`);
+- unidade gestora de 5 serviços cuja página no Portal não cita a unidade (`unidadeCitada: false`
+  em `guia/dados/servicos.js`).
 
 Os números do diagnóstico vêm de `guia/dados/servicos.js` — retrato da Carta publicada no
-Portal gov.br em **15/10/2026**.
+Portal gov.br em **15/10/2026**, conferido de novo, serviço a serviço, em **19/10/2026**.
 
 ---
 
