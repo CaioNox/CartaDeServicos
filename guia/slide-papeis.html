@@ -15,13 +15,8 @@
     .matriz th:first-child { width: 30%; }
     .matriz tbody th { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: .44rem; color: var(--brand-primary); text-align: left; padding: .14rem .4rem; border-bottom: 1px solid #e2e8f0; background: transparent; text-transform: none; letter-spacing: 0; }
     .matriz tbody tr:nth-child(even) th { background: #f8fafc; }
-    .matriz .papel { text-align: center; padding: .14rem .3rem; }
-    .matriz thead th:not(:first-child) { text-align: center; }
-    .pp { display: inline-grid; place-items: center; width: 1.05rem; height: 1.05rem; border-radius: 7px; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: .46rem; }
-    .pp-E { background: var(--brand-primary); color: #fff; }
-    .pp-A { background: var(--dourado); color: #1e293b; }
-    .pp-C { background: #e6f1fa; color: var(--brand-secondary); border: 1.5px solid var(--azul-300); }
-    .pp-I { background: #fff; color: #64748b; border: 1.5px dashed #94a3b8; }
+    .matriz td { font-size: .44rem; line-height: 1.35; padding: .14rem .4rem; }
+    .matriz .base-c { width: 26%; color: #64748b; font-size: .38rem; }
     .legenda { display: flex; gap: .9rem; align-items: center; margin-top: .55rem; font-size: .46rem; color: #334155; }
     .legenda > span { display: inline-flex; align-items: center; gap: .25rem; }
   </style>
@@ -46,30 +41,27 @@
     </header>
 
     <div class="corpo">
-      <p class="lead">Ninguém faz a Carta sozinho. Esta matriz define, para cada etapa do ciclo, quem <b>executa</b>, quem <b>aprova</b>, quem <b>contribui</b> e quem é <b>informado</b>.</p>
+      <p class="lead">Ninguém faz a Carta sozinho. A tabela mostra quem faz cada etapa segundo o <b>Guia Orientativo da CGU</b>. Quando o Guia admite mais de uma opção, quem escolhe é a alta gestão (etapa 3).</p>
       <table class="tabela matriz">
-        <caption class="sr-only">Matriz de responsabilidades por etapa do ciclo da Carta de Serviços</caption>
+        <caption class="sr-only">Quem faz cada etapa do ciclo da Carta de Serviços, segundo o Guia Orientativo da CGU</caption>
         <thead>
-          <tr><th scope="col">Etapa</th><th scope="col">Alta gestão</th><th scope="col">Ouvidoria</th><th scope="col">Unidades gestoras</th><th scope="col">Editores gov.br</th><th scope="col">Comunicação Social</th><th scope="col">Conselho de Usuários</th></tr>
+          <tr><th scope="col">Etapa</th><th scope="col">Quem faz</th><th scope="col">Base</th></tr>
         </thead>
         <tbody>
-            <tr><th scope="row">1 · Diagnóstico preliminar</th><td class="papel"><span class="pp pp-I" title="É informado">I<span class="sr-only"> — É informado</span></span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td></tr>
-            <tr><th scope="row">2 · Comunicação à alta gestão</th><td class="papel"><span class="pp pp-A" title="Aprova">A<span class="sr-only"> — Aprova</span></span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td></tr>
-            <tr><th scope="row">3 · Forma de atuação e pontos focais</th><td class="papel"><span class="pp pp-A" title="Aprova">A<span class="sr-only"> — Aprova</span></span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td></tr>
-            <tr><th scope="row">4 · Plano de ação e cronograma</th><td class="papel"><span class="pp pp-I" title="É informado">I<span class="sr-only"> — É informado</span></span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td></tr>
-            <tr><th scope="row">5 · Identificar os serviços</th><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td></tr>
-            <tr><th scope="row">6 · Levantar as informações</th><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td></tr>
-            <tr><th scope="row">7 · Validar</th><td class="papel"><span class="pp pp-A" title="Aprova">A<span class="sr-only"> — Aprova</span></span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td></tr>
-            <tr><th scope="row">8 · Cadastrar no Portal gov.br</th><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td><td class="papel"><span class="pp pp-A" title="Aprova">A<span class="sr-only"> — Aprova</span></span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td></tr>
-            <tr><th scope="row">9 · Atualizar o site da ANTAQ</th><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="sr-only">—</span></td></tr>
-            <tr><th scope="row">10 · Divulgar a nova Carta</th><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="pp pp-I" title="É informado">I<span class="sr-only"> — É informado</span></span></td></tr>
-            <tr><th scope="row">11 · Manter atualizada e revisar no ano</th><td class="papel"><span class="pp pp-I" title="É informado">I<span class="sr-only"> — É informado</span></span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="pp pp-E" title="Executa">E<span class="sr-only"> — Executa</span></span></td><td class="papel"><span class="sr-only">—</span></td><td class="papel"><span class="pp pp-C" title="Contribui">C<span class="sr-only"> — Contribui</span></span></td></tr>
+          <tr><th scope="row">1 · Diagnóstico preliminar</th><td>A <b>Ouvidoria</b> levanta o estado geral da Carta.</td><td class="base-c">Guia CGU, item 3.1</td></tr>
+          <tr><th scope="row">2 · Comunicação à alta gestão</th><td>A <b>Ouvidoria</b> pode tomar a iniciativa e comunica a <b>alta gestão</b>.</td><td class="base-c">Guia CGU, item 3.2</td></tr>
+          <tr><th scope="row">3 · Forma de atuação</th><td>A <b>alta gestão</b> define quem conduz: grupo de trabalho, Ouvidoria ou área gestora. Cada <b>unidade finalística</b> define pontos focais e editores do Portal.</td><td class="base-c">Guia CGU, item 3.3</td></tr>
+          <tr><th scope="row">4 · Plano de ação</th><td>O <b>grupo de trabalho ou a área responsável</b> definida na etapa 3.</td><td class="base-c">Guia CGU, item 3.4</td></tr>
+          <tr><th scope="row">5 · Identificar os serviços</th><td>O <b>grupo de trabalho ou a área responsável</b> aciona e capacita as <b>unidades gestoras</b>, que qualificam suas próprias atividades.</td><td class="base-c">Guia CGU, item 3.5</td></tr>
+          <tr><th scope="row">6 · Levantar as informações</th><td>O <b>grupo de trabalho ou a área responsável</b>, com as <b>unidades gestoras</b>. A <b>Ouvidoria</b> contribui com subsídios.</td><td class="base-c">Guia CGU, item 3.6</td></tr>
+          <tr><th scope="row">7 · Validar</th><td>A <b>alta gestão</b>.</td><td class="base-c">Guia CGU, item 3.7</td></tr>
+          <tr><th scope="row">8 · Cadastrar no Portal gov.br</th><td>As <b>unidades gestoras</b>, pelos editores habilitados. Pode ficar só com a área técnica ou com a de comunicação.</td><td class="base-c">Portaria SGD/MGI nº 1.083/2025, art. 6º, II · Guia CGU, item 3.8</td></tr>
+          <tr><th scope="row">9 · Atualizar o site da ANTAQ</th><td>O <b>órgão</b>. A norma não define a área.</td><td class="base-c">Lei nº 13.460/2017, art. 7º, §4º · Guia CGU, item 3.9</td></tr>
+          <tr><th scope="row">10 · Divulgar a nova Carta</th><td>A <b>Ouvidoria</b> pode adotar outras formas de divulgação.</td><td class="base-c">Portaria CGU nº 116/2024, art. 65, §3º · Guia CGU, item 3.10</td></tr>
+          <tr><th scope="row">11 · Manter e revisar no ano</th><td>Os <b>gestores dos serviços</b> atualizam sempre; a <b>Ouvidoria</b> faz a consulta anual.</td><td class="base-c">Portaria CGU nº 116/2024, art. 65, §2º · Guia CGU, item 3.11</td></tr>
         </tbody>
       </table>
-      <div class="legenda" aria-hidden="true">
-        <span><span class="pp pp-E">E</span> Executa</span><span><span class="pp pp-A">A</span> Aprova</span><span><span class="pp pp-C">C</span> Contribui</span><span><span class="pp pp-I">I</span> É informado</span>
-        <span class="pequeno" style="margin-left:auto"><b>Alta gestão:</b> Diretoria Colegiada ou a instância que ela designar · <b>Unidades gestoras:</b> SOG, SRG, SAF, SFC e outras que prestem serviço</span>
-      </div>
+      <p class="fonte">Unidades com serviços na Carta hoje: SOG, SRG, SAF e SFC (páginas dos serviços no Portal gov.br e estrutura publicada no site da ANTAQ, conferidas em 19/10/2026).</p>
     </div>
 
     <footer class="rodape">

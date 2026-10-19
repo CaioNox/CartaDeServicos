@@ -12,19 +12,31 @@
  *   gratuidadeInformada — diz expressamente que o serviço é gratuito
  *   legislacao / documentacao — seção preenchida no Portal
  *   linksHttp           — links sem HTTPS na página
- *   avaliacoes          — votos de satisfação no Painel gov.br */
+ *   avaliacoes          — votos de satisfação no Painel gov.br
+ *   unidadeCitada       — false quando a página do serviço no Portal não cita a unidade
+ *                         (nem uma gerência dela); a atribuição precisa ser confirmada
+ *
+ * Conferência: todos os campos foram conferidos contra o PDF do Portal gerado em
+ * 19/10/2026 (mesmos 33 serviços e mesmos valores da coleta de 15/10/2026). Unidades
+ * conferidas pelas gerências citadas em cada serviço e pela estrutura publicada em
+ * https://www.gov.br/antaq/pt-br/acesso-a-informacao/institucional/quem-e-quem */
 window.CARTA = {
   coleta: '2026-10-15',
+  conferencia: '2026-10-19',
+  /* serviços cujo texto de prioridades já traz os grupos incluídos na Lei 10.048, art. 1º,
+     pela Lei 14.626/2023 (TEA, mobilidade reduzida, doadores de sangue). Em 19/10/2026: nenhum —
+     os 33 usam a redação anterior. */
+  prioridadesAtualizadas: 0,
   fonte: 'https://www.gov.br/pt-br/orgaos/agencia-nacional-de-transportes-aquaviarios/@@download.pdf',
   unidades: {
     SOG: 'Superintendência de Outorgas',
     SRG: 'Superintendência de Regulação',
     SAF: 'Superintendência de Administração e Finanças',
-    SFC: 'Superintendência de Fiscalização e Coordenação'
+    SFC: 'Superintendência de Fiscalização e Coordenação das Unidades Regionais'
   },
   servicos: [
-    { n:  1, unidade: 'SFC', nome: "Consultar empresas e embarcações para o transporte aquaviário federal de passageiros na navegação interior (Navegue Seguro)", prazo: "Atendimento imediato", avaliacoes: 0, citaOuvidoria: true, linksHttp: 0, etapas: 2, gratuidadeInformada: true, legislacao: false, documentacao: false },
-    { n:  2, unidade: 'SFC', nome: "Enviar à Antaq o inventário patrimonial e a Lista de Bens Reversíveis dos portos organizados (SisPAT)", prazo: "Até 2 dia(s) útil(eis)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 3, gratuidadeInformada: true, legislacao: true, documentacao: true },
+    { n:  1, unidade: 'SFC', unidadeCitada: false, nome: "Consultar empresas e embarcações para o transporte aquaviário federal de passageiros na navegação interior (Navegue Seguro)", prazo: "Atendimento imediato", avaliacoes: 0, citaOuvidoria: true, linksHttp: 0, etapas: 2, gratuidadeInformada: true, legislacao: false, documentacao: false },
+    { n:  2, unidade: 'SFC', unidadeCitada: false, nome: "Enviar à Antaq o inventário patrimonial e a Lista de Bens Reversíveis dos portos organizados (SisPAT)", prazo: "Até 2 dia(s) útil(eis)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 3, gratuidadeInformada: true, legislacao: true, documentacao: true },
     { n:  3, unidade: 'SRG', nome: "Obter análise da Antaq para transferência de titularidade de instalação portuária.", prazo: "Até 90 dia(s) corrido(s)", avaliacoes: 0, citaOuvidoria: true, linksHttp: 0, etapas: 7, gratuidadeInformada: true, legislacao: true, documentacao: true },
     { n:  4, unidade: 'SRG', nome: "Obter análise da Antaq quanto à alteração da tabela de preços de instalações portuárias arrendadas ou autorizadas.", prazo: "Em média 95 dia(s) corrido(s)", avaliacoes: 0, citaOuvidoria: true, linksHttp: 0, etapas: 6, gratuidadeInformada: true, legislacao: true, documentacao: true },
     { n:  5, unidade: 'SRG', nome: "Obter autorização da Antaq para alteração de tabela de preços dos serviços de transporte aquaviário na navegação interior.", prazo: "Até 35 dia(s) corrido(s)", avaliacoes: 0, citaOuvidoria: true, linksHttp: 1, etapas: 5, gratuidadeInformada: true, legislacao: true, documentacao: true },
@@ -40,10 +52,10 @@ window.CARTA = {
     { n: 15, unidade: 'SOG', nome: "Obter da Antaq autorização, aditamento ou renúncia para transporte aquaviário na navegação marítima e de apoio, cabotagem e longo curso", prazo: "Entre 20 e 40 dia(s) corrido(s)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 1, gratuidadeInformada: true, legislacao: false, documentacao: true },
     { n: 16, unidade: 'SAF', nome: "Obter declaração da Antaq para fins de credenciamento, validação ou outros atestados", prazo: "Em média 3 dia(s) útil(eis)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 2, gratuidadeInformada: true, legislacao: false, documentacao: false },
     { n: 17, unidade: 'SOG', nome: "Obter outorga de autorização da Antaq para construção e exploração de instalação portuária privada localizada fora da área do Porto Organizado", prazo: "Em média 120 dia(s) corrido(s)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 9, gratuidadeInformada: true, legislacao: true, documentacao: true },
-    { n: 18, unidade: 'SAF', nome: "Obter parcela de Contrato de Concessão/Arrendamento em que a Agência Nacional de Transportes Aquaviários (Antaq) seja interveniente", prazo: "Em média 2 dia(s) útil(eis)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 3, gratuidadeInformada: true, legislacao: false, documentacao: false },
-    { n: 19, unidade: 'SAF', nome: "Obter parcelamento de multas emitidas pela Antaq", prazo: "Em média 2 dia(s) útil(eis)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 3, gratuidadeInformada: true, legislacao: false, documentacao: false },
+    { n: 18, unidade: 'SAF', unidadeCitada: false, nome: "Obter parcela de Contrato de Concessão/Arrendamento em que a Agência Nacional de Transportes Aquaviários (Antaq) seja interveniente", prazo: "Em média 2 dia(s) útil(eis)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 3, gratuidadeInformada: true, legislacao: false, documentacao: false },
+    { n: 19, unidade: 'SAF', unidadeCitada: false, nome: "Obter parcelamento de multas emitidas pela Antaq", prazo: "Em média 2 dia(s) útil(eis)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 3, gratuidadeInformada: true, legislacao: false, documentacao: false },
     { n: 20, unidade: 'SOG', nome: "Propor à Antaq recomposição do equilíbrio econômico-financeiro de contratos de Arrendamentos Portuários ou de EVTEA", prazo: "Em média 180 dia(s) corrido(s)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 1, gratuidadeInformada: true, legislacao: false, documentacao: false },
-    { n: 21, unidade: 'SAF', nome: "Realizar pagamento de multa e outros débitos junto à ANTAQ", prazo: "Até 5 minuto(s)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 1, gratuidadeInformada: true, legislacao: false, documentacao: false },
+    { n: 21, unidade: 'SAF', unidadeCitada: false, nome: "Realizar pagamento de multa e outros débitos junto à ANTAQ", prazo: "Até 5 minuto(s)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 1, gratuidadeInformada: true, legislacao: false, documentacao: false },
     { n: 22, unidade: 'SFC', nome: "Registrar denúncia sobre cobranças de serviços que envolvem o transporte aquaviário de carga em contêineres (ProTEU)", prazo: "Não estimado ainda", avaliacoes: 0, citaOuvidoria: true, linksHttp: 0, etapas: 3, gratuidadeInformada: true, legislacao: true, documentacao: true },
     { n: 23, unidade: 'SOG', nome: "Registrar na Antaq afretamento de embarcação brasileira", prazo: "Entre 20 e 40 dia(s) útil(eis)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 2, etapas: 2, gratuidadeInformada: true, legislacao: true, documentacao: true },
     { n: 24, unidade: 'SOG', nome: "Registrar na Antaq alteração de situação cadastral de empresa brasileira de navegação", prazo: "Até 30 dia(s) corrido(s)", avaliacoes: 0, citaOuvidoria: false, linksHttp: 0, etapas: 1, gratuidadeInformada: true, legislacao: true, documentacao: true },
@@ -73,7 +85,8 @@ window.CARTA = {
     return 'outro';
   };
 
-  /* Siglas no nome, exceto o nome da própria Agência (Lei 15.263/2025 — linguagem simples) */
+  /* Siglas no nome, exceto o nome da própria Agência. Ter sigla não é erro por si:
+     a Lei 15.263/2025, art. 5º, VIII, pede o nome completo ANTES da sigla. */
   C.siglas = function (nome) {
     return (nome.match(/\b[A-Za-z]*[A-Z]{2,}[A-Za-z]*\b/g) || []).filter(function (s) { return !/^antaq$/i.test(s); });
   };
@@ -81,7 +94,7 @@ window.CARTA = {
   C.resumo = function () {
     var s = C.servicos;
     var r = { total: s.length, porUnidade: {}, prazo: { maximo: 0, imediato: 0, intervalo: 0, media: 0, ausente: 0, outro: 0 },
-      semOuvidoria: 0, semLegislacao: 0, semDocumentacao: 0, comHttp: 0, comAvaliacao: 0, comSigla: 0, nomeFora: 0 };
+      semOuvidoria: 0, semLegislacao: 0, semDocumentacao: 0, comHttp: 0, comAvaliacao: 0, comSigla: 0, unidadeAConfirmar: 0 };
     s.forEach(function (x) {
       r.porUnidade[x.unidade] = (r.porUnidade[x.unidade] || 0) + 1;
       r.prazo[C.tipoPrazo(x.prazo)]++;
@@ -91,7 +104,7 @@ window.CARTA = {
       if (x.linksHttp > 0) r.comHttp++;
       if (x.avaliacoes > 0) r.comAvaliacao++;
       if (C.siglas(x.nome).length) r.comSigla++;
-      if (/\.$/.test(x.nome) || /Antaq/.test(x.nome)) r.nomeFora++;
+      if (x.unidadeCitada === false) r.unidadeAConfirmar++;
     });
     return r;
   };

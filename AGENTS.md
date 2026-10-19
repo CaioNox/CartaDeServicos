@@ -19,10 +19,17 @@ HTML/CSS/JS puro, publicado no GitHub Pages. Leia o `README.md` antes de mudar a
    avançaria duas telas.
 5. **Paleta institucional sem verde** (`base.css`: `--brand-primary #103050`,
    `--brand-secondary #0070C0`, `--accent #0090C0`, `--dourado #F2A900`).
-6. **Dados não se inventam.** Números da Carta vêm de `guia/dados/servicos.js`.
-   Informação ainda não confirmada leva `<span class="a-validar">…</span>`.
-7. **Base legal citada com artigo** (ex.: "Lei nº 13.460/2017, art. 7º, §2º, IV").
-   Na dúvida sobre uma norma, não afirme — marque para validação.
+6. **Só entra dado com base legal ou fato publicado. Nunca invente.** Todo prazo, mês,
+   número, meta, responsável ou exigência precisa vir de lei, decreto, portaria ou de fato
+   já publicado (Carta no Portal gov.br, site da ANTAQ, *Guia Orientativo* da CGU), com a
+   fonte citada na tela. Não adicione dado sem essa base e não remova dado que a tenha sem
+   motivo legal. Números da Carta vêm de `guia/dados/servicos.js`, conferido contra o PDF
+   do Portal. Recomendação interna sem norma não é apresentada como regra: ou sai do guia
+   ou leva `<span class="a-validar">…</span>`. Dados fornecidos pela Ouvidoria (ex.: equipe
+   na ficha técnica) ficam; divergência com fonte oficial é apontada, não "corrigida".
+7. **Base legal citada com artigo** (ex.: "Lei nº 13.460/2017, art. 7º, §2º, IV"),
+   conferida no texto oficial (planalto.gov.br, in.gov.br). Na dúvida sobre uma norma,
+   não afirme — marque para validação.
 8. **Português do Brasil** em textos, nomes de arquivos, classes e funções.
 9. **Acessibilidade:** `lang="pt-BR"`, `<title>`, `alt` em imagens, foco visível,
    tudo operável por teclado, respeitar `prefers-reduced-motion`.

@@ -67,8 +67,8 @@ window.RELATORIO = {
         nome: txt(el, '.et-tit'),
         tag: txt(el, '.et-fase'),
         desc: Array.from(el.querySelectorAll('.et-lista li')).map((li) => '• ' + li.textContent.trim()).join(' ') +
-          ' — Quem faz: ' + txt(el, '.et-quem') + '. Registro no SEI: ' + txt(el, '.et-prod') +
-          '. Quando: ' + txt(el, '.et-quando') + '. Base: ' + txt(el, '.et-base') + '.'
+          ' — Quem faz: ' + txt(el, '.et-quem') + '. Resultado: ' + txt(el, '.et-prod') +
+          '. Prazo em norma: ' + txt(el, '.et-quando') + '. Base: ' + txt(el, '.et-base') + '.'
       })
     },
     'slide-normas.html': {
