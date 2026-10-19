@@ -7,7 +7,7 @@ Conferência completa feita em **19/10/2026**, no texto oficial de cada norma.
 
 | Norma | Onde foi conferida | Usada para |
 |---|---|---|
-| Lei nº 13.460/2017 | https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm | art. 7º (conteúdo mínimo, §§2º a 4º), arts. 13 e 14 (ouvidoria), art. 23 (avaliação, §1º: no mínimo anual) |
+| Lei nº 13.460/2017 | https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13460.htm | art. 5º, XI e XIV (simplificação; linguagem simples, evitar siglas); art. 6º, VI, "e" (valor das taxas); art. 7º (conteúdo mínimo, §§2º a 4º), arts. 13 e 14 (ouvidoria), art. 23 (avaliação, §1º: no mínimo anual) |
 | Decreto nº 9.094/2017 | https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9094.htm | art. 11, §§2º e 3º (incisos VI e XI); art. 13 (Simplifique!); art. 18, I e II (Portal e versão impressa); art. 18-A e §2º (publicar antes de exigir) |
 | Decreto nº 9.492/2018 | https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/decreto/d9492.htm | art. 5º, IV; art. 10, V; art. 24-C (conselhos de usuários, incluído pelo Decreto nº 10.228/2020) |
 | Portaria Normativa CGU nº 116/2024 | https://www.in.gov.br/en/web/dou/-/portaria-normativa-cgu-n-116-de-18-de-marco-de-2024-549091878 | art. 7º, VII; art. 56 (ouvidoria ativa); art. 60 (relatório de gestão até 1º de abril; §1º, VII); art. 65, §§1º a 3º (revisão anual no §2º) |
@@ -15,6 +15,7 @@ Conferência completa feita em **19/10/2026**, no texto oficial de cada norma.
 | Lei nº 14.129/2021 | https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14129.htm | art. 3º, II, III e XVIII; art. 18; art. 27, II |
 | Lei nº 15.263/2025 | https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15263.htm | art. 5º (técnicas de linguagem simples, incisos citados nas telas) |
 | Lei nº 10.048/2000 (redação da Lei nº 14.626/2023) | https://www.planalto.gov.br/ccivil_03/leis/l10048.htm | art. 1º (grupos com atendimento prioritário) |
+| Decreto nº 8.539/2015 | https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/decreto/d8539.htm | art. 4º (processo administrativo eletrônico: "onde registrar" = SEI) |
 
 **Não há em norma:** mês para cada etapa do ciclo, prazo de "30 dias" para atualizar o
 Portal ou responder à consulta anual, nem metas numéricas de avaliação ou satisfação.
@@ -28,7 +29,7 @@ Esses dados estavam na primeira versão e foram retirados.
 | Guia de Edição de Serviços do gov.br (campos do questionário) | https://www.gov.br/pt-br/guia-de-edicao-de-servicos-do-gov.br/como-cadastrar-e-alterar-servicos/campos-do-questionario-de-servicos | nome com verbo no infinitivo; campos Custos, Legislação e tempo de cada etapa |
 | Carta de Serviços da ANTAQ (PDF do Portal) | https://www.gov.br/pt-br/orgaos/agencia-nacional-de-transportes-aquaviarios/@@download.pdf | `guia/dados/servicos.js`: 33 serviços, prazos, etapas, Ouvidoria, links, avaliações, texto de prioridades. Coleta em 15/10/2026; conferida campo a campo em 19/10/2026, sem diferença |
 | Estrutura da ANTAQ ("Quem é quem") | https://www.gov.br/antaq/pt-br/acesso-a-informacao/institucional/quem-e-quem | superintendências e gerências (GOA, GAF e GPO na SOG; GRN e GRP na SRG; GOF na SAF); nome completo da SFC; Ouvidora e telefone (61) 2029-6574 |
-| Canais de atendimento da Ouvidoria | https://www.gov.br/antaq/pt-br/canais_atendimento/ouvidoria/canais_de_atendimento | 0800 644 5001; endereço SEPN Quadra 514, Conjunto E; ouvidoria@antaq.gov.br |
+| Canais de atendimento da Ouvidoria | https://www.gov.br/antaq/pt-br/canais_atendimento/ouvidoria/canais_de_atendimento | 0800 644 5001; endereço SEPN Quadra 514, Conjunto E; ouvidoria@antaq.gov.br; sac@antaq.gov.br; ouvidoria.interno@antaq.gov.br ("apenas para servidores, empregados públicos e demais colaboradores da ANTAQ") |
 | Certificado do Mês da Carta de Serviços | `Agência Nacional de Transportes Aquaviários.pdf` (raiz do repositório) | tela do certificado (Brasília, 06/08/2026) |
 
 ## Comparação entre Cartas (tela "Erros comuns nas Cartas")
