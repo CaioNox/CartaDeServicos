@@ -4,58 +4,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atores na ANTAQ — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Matriz de responsabilidades — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
-  <link rel="stylesheet" href="paginas.css">
   <style>
-    .atores { font-size: 19px; }
-    .atores td, .atores th[scope="row"] { padding-top: 11px; padding-bottom: 11px; line-height: 1.4; font-size: 20px; }
-    .atores td.ref { font-size: 17px; }
-    .atores col.c1 { width: 22%; }
-    .atores col.c2 { width: 52%; }
+    .colunas { grid-template-columns: 1.75fr 1fr; gap: 40px; align-items: start; }
+    .matriz th { font-size: 16px; padding: 11px 10px; text-align: center; }
+    .matriz th:first-child { text-align: left; }
+    .matriz td { padding: 6px 10px; font-size: 19px; text-align: center; vertical-align: middle; }
+    .matriz td:first-child { text-align: left; }
+    /* papéis na matriz: Executa (azul), Aprova (laranja), Contribui (verde), é Informado (cinza) */
+    .papel {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 8px;
+      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 15px; color: #fff;
+    }
+    .papel-executa { background: var(--cor-azul); }
+    .papel-aprova { background: var(--cor-laranja); }
+    .papel-contribui { background: var(--cor-verde); }
+    .papel-informado { background: var(--cor-cinza); }
+    .legenda { display: flex; gap: 34px; align-items: center; margin: 0; font-size: 20px; color: var(--cor-texto-forte); }
+    .legenda span { display: inline-flex; align-items: center; gap: 12px; }
+    .prazos .cartao { padding-top: 20px; padding-bottom: 20px; gap: 6px; }
+    .prazos .cartao p { font-size: 20px; }
   </style>
 </head>
 
-<body class="cap-2">
-  <main class="slide pg">
-    <header class="faixa">
-      <p class="faixa-rot">02 · PAPÉIS</p>
-      <img class="faixa-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
+<body class="capitulo-2">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">02 · PAPÉIS</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
     </header>
 
-    <div class="pg-corpo">
-      <div class="pg-cab">
-        <h1 class="pg-titulo">Atores na ANTAQ</h1>
-        <p class="pg-intro">A Ouvidoria coordena e zela pela qualidade da Carta. Quem descreve o serviço, fixa prazos e responde pelo conteúdo é a <b>UORG que presta o serviço</b>.</p>
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Matriz de responsabilidades</h1>
+        <p class="pagina-introducao">Para cada etapa do ciclo: quem <b>executa</b>, quem <b>aprova</b>, quem <b>contribui</b> e quem é <b>informado</b>.</p>
       </div>
 
-      <table class="tab atores">
-        <colgroup><col class="c1"><col class="c2"><col></colgroup>
-        <thead>
-          <tr><th scope="col">Ator</th><th scope="col">Responsabilidades</th><th scope="col">Base</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Diretoria Colegiada / Diretor-Geral</th><td>Patrocina o ciclo. Determina às UORGs a indicação de pontos focais. Valida inclusões e exclusões de serviços.</td><td class="ref">Guia CGU, itens 3.2, 3.3 e 3.7</td></tr>
-          <tr><th scope="row">Ouvidoria (titular)</th><td>Coordena o ciclo e comunica a alta gestão. Consolida a Carta no relatório anual.</td><td class="ref">Portaria CGU 116/2024, arts. 7º, VII, 60 e 65</td></tr>
-          <tr><th scope="row">Seção de Apoio ao Cidadão (SAC)</th><td>Acompanha a elaboração, a implementação e a atualização da Carta com os gestores de cada área. Usa as manifestações e as pesquisas de satisfação para avaliar se os compromissos da Carta são cumpridos.</td><td class="ref">Portaria nº 3/2025/OUV, art. 4º, V e VI</td></tr>
-          <tr><th scope="row">Seção de Transparência e Acesso à Informação (STAI)</th><td>Acompanha as informações publicadas no site da ANTAQ, para garantir integridade, autenticidade e atualidade.</td><td class="ref">Portaria nº 3/2025/OUV, art. 5º, III</td></tr>
-          <tr><th scope="row">UORG gestora do serviço</th><td>Revisa seus serviços e propõe atualização, inclusão ou exclusão. Responde pela veracidade e valida o texto final.</td><td class="ref">Portaria SGD/MGI 1.083/2025, art. 6º, II</td></tr>
-          <tr><th scope="row">Ponto focal da UORG</th><td>Interlocutor único com a Ouvidoria. Preenche o formulário e anexa normas e documentos no SEI.</td><td class="ref">Indicado pela UORG (titular e substituto)</td></tr>
-          <tr><th scope="row">Editor de serviços do gov.br</th><td>Cadastra, altera, torna privado ou reativa o serviço no portal, sempre após a validação.</td><td class="ref">Guia de Edição do gov.br<br>SEI 50300.012299/2024-14</td></tr>
-          <tr><th scope="row">Comunicação Social</th><td>Mantém o link da Carta no site da ANTAQ e divulga as mudanças.</td><td class="ref">Lei 13.460/2017, art. 7º, § 4º</td></tr>
-          <tr><th scope="row">Conselho de Usuários</th><td>Acompanha a prestação, participa da avaliação dos serviços e propõe melhorias.</td><td class="ref">Lei 13.460/2017, art. 18, par. único<br>Portaria nº 3/2025/OUV, arts. 38 e 39</td></tr>
-        </tbody>
-      </table>
+      <div class="grade colunas">
+        <div class="coluna">
+          <table class="tabela matriz">
+            <thead>
+              <tr><th scope="col">Etapa</th><th scope="col">Alta gestão</th><th scope="col">Ouvidoria</th><th scope="col">UORGs</th><th scope="col">Editores</th><th scope="col">Comunicação</th><th scope="col">Conselho</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1 · Diagnóstico</td><td><span class="papel papel-informado">I</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-contribui">C</span></td><td><span class="papel papel-contribui">C</span></td><td></td><td></td></tr>
+              <tr><td>2 · Comunicação à alta gestão</td><td><span class="papel papel-aprova">A</span></td><td><span class="papel papel-executa">E</span></td><td></td><td></td><td></td><td></td></tr>
+              <tr><td>3 · Pontos focais e editores</td><td><span class="papel papel-aprova">A</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-contribui">C</span></td><td></td><td></td><td></td></tr>
+              <tr><td>4 · Plano de ação</td><td><span class="papel papel-informado">I</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-contribui">C</span></td><td></td><td></td><td></td></tr>
+              <tr><td>5 · Identificar serviços</td><td></td><td><span class="papel papel-contribui">C</span></td><td><span class="papel papel-executa">E</span></td><td></td><td></td><td><span class="papel papel-contribui">C</span></td></tr>
+              <tr><td>6 · Levantar informações</td><td></td><td><span class="papel papel-contribui">C</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-contribui">C</span></td><td></td><td><span class="papel papel-contribui">C</span></td></tr>
+              <tr><td>7 · Validar</td><td><span class="papel papel-aprova">A</span></td><td><span class="papel papel-contribui">C</span></td><td><span class="papel papel-executa">E</span></td><td></td><td></td><td></td></tr>
+              <tr><td>8 · Cadastrar no gov.br</td><td></td><td><span class="papel papel-contribui">C</span></td><td><span class="papel papel-aprova">A</span></td><td><span class="papel papel-executa">E</span></td><td></td><td></td></tr>
+              <tr><td>9 · Site da ANTAQ</td><td></td><td><span class="papel papel-contribui">C</span></td><td></td><td></td><td><span class="papel papel-executa">E</span></td><td></td></tr>
+              <tr><td>10 · Divulgar</td><td></td><td><span class="papel papel-executa">E</span></td><td></td><td></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-informado">I</span></td></tr>
+              <tr><td>11 · Manter e revisar</td><td><span class="papel papel-informado">I</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-executa">E</span></td><td></td><td><span class="papel papel-contribui">C</span></td></tr>
+            </tbody>
+          </table>
+          <p class="legenda">
+            <span><span class="papel papel-executa">E</span>Executa</span>
+            <span><span class="papel papel-aprova">A</span>Aprova</span>
+            <span><span class="papel papel-contribui">C</span>Contribui</span>
+            <span><span class="papel papel-informado">I</span>É informado</span>
+          </p>
+        </div>
+
+        <div class="coluna prazos">
+          <section class="cartao tom-verde">
+            <span class="icone"><i class="fas fa-share-from-square" aria-hidden="true"></i></span>
+            <h2>2 dias úteis</h2>
+            <p>Para a Ouvidoria encaminhar a demanda à UORG.</p>
+            <span class="base-legal">Portaria nº 3/2025/OUV, art. 21</span>
+          </section>
+          <section class="cartao tom-verde">
+            <span class="icone"><i class="fas fa-reply" aria-hidden="true"></i></span>
+            <h2>20 dias</h2>
+            <p>Para a UORG responder à Ouvidoria, prorrogáveis uma vez.</p>
+            <span class="base-legal">Lei 13.460/2017, art. 16, par. único · Portaria nº 3/2025/OUV, art. 21, II</span>
+          </section>
+          <section class="cartao tom-verde">
+            <span class="icone"><i class="fas fa-hourglass-half" aria-hidden="true"></i></span>
+            <h2>30 dias</h2>
+            <p>Para a Ouvidoria dar a decisão final ao usuário, prorrogáveis uma vez.</p>
+            <span class="base-legal">Lei 13.460/2017, art. 16</span>
+          </section>
+        </div>
+      </div>
     </div>
 
-    <footer class="pg-rodape">
+    <footer class="pagina-rodape">
       <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
-      <span class="pg-num">15</span>
+      <span class="pagina-numero">15</span>
     </footer>
   </main>
 

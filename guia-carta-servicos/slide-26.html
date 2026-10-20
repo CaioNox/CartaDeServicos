@@ -4,29 +4,92 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>04 · Qualidade da informação — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Checklist de 16 itens — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
-  <link rel="stylesheet" href="paginas.css">
+  <style>
+    .colunas { grid-template-columns: 1fr 1fr; gap: 0 60px; align-items: start; }
+    .grupo { margin: 0; padding: 0; border: 0; }
+    .grupo + .grupo { margin-top: 30px; }
+    .grupo legend {
+      padding: 0; margin-bottom: 4px;
+      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 18px;
+      letter-spacing: .14em; color: var(--cor-roxo);
+    }
+    .item {
+      display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; align-items: center; gap: 16px;
+      padding: 15px 0; border-bottom: 1.5px solid var(--cor-borda);
+      font-size: 23px; line-height: 1.35; color: var(--cor-texto-forte); cursor: pointer;
+    }
+    .item input {
+      appearance: none; -webkit-appearance: none; margin: 0;
+      width: 26px; height: 26px; border: 2px solid var(--cor-roxo); border-radius: 6px; background: #fff; cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .item input:checked { background: var(--cor-roxo); }
+    .item input:checked::after { content: '\2713'; color: #fff; font-size: 18px; font-weight: 700; }
+    .item input:focus-visible { outline: 3px solid var(--cor-roxo); outline-offset: 2px; }
+    .item .referencia { font-size: 17px; color: #64748B; text-align: right; }
+  </style>
 </head>
 
-<body class="cap-4">
-  <main class="capa">
-    <div class="circ" style="width:960px;height:960px;right:-260px;top:-500px" aria-hidden="true"></div>
-    <div class="circ" style="width:560px;height:560px;right:420px;bottom:-240px" aria-hidden="true"></div>
+<body class="capitulo-4">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">04 · QUALIDADE</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
+    </header>
 
-    <p class="capa-num">04</p>
-    <h1 class="capa-titulo">Qualidade da<br>informação</h1>
-    <ul class="capa-topicos" aria-label="Tópicos do capítulo">
-      <li><button type="button" data-ir="slide-27.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Checklist de 16 itens</button></li>
-      <li><button type="button" data-ir="slide-28.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Linguagem simples</button></li>
-    </ul>
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Checklist de 16 itens</h1>
+        <p class="pagina-resumo">Aplique a cada serviço antes de publicar.</p>
+      </div>
 
-    <img class="capa-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ — Agência Nacional de Transportes Aquaviários">
+      <div class="grade colunas">
+        <div>
+          <fieldset class="grupo">
+            <legend>IDENTIFICAÇÃO</legend>
+            <label class="item"><input type="checkbox"><span>Tem as 5 características de serviço</span><span class="referencia">Portaria SGD/MGI 1.083, art. 3º</span></label>
+            <label class="item"><input type="checkbox"><span>Nome com verbo, sem sigla solta e com grafia padrão</span><span class="referencia">Lei 15.263/2025, art. 5º, VIII</span></label>
+            <label class="item"><input type="checkbox"><span>"O que é?" em até três frases simples</span><span class="referencia">Lei 13.460, art. 7º, § 2º, I</span></label>
+            <label class="item"><input type="checkbox"><span>Unidade gestora e ponto focal definidos</span><span class="referencia">Portaria SGD/MGI 1.083, art. 6º, II</span></label>
+          </fieldset>
+          <fieldset class="grupo">
+            <legend>ACESSO</legend>
+            <label class="item"><input type="checkbox"><span>Requisitos e documentos completos</span><span class="referencia">Decreto 9.094, art. 18-A</span></label>
+            <label class="item"><input type="checkbox"><span>Custos explícitos: valor ou "é gratuito"</span><span class="referencia">Lei 13.460, art. 6º, VI, "e"</span></label>
+            <label class="item"><input type="checkbox"><span>Canais com links HTTPS testados</span><span class="referencia">Lei 13.460, art. 7º, § 2º, V</span></label>
+            <label class="item"><input type="checkbox"><span>Tempo de cada etapa informado</span><span class="referencia">Decreto 9.094, art. 11, § 3º, VI</span></label>
+          </fieldset>
+        </div>
+        <div>
+          <fieldset class="grupo">
+            <legend>PRAZOS E COMPROMISSOS</legend>
+            <label class="item"><input type="checkbox"><span>Prazo máximo ("Até N dias"), não média</span><span class="referencia">Lei 13.460, art. 7º, § 2º, IV</span></label>
+            <label class="item"><input type="checkbox"><span>Diz como acompanhar o pedido</span><span class="referencia">Lei 13.460, art. 7º, § 3º, V</span></label>
+            <label class="item"><input type="checkbox"><span>Diz onde reclamar: Ouvidoria e Fala.BR</span><span class="referencia">Lei 13.460, art. 7º, § 2º, VI</span></label>
+            <label class="item"><input type="checkbox"><span>Prioridades atualizadas (autismo, mobilidade reduzida, doadores de sangue)</span><span class="referencia">Lei 10.048/2000, art. 1º (red. Lei 14.626/2023)</span></label>
+          </fieldset>
+          <fieldset class="grupo">
+            <legend>MANUTENÇÃO</legend>
+            <label class="item"><input type="checkbox"><span>Diz o que fazer se o sistema cair</span><span class="referencia">Decreto 9.094, art. 11, § 3º, XI</span></label>
+            <label class="item"><input type="checkbox"><span>Legislação com link oficial</span><span class="referencia">Guia CGU, item 3.6</span></label>
+            <label class="item"><input type="checkbox"><span>Revisado nos últimos 12 meses</span><span class="referencia">Portaria CGU 116, art. 65, § 2º</span></label>
+            <label class="item"><input type="checkbox"><span>Nota e utilidade no Painel gov.br acompanhadas</span><span class="referencia">Lei 13.460, art. 23 · Decreto 9.094, art. 20</span></label>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <footer class="pagina-rodape">
+      <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
+      <span class="pagina-numero">26</span>
+    </footer>
   </main>
 
   <script src="guia.js" defer></script>

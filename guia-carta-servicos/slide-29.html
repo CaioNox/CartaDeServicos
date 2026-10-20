@@ -4,31 +4,101 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>05 · Monitoramento — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Retrato da Carta da ANTAQ — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
-  <link rel="stylesheet" href="paginas.css">
+  <style>
+    .indicadores .indicador { padding: 20px 28px; }
+    .graficos { grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    /* barras horizontais: largura = valor ÷ maior valor (18) */
+    .barras { display: flex; flex-direction: column; gap: 22px; margin-top: 6px; }
+    .barra-linha { display: grid; grid-template-columns: 70px minmax(0, 1fr) 40px; align-items: center; gap: 18px; font-size: 22px; color: var(--cor-texto-forte); }
+    .barra-linha b { font-family: 'Montserrat', sans-serif; font-weight: 800; text-align: right; }
+    .trilho { height: 36px; border-radius: 8px; background: #EEF1F5; overflow: hidden; }
+    .trilho > span { display: block; height: 100%; border-radius: 8px; background: var(--cor-laranja); }
+    /* barra empilhada: largura = parte ÷ 33 */
+    .empilhada { display: flex; height: 54px; border-radius: 10px; overflow: hidden; margin-top: 6px; }
+    .empilhada > span {
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 18px; color: #fff;
+    }
+    .segmento-maximo { background: #1F9D55; }
+    .segmento-media { background: var(--cor-amarelo); color: var(--cor-marinho) !important; }
+    .segmento-intervalo { background: var(--cor-laranja); }
+    .segmento-sem-prazo { background: #7A8597; }
+    .legenda-grafico { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 22px; color: var(--cor-texto-forte); }
+    .legenda-grafico .marcador { margin-right: 2px; }
+    .corrigir .cartao { padding-top: 24px; padding-bottom: 24px; }
+    .corrigir .cartao p { font-size: 23px; }
+    .pagina-conteudo { gap: 26px; }
+  </style>
 </head>
 
-<body class="cap-5">
-  <main class="capa">
-    <div class="circ" style="width:960px;height:960px;right:-260px;top:-500px" aria-hidden="true"></div>
-    <div class="circ" style="width:560px;height:560px;right:420px;bottom:-240px" aria-hidden="true"></div>
+<body class="capitulo-5">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">05 · MONITORAMENTO</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
+    </header>
 
-    <p class="capa-num">05</p>
-    <h1 class="capa-titulo">Monito-<br>ramento</h1>
-    <ul class="capa-topicos" aria-label="Tópicos do capítulo">
-      <li><button type="button" data-ir="slide-30.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Retrato da Carta da ANTAQ</button></li>
-      <li><button type="button" data-ir="slide-31.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Indicadores e metas</button></li>
-      <li><button type="button" data-ir="slide-31.html"><i class="fas fa-circle-check" aria-hidden="true"></i>De onde vêm as melhorias</button></li>
-      <li><button type="button" data-ir="slide-32.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Simplifique! e prestação de contas</button></li>
-    </ul>
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Retrato da Carta da ANTAQ</h1>
+        <p class="pagina-resumo">Carta publicada no gov.br em 15/10/2026. É a linha de base do primeiro ciclo.</p>
+      </div>
 
-    <img class="capa-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ — Agência Nacional de Transportes Aquaviários">
+      <div class="grade grade-4 indicadores">
+        <div class="indicador tom-marinho"><span class="indicador-valor">33</span><span class="indicador-legenda">serviços</span></div>
+        <div class="indicador tom-amarelo"><span class="indicador-valor">15</span><span class="indicador-legenda">com prazo máximo</span></div>
+        <div class="indicador tom-laranja"><span class="indicador-valor">11</span><span class="indicador-legenda">indicam a Ouvidoria</span></div>
+        <div class="indicador tom-roxo"><span class="indicador-valor">8</span><span class="indicador-legenda">nomes com ponto final</span></div>
+      </div>
+
+      <div class="grade graficos">
+        <section aria-label="Serviços por superintendência: SOG 18, SRG 8, SAF 4, SFC 3">
+          <h2 class="subtitulo">Serviços por superintendência</h2>
+          <div class="barras">
+            <div class="barra-linha"><span>SOG</span><span class="trilho"><span style="width:100%"></span></span><b>18</b></div>
+            <div class="barra-linha"><span>SRG</span><span class="trilho"><span style="width:44.44%"></span></span><b>8</b></div>
+            <div class="barra-linha"><span>SAF</span><span class="trilho"><span style="width:22.22%"></span></span><b>4</b></div>
+            <div class="barra-linha"><span>SFC</span><span class="trilho"><span style="width:16.67%"></span></span><b>3</b></div>
+          </div>
+        </section>
+        <section aria-label="Como o prazo aparece, em 33 serviços: 15 com &quot;Até N dias&quot; ou imediato, 11 só média, 6 intervalo, 1 não estimado">
+          <h2 class="subtitulo">Como o prazo aparece</h2>
+          <div class="empilhada">
+            <span class="segmento-maximo" style="width:45.45%">15</span>
+            <span class="segmento-media" style="width:33.33%">11</span>
+            <span class="segmento-intervalo" style="width:18.18%">6</span>
+            <span class="segmento-sem-prazo" style="width:3.03%"></span>
+          </div>
+          <ul class="legenda-grafico">
+            <li><span class="marcador" style="color:#1F9D55">■</span> "Até N dias" ou imediato</li>
+            <li><span class="marcador" style="color:#F2A900">■</span> Só média</li>
+            <li><span class="marcador" style="color:#E4572E">■</span> Intervalo ("entre 20 e 40")</li>
+            <li><span class="marcador" style="color:#7A8597">■</span> Não estimado (1)</li>
+          </ul>
+        </section>
+      </div>
+
+      <h2 class="subtitulo">O que corrigir primeiro</h2>
+      <div class="grade grade-3 corrigir">
+        <section class="cartao tom-laranja"><p><b>18 serviços</b> sem prazo máximo.</p></section>
+        <section class="cartao tom-laranja"><p><b>22 serviços</b> sem indicar Ouvidoria ou Fala.BR.</p></section>
+        <section class="cartao tom-laranja"><p><b>4 serviços</b> com link sem HTTPS.</p></section>
+      </div>
+
+      <p class="nota">Fonte: PDF da Carta gerado pelo gov.br. Confirme cada caso na página do serviço antes de pedir a correção.</p>
+    </div>
+
+    <footer class="pagina-rodape">
+      <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
+      <span class="pagina-numero">29</span>
+    </footer>
   </main>
 
   <script src="guia.js" defer></script>

@@ -72,6 +72,12 @@ Portal gov.br em **15/10/2026**, conferido de novo, serviço a serviço, em **19
 │   ├── dados/servicos.js    inventário da Carta da ANTAQ (fonte do diagnóstico)
 │   ├── slide-*.html         uma tela por arquivo
 │   └── capa-*.html          capas de capítulo
+├── guia-carta-servicos/     versão 2.0 do guia (36 telas, slide-NN.html = página NN)
+│   ├── deck.js              manifesto: ordem das telas e capítulos
+│   ├── base.css             cores (marca ANTAQ e paleta dos capítulos)
+│   ├── guia.css             estilos das telas, em seções numeradas
+│   ├── guia.js · a11y.js    teclado, atalhos data-ir e leitor de tela
+│   └── vida.js              contagem animada dos números em destaque
 ├── scripts/
 │   ├── validar.mjs          verificação estática (manifesto, caminhos, acessibilidade)
 │   ├── testar-telas.mjs     teste no navegador (Playwright)
@@ -102,6 +108,21 @@ serviço a serviço e atualize `guia/dados/servicos.js` (inclusive a data em `co
 Diagnóstico, inventário, checklist, formulário e indicadores recalculam sozinhos.
 
 **Atalho para uma tela** — `guia/index.html?tela=slide-formulario` abre direto nela.
+
+### Nomes de classes na versão 2.0
+
+Cada tela é um `<main class="pagina">` (ou `class="capa"`, nas capas de capítulo) e o capítulo
+vem da classe do `<body>` (`capitulo-abertura`, `capitulo-1` … `capitulo-6`), que define a
+cor do cabeçalho, do número da página e das tabelas.
+
+| Parte | Classes |
+|---|---|
+| Moldura | `pagina-cabecalho`, `pagina-secao`, `pagina-conteudo`, `pagina-topo`, `pagina-titulo`, `pagina-resumo`, `pagina-rodape`, `pagina-numero` |
+| Layout | `grade` + `grade-2` … `grade-6`, `coluna`, `subtitulo`, `nota` |
+| Componentes | `cartao`, `icone`, `base-legal`, `destaque`, `aviso`, `indicador`, `tabela`, `etapa`, `fluxo` |
+| Tom de destaque | `tom-azul`, `tom-verde`, `tom-amarelo`, `tom-roxo`, `tom-laranja`, `tom-marinho` |
+
+Um componente pega a cor de `--tom`, `--tom-fundo` e `--tom-texto`, definidas pela classe `tom-*`.
 
 ## Rodar e verificar localmente
 

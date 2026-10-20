@@ -4,93 +4,130 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>As 11 etapas em um olhar — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Etapas 1 a 6 — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
-  <link rel="stylesheet" href="paginas.css">
   <style>
-    .fase { display: flex; flex-direction: column; gap: 14px; padding: 26px 22px; border-radius: 18px; background: var(--c); color: #fff; }
-    .fase h2 { margin: 0 0 4px; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 20px; letter-spacing: .14em; color: #fff; }
-    .fase ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-    .fase li {
-      display: flex; align-items: center; gap: 16px;
-      padding: 22px 18px; border-radius: 10px; background: rgba(255, 255, 255, .16);
-      font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 24px; line-height: 1.3;
-    }
-    .fase li b {
-      width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
-      display: inline-flex; align-items: center; justify-content: center;
-      background: #fff; color: var(--pdf-marinho);
-      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 17px;
-    }
-    .fase p { margin: 0; font-size: 22px; line-height: 1.45; color: #fff; }
-    .fases { align-items: stretch; }
-    .pg-corpo { gap: 32px; }
-    .escuro p { font-size: 24px; }
+    .colunas { grid-template-columns: 1fr 1fr; gap: 0 56px; align-items: start; }
   </style>
 </head>
 
-<body class="cap-3">
-  <main class="slide pg">
-    <header class="faixa">
-      <p class="faixa-rot">03 · PASSO A PASSO</p>
-      <img class="faixa-logo" src="Imagens/logo-antaq-azul.png" alt="ANTAQ">
+<body class="capitulo-3">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">03 · PASSO A PASSO</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-azul.png" alt="ANTAQ">
     </header>
 
-    <div class="pg-corpo">
-      <div class="pg-cab">
-        <h1 class="pg-titulo">As 11 etapas em um olhar</h1>
-        <p class="pg-lead">Quatro fases, baseadas no Guia Orientativo da CGU sobre Cartas de Serviços.</p>
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Etapas 1 a 6</h1>
+        <p class="pagina-resumo">O que fazer, quem faz e o que fica registrado.</p>
       </div>
 
-      <div class="grade col4 fases">
-        <section class="fase c-azul">
-          <h2>1 · PREPARAR</h2>
-          <ol>
-            <li><b>1</b>Diagnóstico preliminar</li>
-            <li><b>2</b>Comunicação à alta gestão</li>
-            <li><b>3</b>Forma de atuação</li>
-            <li><b>4</b>Plano de ação</li>
-          </ol>
-        </section>
-        <section class="fase c-verde">
-          <h2>2 · CONSTRUIR</h2>
-          <ol>
-            <li><b>5</b>Identificar os serviços</li>
-            <li><b>6</b>Levantar as informações</li>
-            <li><b>7</b>Validar</li>
-          </ol>
-        </section>
-        <section class="fase c-roxo">
-          <h2>3 · PUBLICAR</h2>
-          <ol>
-            <li><b>8</b>Cadastrar no gov.br</li>
-            <li><b>9</b>Atualizar o site da ANTAQ</li>
-            <li><b>10</b>Divulgar</li>
-          </ol>
-        </section>
-        <section class="fase c-laranja">
-          <h2>4 · MANTER</h2>
-          <ol>
-            <li><b>11</b>Manter e revisar todo ano</li>
-          </ol>
-          <p>A Carta é viva: cada mudança volta ao ciclo.</p>
-        </section>
+      <div class="grade colunas">
+        <div>
+          <section class="etapa tom-azul">
+            <span class="etapa-numero">1</span>
+            <div>
+              <h2>Diagnóstico preliminar</h2>
+              <ul>
+                <li>Gerar o PDF da Carta no gov.br e aplicar o checklist.</li>
+                <li>Juntar dados do Painel gov.br e do Fala.BR.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="etapa-responsavel">Ouvidoria</p>
+              <p class="etapa-registro">Nota técnica no SEI</p>
+            </div>
+          </section>
+          <section class="etapa tom-azul">
+            <span class="etapa-numero">2</span>
+            <div>
+              <h2>Comunicação à alta gestão</h2>
+              <ul>
+                <li>Apresentar o diagnóstico e os riscos.</li>
+                <li>Pedir patrocínio e pontos focais.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="etapa-responsavel">Ouvidoria → alta gestão</p>
+              <p class="etapa-registro">Despacho no SEI</p>
+            </div>
+          </section>
+          <section class="etapa tom-azul">
+            <span class="etapa-numero">3</span>
+            <div>
+              <h2>Forma de atuação</h2>
+              <ul>
+                <li>Formalizar quem conduz o ciclo.</li>
+                <li>Cada unidade indica ponto focal e editores.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="etapa-responsavel">Alta gestão</p>
+              <p class="etapa-registro">Ato de designação</p>
+            </div>
+          </section>
+        </div>
+
+        <div>
+          <section class="etapa tom-azul">
+            <span class="etapa-numero">4</span>
+            <div>
+              <h2>Plano de ação</h2>
+              <ul>
+                <li>Definir o escopo: revisar os 33 serviços.</li>
+                <li>Cronograma por superintendência.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="etapa-responsavel">Ouvidoria + unidades</p>
+              <p class="etapa-registro">Plano no SEI</p>
+            </div>
+          </section>
+          <section class="etapa tom-verde">
+            <span class="etapa-numero">5</span>
+            <div>
+              <h2>Identificar os serviços</h2>
+              <ul>
+                <li>Aplicar o teste das 5 características.</li>
+                <li>Propor inclusões e exclusões.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="etapa-responsavel">Unidades gestoras</p>
+              <p class="etapa-registro">Lista confirmada</p>
+            </div>
+          </section>
+          <section class="etapa tom-verde">
+            <span class="etapa-numero">6</span>
+            <div>
+              <h2>Levantar as informações</h2>
+              <ul>
+                <li>Preencher a ficha padrão de cada serviço novo ou alterado.</li>
+                <li>Confirmar "sem alteração" quando for o caso.</li>
+                <li>Retirar exigências desnecessárias.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="etapa-responsavel">Unidades gestoras</p>
+              <p class="etapa-registro">Fichas no SEI</p>
+            </div>
+          </section>
+        </div>
       </div>
 
-      <div class="escuro">
-        <i class="fas fa-folder-tree" aria-hidden="true"></i>
-        <p><b>Tudo fica no SEI.</b> Cada etapa gera um registro no processo do ciclo anual. Assim, qualquer pessoa sabe o que foi feito e por quem.</p>
-      </div>
+      <p class="nota">Base: Guia Orientativo da CGU, itens 3.1 a 3.6 · Decreto 9.094/2017, art. 18-A.</p>
     </div>
 
-    <footer class="pg-rodape">
+    <footer class="pagina-rodape">
       <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
-      <span class="pg-num">19</span>
+      <span class="pagina-numero">19</span>
     </footer>
   </main>
 
