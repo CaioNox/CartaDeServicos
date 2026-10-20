@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linguagem simples — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <style>
+    .colunas { grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; }
+    .exemplo { display: grid; grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr); align-items: center; gap: 12px; }
+    .exemplo + .exemplo { margin-top: 26px; }
+    .exemplo > i { color: var(--cor-roxo); font-size: 26px; text-align: center; }
+    .antes, .depois { padding: 18px 22px; border-radius: 14px; border-left: 6px solid var(--tom); background: var(--tom-fundo); }
+    .antes p, .depois p { margin: 0; font-size: 23px; line-height: 1.45; color: var(--cor-texto-forte); }
+    .depois p { font-weight: 600; }
+    .antes small { display: block; margin-top: 6px; font-size: 18px; color: #64748B; }
+    .regras .cartao { padding: 24px 22px 24px 26px; gap: 8px; }
+    .regras .cartao h3 { font-size: 24px; }
+    .regras .cartao p { font-size: 22px; }
+  </style>
+</head>
+
+<body class="capitulo-4">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">04 · QUALIDADE</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
+    </header>
+
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Linguagem simples</h1>
+        <p class="pagina-resumo">Exemplos reais da Carta da ANTAQ. São sugestões: só mudam após validação.</p>
+      </div>
+
+      <div class="grade colunas">
+        <div>
+          <div class="exemplo">
+            <div class="antes tom-erro"><p>Solicitar da Antaq análise de tonelagem para inscrição no Registro Especial Brasileiro (REB)</p><small>Sigla no nome; "da Antaq" repete o óbvio</small></div>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            <div class="depois tom-sucesso"><p>Pedir análise de tonelagem para inscrever embarcação no Registro Especial Brasileiro</p></div>
+          </div>
+          <div class="exemplo">
+            <div class="antes tom-erro"><p>Solicitar atualização de dados na Antaq para o Sistema Mercante - AFRMM</p><small>Sigla solta no fim</small></div>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            <div class="depois tom-sucesso"><p>Atualizar dados da empresa no Sistema Mercante</p></div>
+          </div>
+          <div class="exemplo">
+            <div class="antes tom-erro"><p>Obter análise da Antaq para transferência de titularidade de instalação portuária.</p><small>Ponto final e grafia "Antaq"</small></div>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            <div class="depois tom-sucesso"><p>Obter análise da ANTAQ para transferência de titularidade de instalação portuária</p></div>
+          </div>
+        </div>
+
+        <div class="coluna">
+          <h2 class="subtitulo">Regras rápidas</h2>
+          <div class="grade grade-2 regras">
+            <section class="cartao tom-roxo">
+              <h3><i class="fas fa-play" aria-hidden="true"></i>Comece pelo verbo</h3>
+              <p>No infinitivo: obter, pedir, registrar.</p>
+            </section>
+            <section class="cartao tom-roxo">
+              <h3><i class="fas fa-align-left" aria-hidden="true"></i>Frases curtas</h3>
+              <p>Uma ideia por frase.</p>
+            </section>
+            <section class="cartao tom-roxo">
+              <h3><i class="fas fa-user" aria-hidden="true"></i>Fale como o usuário</h3>
+              <p>"Pedir", não "peticionar".</p>
+            </section>
+            <section class="cartao tom-roxo">
+              <h3><i class="fas fa-font" aria-hidden="true"></i>Sigla por extenso</h3>
+              <p>Na primeira vez. Nunca solta no nome.</p>
+            </section>
+            <section class="cartao tom-roxo">
+              <h3><i class="fas fa-hashtag" aria-hidden="true"></i>Número com unidade</h3>
+              <p>"Até 30 dias corridos".</p>
+            </section>
+            <section class="cartao tom-roxo">
+              <h3><i class="fas fa-vial" aria-hidden="true"></i>Teste com quem usa</h3>
+              <p>Conselho de Usuários ou usuário real.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <p class="nota">Base: Lei 13.460/2017, art. 5º, XIV · Lei 15.263/2025 (Política Nacional de Linguagem Simples).</p>
+    </div>
+
+    <footer class="pagina-rodape">
+      <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
+      <span class="pagina-numero">27</span>
+    </footer>
+  </main>
+
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>

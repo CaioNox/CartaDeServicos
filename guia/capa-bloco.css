@@ -321,3 +321,7 @@ body {
 .topic{background:none;border:0;padding:0;text-align:left;font:inherit;font-family:'Open Sans',sans-serif;font-size:1.35rem}
 .topic:focus-visible{outline:3px solid #4dcfff;outline-offset:4px;color:#fff}
 .lead-capa{font-family:'Open Sans',sans-serif;font-size:1.45rem;line-height:1.55;color:rgba(255,255,255,.72);max-width:44rem;margin:0 0 1.6rem}
+
+/* fonte citada na capa (fundo escuro), ex.: Guia Orientativo da CGU na capa 3 */
+.fonte-capa{font-family:'Open Sans',sans-serif;font-size:.78rem;line-height:1.45;color:rgba(255,255,255,.62);max-width:44rem;margin:.5rem 0 0}
+.fonte-capa a{color:#7fd3f2}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apresentação — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <style>
+    .apresentacao {
+      gap: 28px;
+    }
+
+    .apresentacao .pagina-introducao {
+      max-width: 1560px;
+    }
+
+    /* "Para quem é": três cartões lado a lado, abaixo do texto; ícone e
+       título na mesma linha, descrição embaixo */
+    .para-quem .cartao {
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      grid-template-rows: auto 1fr;
+      column-gap: 16px;
+      row-gap: 14px;
+      align-items: center;
+      padding: 22px 26px 24px 28px;
+    }
+
+    .para-quem .icone {
+      margin-bottom: 0;
+    }
+
+    .para-quem .cartao h3 {
+      font-size: 22px;
+    }
+
+    .para-quem .cartao p {
+      grid-column: 1 / -1;
+      align-self: start;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+
+<body class="capitulo-abertura">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">ABERTURA</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
+    </header>
+
+    <div class="pagina-conteudo">
+      <h1 class="pagina-titulo">Apresentação</h1>
+
+      <div class="coluna apresentacao">
+        <div class="coluna">
+          <p class="pagina-introducao">A Ouvidoria da ANTAQ apresenta este guia como o <b>roteiro </b> para revisar,
+            atualizar, incluir e excluir serviços da Carta de Serviços ao Usuário, publicada no portal gov.br.</p>
+          <p class="pagina-introducao">O guia define <b>quem faz o quê, em que ordem, com quais instrumentos e em quais
+              prazos</b>. Cada etapa se apoia na Lei nº 13.460/2017, na Lei das Agências Reguladoras (Lei nº
+            13.848/2019), nas normas da CGU e nos atos internos da ANTAQ.</p>
+        </div>
+
+        <div class="coluna">
+          <h2 class="subtitulo">Para quem é</h2>
+          <div class="grade grade-3 para-quem">
+            <section class="cartao tom-roxo">
+              <span class="icone"><i class="fas fa-headset" aria-hidden="true"></i></span>
+              <h3>Ouvidoria</h3>
+              <p>Acompanha as implementações, atua em coordernação com as demais unidades da ANTAQ e revisa manualmente
+                as informações. Comunica ao Conselho e ao DG (Diretor-Geral) sobre a necessidade da revisão da Carta de
+                Serviços com fundamentos na legislação vigente. </p>
+            </section>
+            <section class="cartao tom-azul">
+              <span class="icone"><i class="fas fa-building" aria-hidden="true"></i></span>
+              <h3>Unidades (SAF | SOG | SFC | SRG)</h3>
+              <p>Elaboram os serviços que serão oferecidos, atualizam a carta de serviços, monitoram e avaliam para
+                implementar melhorias.</p>
+            </section>
+            <section class="cartao tom-verde">
+              <span class="icone"><i class="fas fa-pen-to-square" aria-hidden="true"></i></span>
+              <h3>Editores</h3>
+              <p>Editam no gov.br os serviços validados pela Ouvidoria e as Unidades, podendo excluir, atualizar e/ou
+                inserir novos serviços.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="pagina-rodape">
+      <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
+      <span class="pagina-numero">4</span>
+    </footer>
+  </main>
+
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>
