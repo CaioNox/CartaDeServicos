@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apresentação e objetivo — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <link rel="stylesheet" href="paginas.css">
+  <style>
+    .duas { grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: start; }
+    .objetivos { list-style: none; margin: 0; padding: 0; }
+    .objetivos li {
+      display: flex; align-items: center; gap: 22px;
+      padding: 14px 0; border-bottom: 1.5px solid var(--pdf-linha);
+      font-size: 21px; line-height: 1.45; color: var(--pdf-escuro);
+    }
+    .objetivos b {
+      width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--pdf-amarelo); color: var(--pdf-marinho);
+      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 19px;
+    }
+  </style>
+</head>
+
+<body class="cap-ab">
+  <main class="slide pg">
+    <header class="faixa">
+      <p class="faixa-rot">ABERTURA</p>
+      <img class="faixa-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
+    </header>
+
+    <div class="pg-corpo">
+      <h1 class="pg-titulo">Apresentação e objetivo</h1>
+
+      <div class="grade duas">
+        <div class="pilha">
+          <p class="pg-intro">A Ouvidoria da ANTAQ apresenta este guia como o <b>roteiro único</b> para revisar, atualizar, incluir e excluir serviços da Carta de Serviços ao Usuário, publicada no portal gov.br.</p>
+          <p class="pg-intro">O guia define <b>quem faz o quê, em que ordem, com quais instrumentos e em quais prazos</b>. Cada etapa se apoia na Lei nº 13.460/2017, na Lei das Agências Reguladoras (Lei nº 13.848/2019), nas normas da CGU e nos atos internos da ANTAQ.</p>
+          <h2 class="sec">Para quem é</h2>
+          <div class="grade col3">
+            <section class="card c-roxo">
+              <span class="ic"><i class="fas fa-headset" aria-hidden="true"></i></span>
+              <h3>Ouvidoria (SAC e STAI)</h3>
+              <p>Coordena o ciclo, analisa as propostas e acompanha a publicação.</p>
+            </section>
+            <section class="card c-azul">
+              <span class="ic"><i class="fas fa-building" aria-hidden="true"></i></span>
+              <h3>Unidades (UORGs)</h3>
+              <p>Revisam os serviços que prestam e respondem pelo conteúdo.</p>
+            </section>
+            <section class="card c-verde">
+              <span class="ic"><i class="fas fa-pen-to-square" aria-hidden="true"></i></span>
+              <h3>Editores do gov.br</h3>
+              <p>Publicam no portal as alterações já validadas.</p>
+            </section>
+          </div>
+        </div>
+
+        <div class="pilha">
+          <h2 class="sec">Objetivo</h2>
+          <p class="pg-intro">Padronizar o ciclo de revisão para que as informações publicadas sejam <b>precisas, completas, acessíveis e atualizadas</b>.</p>
+          <ol class="objetivos">
+            <li><b>1</b><span>Definir as responsabilidades da Ouvidoria, das UORGs, dos pontos focais e dos editores do gov.br.</span></li>
+            <li><b>2</b><span>Fixar etapas, instrumentos e prazos para atualizar, incluir, excluir ou confirmar serviços.</span></li>
+            <li><b>3</b><span>Assegurar a revisão anual exigida pela Portaria Normativa CGU nº 116/2024 (art. 65, § 2º).</span></li>
+            <li><b>4</b><span>Usar os dados do Fala.BR, do Simplifique!, do Conselho de Usuários e do Painel gov.br na revisão.</span></li>
+            <li><b>5</b><span>Gerar as informações sobre a Carta para o relatório anual de gestão da Ouvidoria (art. 60, § 1º, VII).</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <footer class="pg-rodape">
+      <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
+      <span class="pg-num">4</span>
+    </footer>
+  </main>
+
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>

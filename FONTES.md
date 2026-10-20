@@ -2,6 +2,8 @@
 
 Todo dado do guia tem de vir de uma das fontes abaixo (regra 6 do `AGENTS.md`).
 Conferência completa feita em **19/10/2026**, no texto oficial de cada norma.
+A versão 2.0 (`guia-carta-servicos/`) foi conferida em **20/10/2026**, com o texto literal de cada
+dispositivo em `VERIFICACAO-NORMAS.md`, seção 4.
 
 ## Normas
 
@@ -16,10 +18,17 @@ Conferência completa feita em **19/10/2026**, no texto oficial de cada norma.
 | Lei nº 15.263/2025 | https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15263.htm | art. 5º (técnicas de linguagem simples, incisos citados nas telas) |
 | Lei nº 10.048/2000 (redação da Lei nº 14.626/2023) | https://www.planalto.gov.br/ccivil_03/leis/l10048.htm | art. 1º (grupos com atendimento prioritário) |
 | Decreto nº 8.539/2015 | https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/decreto/d8539.htm | art. 4º (processo administrativo eletrônico: "onde registrar" = SEI) |
+| Constituição Federal | https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm | art. 37, § 3º, I (participação do usuário; avaliação periódica dos serviços) |
+| Lei nº 13.848/2019 (agências reguladoras) | https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13848.htm | v2.0: art. 22, § 1º, I (ouvidor zela pela qualidade dos serviços); §§ 4º e 6º (caminho do relatório do ouvidor) |
+| Lei nº 10.233/2001 | https://www.planalto.gov.br/ccivil_03/leis/leis_2001/l10233.htm | v2.0: art. 21 (institui a ANTAQ); art. 52 (Ouvidoria na estrutura) |
+| Decreto nº 12.198/2024 | https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/decreto/d12198.htm | ementa (Estratégia Federal de Governo Digital 2024–2027) |
+| Portaria nº 235/2019-DG/ANTAQ | https://www.gov.br/antaq/pt-br/canais_atendimento/ouvidoria/Portarian235.pdf | v2.0: art. 1º (Ouvidoria como canal único); considerando sobre o art. 37 do Regimento Interno |
+| Portaria nº 3/2025/OUV/ANTAQ | https://www.gov.br/antaq/pt-br/canais_atendimento/ouvidoria/SEI_ANTAQ2600431Portaria.pdf | v2.0: art. 3º (CAC/CTA, hoje SAC/STAI); art. 4º, V e VI; art. 5º, III; art. 14, I (30 dias); art. 21, caput e II (2 dias úteis; 20 dias corridos); arts. 38 e 39 (Conselho de Usuários) |
 
 **Não há em norma:** mês para cada etapa do ciclo, prazo de "30 dias" para atualizar o
 Portal ou responder à consulta anual, nem metas numéricas de avaliação ou satisfação.
-Esses dados estavam na primeira versão e foram retirados.
+Esses dados estavam na primeira versão e foram retirados. Voltaram na versão 2.0 e foram
+retirados de novo em 20/10/2026.
 
 ## Documentos publicados
 

@@ -27,30 +27,36 @@ const erros = [];
 const avisos = [];
 const rel = (p) => path.relative(RAIZ, p).split(path.sep).join('/');
 
-/* ---------- 1. manifesto ---------- */
-const ctx = { window: {}, console, fetch: () => Promise.resolve({ ok: true }) };
-vm.createContext(ctx);
-vm.runInContext(fs.readFileSync(path.join(GUIA, 'deck.js'), 'utf8'), ctx, { filename: 'deck.js' });
-const R = ctx.window.RELATORIO;
-if (!R || !Array.isArray(R.blocos)) {
-  erros.push('guia/deck.js: window.RELATORIO.blocos não encontrado');
-} else {
-  const lista = R.paraApresentacao().map((s) => s.file).concat(R.paraRelatorio());
+/* ---------- 1. manifesto (um por pasta de guia) ---------- */
+let telasNoManifesto = 0;
+for (const pasta of ['guia', 'guia-carta-servicos']) {
+  const GUIA = path.join(RAIZ, pasta);
+  if (!fs.existsSync(path.join(GUIA, 'deck.js'))) continue;
+  const ctx = { window: {}, console, fetch: () => Promise.resolve({ ok: true }) };
+  vm.createContext(ctx);
+  vm.runInContext(fs.readFileSync(path.join(GUIA, 'deck.js'), 'utf8'), ctx, { filename: `${pasta}/deck.js` });
+  const M = ctx.window.RELATORIO;
+  if (!M || !Array.isArray(M.blocos)) {
+    erros.push(`${pasta}/deck.js: window.RELATORIO.blocos não encontrado`);
+    continue;
+  }
+  const lista = M.paraApresentacao().map((s) => s.file).concat(M.paraRelatorio());
   const vistos = new Set();
-  R.paraApresentacao().forEach((s) => {
-    if (vistos.has(s.file)) erros.push(`deck.js: tela duplicada na apresentação: ${s.file}`);
+  M.paraApresentacao().forEach((s) => {
+    if (vistos.has(s.file)) erros.push(`${pasta}/deck.js: tela duplicada na apresentação: ${s.file}`);
     vistos.add(s.file);
   });
+  telasNoManifesto += vistos.size;
   new Set(lista).forEach((f) => {
-    if (!fs.existsSync(path.join(GUIA, f))) erros.push(`deck.js: arquivo não existe: guia/${f}`);
+    if (!fs.existsSync(path.join(GUIA, f))) erros.push(`${pasta}/deck.js: arquivo não existe: ${pasta}/${f}`);
   });
   const telas = fs.readdirSync(GUIA).filter((f) => /^(slide|capa)-.*\.html$/.test(f));
   telas.forEach((f) => {
-    if (!lista.includes(f)) avisos.push(`guia/${f} existe mas não está no deck.js (não aparece na apresentação nem no PDF)`);
+    if (!lista.includes(f)) avisos.push(`${pasta}/${f} existe mas não está no deck.js (não aparece na apresentação nem no PDF)`);
     const html = fs.readFileSync(path.join(GUIA, f), 'utf8');
     const interativa = /etapa-foco|class="tile"/.test(html);
-    if (interativa && !(R.anexos && R.anexos[f])) {
-      erros.push(`guia/${f}: tela interativa sem entrada em "anexos" do deck.js — o PDF perderia o conteúdo escondido`);
+    if (interativa && !(M.anexos && M.anexos[f])) {
+      erros.push(`${pasta}/${f}: tela interativa sem entrada em "anexos" do deck.js — o PDF perderia o conteúdo escondido`);
     }
   });
 }
@@ -109,7 +115,7 @@ arquivos.filter((f) => f.endsWith('.html')).forEach((arq) => {
   }
 
   /* telas do guia: scripts comuns */
-  if (/guia\/(slide|capa)-/.test(nome)) {
+  if (/guia(-carta-servicos)?\/(slide|capa)-/.test(nome)) {
     if (!html.includes('src="a11y.js"')) erros.push(`${nome}: não carrega a11y.js (acessibilidade)`);
     if (!html.includes('src="guia.js"') && !html.includes('slide-nav')) erros.push(`${nome}: sem navegação por teclado (carregue guia.js)`);
     if (html.includes('src="guia.js"') && /addEventListener\(\s*["']keydown[\s\S]{0,200}slide-nav/.test(html)) erros.push(`${nome}: carrega guia.js e tem listener próprio de slide-nav — cada tecla avançaria duas telas`);
@@ -135,7 +141,7 @@ arquivos.filter((f) => /\.(html|css)$/.test(f)).forEach((arq) => {
 });
 
 /* ---------- relatório ---------- */
-const resumo = `Telas no manifesto: ${R ? new Set(R.paraApresentacao().map((s) => s.file)).size : 0} · HTML verificados: ${arquivos.filter((f) => f.endsWith('.html')).length}`;
+const resumo = `Telas nos manifestos: ${telasNoManifesto} · HTML verificados: ${arquivos.filter((f) => f.endsWith('.html')).length}`;
 console.log(resumo);
 avisos.forEach((a) => console.log('AVISO  ' + a));
 erros.forEach((e) => console.log('ERRO   ' + e));

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indicadores e metas — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <link rel="stylesheet" href="paginas.css">
+  <style>
+    .duas { grid-template-columns: 1.45fr 1fr; gap: 44px; align-items: start; }
+    .ind td, .ind th[scope="row"] { font-size: 21px; padding-top: 15px; padding-bottom: 15px; }
+    .ind th:last-child { border-left: 1.5px solid rgba(255, 255, 255, .5); }
+    .ind col.c3, .ind col.c4 { width: 11%; }
+    .melhorias .card { padding: 22px 20px 22px 24px; gap: 8px; }
+    .melhorias .card h3 { font-size: 23px; }
+    .melhorias .card h3 > i { color: var(--pdf-marinho); }
+    .melhorias .card p { font-size: 21px; }
+  </style>
+</head>
+
+<body class="cap-5">
+  <main class="slide pg">
+    <header class="faixa">
+      <p class="faixa-rot">05 · MONITORAMENTO</p>
+      <img class="faixa-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
+    </header>
+
+    <div class="pg-corpo">
+      <div class="pg-cab">
+        <h1 class="pg-titulo">Indicadores e metas</h1>
+        <p class="pg-lead">Poucos indicadores, medidos sem esforço extra. A meta só aparece onde a norma a fixa.</p>
+      </div>
+
+      <div class="grade duas">
+        <table class="tab ind">
+          <colgroup><col style="width:24%"><col><col class="c3"><col class="c4"></colgroup>
+          <thead>
+            <tr><th scope="col">Indicador</th><th scope="col">Como medir</th><th scope="col">Hoje</th><th scope="col">Meta</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Prazo máximo</th><td>Serviços com "Até…" ÷ total</td><td>45%</td><td>100%</td></tr>
+            <tr><th scope="row">Onde reclamar</th><td>Serviços que citam Ouvidoria ou Fala.BR ÷ total</td><td>33%</td><td>100%</td></tr>
+            <tr><th scope="row">Revisão anual</th><td>Serviços alterados ou confirmados ÷ total</td><td>—</td><td>100%</td></tr>
+            <tr><th scope="row">Nomes no padrão</th><td>Sem sigla solta, sem ponto final, grafia única</td><td>—</td><td>Não fixada</td></tr>
+            <tr><th scope="row">Exigência publicada antes</th><td>Requisitos novos publicados antes de exigidos</td><td>—</td><td>Sempre</td></tr>
+            <tr><th scope="row">Outras mudanças</th><td>Dias até atualizar o gov.br</td><td>—</td><td>Não fixada</td></tr>
+            <tr><th scope="row">Satisfação</th><td>Nota média no Painel gov.br (1 a 5)</td><td>sem dados</td><td>Não fixada</td></tr>
+            <tr><th scope="row">Informação útil</th><td>"Sim" em "As informações foram úteis?"</td><td>a medir</td><td>Não fixada</td></tr>
+          </tbody>
+        </table>
+
+        <div class="pilha">
+          <h2 class="sec">De onde vêm as melhorias</h2>
+          <div class="grade col2 melhorias">
+            <section class="card c-laranja">
+              <h3><i class="fas fa-comment-dots" aria-hidden="true"></i>Fala.BR</h3>
+              <p>Reclamações mostram o que falta na Carta.</p>
+            </section>
+            <section class="card c-laranja">
+              <h3><i class="fas fa-scissors" aria-hidden="true"></i>Simplifique!</h3>
+              <p>Pedidos de desburocratização.</p>
+            </section>
+            <section class="card c-laranja">
+              <h3><i class="fas fa-circle-info" aria-hidden="true"></i>Acesso à informação</h3>
+              <p>Perguntas que a página não responde.</p>
+            </section>
+            <section class="card c-laranja">
+              <h3><i class="fas fa-people-group" aria-hidden="true"></i>Conselho de Usuários</h3>
+              <p>Testa a clareza do texto.</p>
+            </section>
+            <section class="card c-laranja">
+              <h3><i class="fas fa-star" aria-hidden="true"></i>Painel gov.br</h3>
+              <p>Nota e utilidade de cada página.</p>
+            </section>
+            <section class="card c-laranja">
+              <h3><i class="fas fa-phone" aria-hidden="true"></i>Atendimento</h3>
+              <p>Dúvidas frequentes viram texto claro.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <p class="nota">Metas em norma: Lei 13.460, art. 7º, § 2º, IV e VI · Portaria CGU 116/2024, art. 65, § 2º · Decreto 9.094, art. 18-A, § 2º. As demais podem ser definidas no plano de ação. Melhorias: Lei 13.460, arts. 14, II, e 23 · Portaria CGU 116/2024, art. 56 (ouvidoria ativa).</p>
+    </div>
+
+    <footer class="pg-rodape">
+      <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
+      <span class="pg-num">31</span>
+    </footer>
+  </main>
+
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>
