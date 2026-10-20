@@ -98,6 +98,16 @@
       text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     }
 
+    /* os cartões dos guias, lado a lado (empilham no celular) */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+    }
+    .card:nth-child(2) { animation-delay: .08s; }
+
     /* o cartão do guia: compacto, ícone em cima do texto */
     .card {
       display: flex;
@@ -283,6 +293,7 @@
       <p>Guia prático de revisão e atualização</p>
     </div>
 
+    <div class="cards">
     <a class="card" href="guia/index.html" target="_blank" rel="noopener noreferrer">
       <div class="card-icon">
         <i class="fa-solid fa-book-open" aria-hidden="true"></i>
@@ -294,6 +305,19 @@
             class="sr-only"> (abre em nova aba)</span></span>
       </div>
     </a>
+
+    <a class="card" href="guia-carta-servicos/index.html" target="_blank" rel="noopener noreferrer">
+      <div class="card-icon">
+        <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+      </div>
+      <div class="card-content">
+        <h2>Guia Prático · versão 2.0</h2>
+        <p>37 telas em 6 capítulos, com as 11 etapas da CGU e as normas conferidas no texto oficial.</p>
+        <span class="card-link">Abrir a versão 2.0 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i><span
+            class="sr-only"> (abre em nova aba)</span></span>
+      </div>
+    </a>
+    </div>
   </main>
 
   <div class="footer">
