@@ -1,15 +1,18 @@
-/* deck.js — MANIFESTO ÚNICO do Guia Prático da Carta de Serviços, versão 2.0
- * (outubro de 2026). Mesmo formato dos relatórios da Ouvidoria.
- *
- * Fonte única: Guia-Carta-de-Servicos-ANTAQ.pdf (36 páginas), mais a página 6
- * (as 11 etapas do Guia da CGU), incluída em 20/10/2026. Uma tela por página,
- * na mesma ordem: slide-NN.html = página NN.
- *
- *   - index.html      → apresentação navegável  (paraApresentacao)
- *   - relatorio.html  → versão A4 / PDF + PPTX  (paraRelatorio)
- *
- * Um item de `files` pode ser 'arquivo.html' (entra nas duas saídas) ou
- * { file, apresentacao: false } / { file, relatorio: false }. */
+/* =====================================================================
+   deck.js — manifesto do Guia Prático da Carta de Serviços, versão 2.0.
+
+   Define a ordem das telas e os capítulos. É a única lista de telas do
+   projeto: o visualizador (index.html), a versão A4 (relatorio.html) e a
+   verificação (scripts/validar.mjs) leem daqui.
+
+   Convenção: slide-NN.html é a página NN do guia. Para incluir uma tela,
+   crie o arquivo e acrescente o nome em `files` do capítulo certo.
+
+   Um item de `files` pode ser:
+     'slide-NN.html'                              entra nas duas saídas
+     { file: 'slide-NN.html', relatorio: false }  só na apresentação
+     { file: 'slide-NN.html', apresentacao: false } só na versão A4
+   ===================================================================== */
 
 window.RELATORIO = {
   meta: {
@@ -21,42 +24,45 @@ window.RELATORIO = {
   blocos: [
     {
       block: 'Abertura', short: 'Abertura', tint: 0.35,
-      files: ['slide-01.html', 'slide-02.html', 'slide-03.html', 'slide-04.html'],
+      files: ['slide-01.html', 'slide-02.html', 'slide-03.html', 'slide-04.html', 'slide-05.html'],
     },
     {
       block: 'Antes de começar', short: 'Antes de começar', tint: 0.4,
-      files: ['slide-05.html', 'slide-06.html', 'slide-07.html'],
+      files: ['slide-06.html'],
     },
     {
       block: '01 · Entendendo a Carta', short: 'Entendendo a Carta', tint: 1,
-      files: ['slide-08.html', 'slide-09.html', 'slide-10.html', 'slide-11.html', 'slide-12.html'],
+      files: ['slide-07.html', 'slide-08.html', 'slide-09.html', 'slide-10.html', 'slide-11.html'],
     },
     {
       block: '02 · Papéis e responsabilidades', short: 'Papéis', tint: 0.85,
-      files: ['slide-13.html', 'slide-14.html', 'slide-15.html', 'slide-16.html', 'slide-17.html'],
+      files: ['slide-12.html', 'slide-13.html', 'slide-14.html', 'slide-15.html', 'slide-16.html'],
     },
     {
       block: '03 · Passo a passo', short: 'Passo a passo', tint: 0.7,
-      files: ['slide-18.html', 'slide-19.html', 'slide-20.html', 'slide-21.html', 'slide-22.html',
-        'slide-23.html', 'slide-24.html', 'slide-25.html'],
+      files: ['slide-17.html', 'slide-18.html', 'slide-19.html', 'slide-20.html', 'slide-21.html',
+        'slide-22.html', 'slide-23.html', 'slide-24.html'],
     },
     {
       block: '04 · Qualidade da informação', short: 'Qualidade', tint: 0.55,
-      files: ['slide-26.html', 'slide-27.html', 'slide-28.html'],
+      files: ['slide-25.html', 'slide-26.html', 'slide-27.html'],
     },
     {
       block: '05 · Monitoramento', short: 'Monitoramento', tint: 0.45,
-      files: ['slide-29.html', 'slide-30.html', 'slide-31.html', 'slide-32.html'],
+      files: ['slide-28.html', 'slide-29.html', 'slide-30.html', 'slide-31.html'],
     },
     {
       block: '06 · Apêndice', short: 'Apêndice', tint: 0.3,
-      files: ['slide-33.html', 'slide-34.html', 'slide-35.html', 'slide-36.html', 'slide-37.html'],
+      files: ['slide-32.html', 'slide-33.html', 'slide-34.html', 'slide-35.html', 'slide-36.html'],
     },
   ],
 
-  /* nenhuma tela esconde conteúdo: todo o texto da página está visível */
+  /* Telas com conteúdo escondido (abas, cartões que abrem) precisam de uma
+     entrada aqui para o conteúdo sair no PDF. Nenhuma tela da v2.0 esconde
+     conteúdo. */
   anexos: {},
 
+  /* ajustes de captura por tela na exportação para PPTX (nenhum necessário) */
   capturaPptx: {},
 };
 

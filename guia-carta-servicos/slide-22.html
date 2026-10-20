@@ -4,68 +4,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendário do ciclo anual — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Ficha padrão do serviço — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
-  <link rel="stylesheet" href="paginas.css">
   <style>
-    .meses { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
-    .meses.fases { grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
-    .mes { padding: 18px 20px; min-height: 128px; border-radius: 14px; background: var(--c); color: #fff; }
-    .mes b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 28px; margin-bottom: 6px; }
-    .mes span { display: block; font-size: 19px; line-height: 1.35; }
+    .ficha col.col-1 { width: 20%; }
+    .ficha col.col-2 { width: 54%; }
+    .ficha td, .ficha th[scope="row"] { font-size: 21px; padding-top: 11px; padding-bottom: 11px; }
+    .ficha td.referencia { font-size: 18px; }
   </style>
 </head>
 
-<body class="cap-3">
-  <main class="slide pg">
-    <header class="faixa">
-      <p class="faixa-rot">03 · PASSO A PASSO</p>
-      <img class="faixa-logo" src="Imagens/logo-antaq-azul.png" alt="ANTAQ">
+<body class="capitulo-3">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">03 · PASSO A PASSO</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-azul.png" alt="ANTAQ">
     </header>
 
-    <div class="pg-corpo">
-      <div class="pg-cab">
-        <h1 class="pg-titulo">Calendário do ciclo anual</h1>
-        <p class="pg-lead">A norma fixa a revisão anual e a data do relatório de gestão. Os meses de cada etapa saem do plano de ação (etapa 4).</p>
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Ficha padrão do serviço</h1>
+        <p class="pagina-resumo">Preencha antes de ir ao gov.br. A Ouvidoria confere cada regra.</p>
       </div>
 
-
-      <ol class="meses fases">
-        <li class="mes c-azul"><b>Preparar</b><span>Etapas 1 a 4: diagnóstico, alta gestão, forma de atuação e plano de ação</span></li>
-        <li class="mes c-verde"><b>Construir</b><span>Etapas 5 a 7: identificar os serviços, levantar as informações e validar</span></li>
-        <li class="mes c-roxo"><b>Publicar</b><span>Etapas 8 a 10: gov.br, site da ANTAQ e divulgação</span></li>
-        <li class="mes c-laranja"><b>Manter</b><span>Etapa 11: atualização contínua e revisão anual</span></li>
-      </ol>
-
-      <div class="grade col3">
-        <section class="card c-amarelo">
-          <span class="ic"><i class="fas fa-rotate" aria-hidden="true"></i></span>
-          <h2>Uma vez por ano</h2>
-          <p>Revisão anual, com consulta da Ouvidoria às unidades gestoras.</p>
-          <span class="cita">Portaria CGU 116, art. 65, § 2º</span>
-        </section>
-        <section class="card c-amarelo">
-          <span class="ic"><i class="fas fa-file-circle-check" aria-hidden="true"></i></span>
-          <h2>"Sem alteração"</h2>
-          <p>Também precisa ser informado.</p>
-        </section>
-        <section class="card c-amarelo">
-          <span class="ic"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
-          <h2>1º de abril</h2>
-          <p>Relatório de gestão traz a atualização da Carta.</p>
-          <span class="cita">Portaria CGU 116, art. 60, caput e § 1º, VII</span>
-        </section>
-      </div>
+      <table class="tabela ficha">
+        <colgroup><col class="col-1"><col class="col-2"><col></colgroup>
+        <thead>
+          <tr><th scope="col">Campo</th><th scope="col">Regra</th><th scope="col">Base</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Nome</th><td>Verbo no infinitivo. Sem sigla solta, sem ponto final. "ANTAQ" sempre igual.</td><td class="referencia">Lei 15.263/2025, art. 5º, VIII · Guia de Edição do gov.br</td></tr>
+          <tr><th scope="row">O que é?</th><td>Até três frases: para que serve e o que o usuário recebe.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, I</td></tr>
+          <tr><th scope="row">Quem pode usar</th><td>Público e pré-requisitos.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, II</td></tr>
+          <tr><th scope="row">Etapas</th><td>Uma ação por etapa, começando por verbo.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, III</td></tr>
+          <tr><th scope="row">Documentos</th><td>Lista completa. O que não estiver aqui não pode ser exigido.</td><td class="referencia">Decreto 9.094, art. 18-A</td></tr>
+          <tr><th scope="row">Custos</th><td>Valor e forma de pagamento, ou "é gratuito".</td><td class="referencia">Lei 13.460, art. 6º, VI, "e"</td></tr>
+          <tr><th scope="row">Canais</th><td>Link HTTPS testado, e-mail ou endereço.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, V</td></tr>
+          <tr><th scope="row">Prazo</th><td>"Até N dias úteis/corridos". Média só como extra.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, IV</td></tr>
+          <tr><th scope="row">Mais informações</th><td>Sempre indicar Ouvidoria e Fala.BR.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, VI</td></tr>
+          <tr><th scope="row">Legislação</th><td>Normas com link oficial.</td><td class="referencia">Guia CGU, item 3.6</td></tr>
+          <tr><th scope="row">Compromissos</th><td>Prioridades, acompanhamento, sistema fora do ar.</td><td class="referencia">Lei 13.460, art. 7º, § 3º</td></tr>
+        </tbody>
+      </table>
     </div>
 
-    <footer class="pg-rodape">
+    <footer class="pagina-rodape">
       <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
-      <span class="pg-num">22</span>
+      <span class="pagina-numero">22</span>
     </footer>
   </main>
 

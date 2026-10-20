@@ -1,8 +1,16 @@
+/* =====================================================================
+   a11y.js — apoio a leitores de tela e atalho de teclado.
 
+   Carregado pelas telas e pelos visualizadores (index.html e relatorio.html).
+
+   A11y.announce(texto)  lê o texto em voz alta pelo leitor de tela, sem
+                         mover o foco (região aria-live "polite").
+   Ctrl+M (ou Cmd+M)     dentro do visualizador, volta ao menu inicial.
+   ===================================================================== */
 (function (global) {
   'use strict';
 
-  function getLiveRegion() {
+  function regiaoDeAnuncio() {
     var el = document.getElementById('a11yLiveRegion');
     if (!el) {
       el = document.createElement('div');
@@ -15,71 +23,23 @@
     return el;
   }
 
-
-  function announce(message) {
-    var el = getLiveRegion();
+  function announce(mensagem) {
+    var el = regiaoDeAnuncio();
+    /* esvaziar e preencher de novo faz o leitor repetir a mesma frase */
     el.textContent = '';
-    window.setTimeout(function () {
-      el.textContent = message;
-    }, 50);
+    global.setTimeout(function () { el.textContent = mensagem; }, 50);
   }
 
+  global.A11y = { announce: announce };
 
-  function renderChartFallbackTable(anchorEl, caption, columns, rows) {
-    if (!anchorEl || !anchorEl.parentNode) return;
-    var existing = anchorEl.nextElementSibling;
-    if (existing && existing.classList && existing.classList.contains('a11y-chart-table')) {
-      existing.remove();
-    }
-    var table = document.createElement('table');
-    table.className = 'sr-only a11y-chart-table';
-    if (caption) {
-      var cap = document.createElement('caption');
-      cap.textContent = caption;
-      table.appendChild(cap);
-    }
-    var thead = document.createElement('thead');
-    var headRow = document.createElement('tr');
-    columns.forEach(function (colLabel) {
-      var th = document.createElement('th');
-      th.setAttribute('scope', 'col');
-      th.textContent = colLabel;
-      headRow.appendChild(th);
+  /* A tela roda dentro de um iframe e recebe o teclado; sem isto, o atalho
+     só funcionaria com o foco fora da tela. */
+  if (global.parent !== global) {
+    document.addEventListener('keydown', function (e) {
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'm' || e.key === 'M')) {
+        e.preventDefault();
+        global.parent.postMessage({ type: 'go-menu' }, '*');
+      }
     });
-    thead.appendChild(headRow);
-    table.appendChild(thead);
-
-    var tbody = document.createElement('tbody');
-    rows.forEach(function (row) {
-      var tr = document.createElement('tr');
-      row.forEach(function (cell, i) {
-        var cellEl = i === 0 ? document.createElement('th') : document.createElement('td');
-        if (i === 0) cellEl.setAttribute('scope', 'row');
-        cellEl.textContent = cell;
-        tr.appendChild(cellEl);
-      });
-      tbody.appendChild(tr);
-    });
-    table.appendChild(tbody);
-
-    anchorEl.parentNode.insertBefore(table, anchorEl.nextSibling);
   }
-
-  global.A11y = {
-    announce: announce,
-    renderChartFallbackTable: renderChartFallbackTable
-  };
 })(window);
-
-/* ---- Ctrl+M: pede ao index para voltar ao menu de relatorios ----
-   O slide roda dentro de um iframe e captura o teclado; sem isto o
-   atalho so funcionaria quando o foco estivesse fora do slide. */
-(function () {
-  if (window.parent === window) return;
-  document.addEventListener('keydown', function (e) {
-    if ((e.ctrlKey || e.metaKey) && (e.key === 'm' || e.key === 'M')) {
-      e.preventDefault();
-      window.parent.postMessage({ type: 'go-menu' }, '*');
-    }
-  });
-})();

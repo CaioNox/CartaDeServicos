@@ -4,59 +4,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ficha padrão do serviço — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Formulário: as quatro respostas — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
-  <link rel="stylesheet" href="paginas.css">
   <style>
-    .ficha col.c1 { width: 20%; }
-    .ficha col.c2 { width: 54%; }
-    .ficha td, .ficha th[scope="row"] { font-size: 21px; padding-top: 11px; padding-bottom: 11px; }
-    .ficha td.ref { font-size: 18px; }
+    .respostas .cartao { padding-top: 20px; padding-bottom: 20px; gap: 8px; }
+    .respostas .cartao p { font-size: 22px; }
+    .pagina-conteudo { gap: 34px; }
+    .comuns { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+    .comuns ul { margin: 0; padding-left: 26px; }
+    .comuns li { font-size: 23px; line-height: 1.55; color: var(--cor-texto-forte); }
+    .campos-e-fluxo { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .fluxo.tom-amarelo { --tom-contraste: var(--cor-marinho); }
+    .fluxo.tom-amarelo i { color: var(--cor-amarelo); }
   </style>
 </head>
 
-<body class="cap-3">
-  <main class="slide pg">
-    <header class="faixa">
-      <p class="faixa-rot">03 · PASSO A PASSO</p>
-      <img class="faixa-logo" src="Imagens/logo-antaq-azul.png" alt="ANTAQ">
+<body class="capitulo-3">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">03 · PASSO A PASSO</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-azul.png" alt="ANTAQ">
     </header>
 
-    <div class="pg-corpo">
-      <div class="pg-cab">
-        <h1 class="pg-titulo">Ficha padrão do serviço</h1>
-        <p class="pg-lead">Preencha antes de ir ao gov.br. A Ouvidoria confere cada regra.</p>
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Formulário: as quatro respostas</h1>
+        <p class="pagina-introducao">Toda proposta da UORG entra por <b>um único formulário eletrônico</b> e é registrada no processo SEI do ciclo. Assim, cada mudança tem autor, data e fundamento. Para cada serviço, a UORG escolhe uma resposta.</p>
       </div>
 
-      <table class="tab ficha">
-        <colgroup><col class="c1"><col class="c2"><col></colgroup>
-        <thead>
-          <tr><th scope="col">Campo</th><th scope="col">Regra</th><th scope="col">Base</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Nome</th><td>Verbo no infinitivo. Sem sigla solta, sem ponto final. "ANTAQ" sempre igual.</td><td class="ref">Lei 15.263/2025, art. 5º, VIII · Guia de Edição do gov.br</td></tr>
-          <tr><th scope="row">O que é?</th><td>Até três frases: para que serve e o que o usuário recebe.</td><td class="ref">Lei 13.460, art. 7º, § 2º, I</td></tr>
-          <tr><th scope="row">Quem pode usar</th><td>Público e pré-requisitos.</td><td class="ref">Lei 13.460, art. 7º, § 2º, II</td></tr>
-          <tr><th scope="row">Etapas</th><td>Uma ação por etapa, começando por verbo.</td><td class="ref">Lei 13.460, art. 7º, § 2º, III</td></tr>
-          <tr><th scope="row">Documentos</th><td>Lista completa. O que não estiver aqui não pode ser exigido.</td><td class="ref">Decreto 9.094, art. 18-A</td></tr>
-          <tr><th scope="row">Custos</th><td>Valor e forma de pagamento, ou "é gratuito".</td><td class="ref">Lei 13.460, art. 6º, VI, "e"</td></tr>
-          <tr><th scope="row">Canais</th><td>Link HTTPS testado, e-mail ou endereço.</td><td class="ref">Lei 13.460, art. 7º, § 2º, V</td></tr>
-          <tr><th scope="row">Prazo</th><td>"Até N dias úteis/corridos". Média só como extra.</td><td class="ref">Lei 13.460, art. 7º, § 2º, IV</td></tr>
-          <tr><th scope="row">Mais informações</th><td>Sempre indicar Ouvidoria e Fala.BR.</td><td class="ref">Lei 13.460, art. 7º, § 2º, VI</td></tr>
-          <tr><th scope="row">Legislação</th><td>Normas com link oficial.</td><td class="ref">Guia CGU, item 3.6</td></tr>
-          <tr><th scope="row">Compromissos</th><td>Prioridades, acompanhamento, sistema fora do ar.</td><td class="ref">Lei 13.460, art. 7º, § 3º</td></tr>
-        </tbody>
-      </table>
+      <div class="grade grade-4 respostas">
+        <section class="cartao tom-azul">
+          <span class="icone"><i class="fas fa-pen" aria-hidden="true"></i></span>
+          <h2>Atualizar</h2>
+          <p>Mudou alguma informação. Indique os tópicos alterados e envie o texto novo: descrição, público, etapas, documentos, canais, custos, prazo e legislação com link.</p>
+        </section>
+        <section class="cartao tom-verde">
+          <span class="icone"><i class="fas fa-plus" aria-hidden="true"></i></span>
+          <h2>Incluir</h2>
+          <p>Serviço novo. Preencha antes a Descrição Padrão do Serviço no SEI. Só segue se tiver as 5 características (pág. 11). Atividade interna não entra.</p>
+        </section>
+        <section class="cartao tom-laranja">
+          <span class="icone"><i class="fas fa-minus" aria-hidden="true"></i></span>
+          <h2>Excluir</h2>
+          <p>Informe o motivo e anexe a norma ou decisão. O serviço fica "privado" no gov.br e pode ser reativado. A Ouvidoria confere antes se há manifestações abertas sobre ele.</p>
+        </section>
+        <section class="cartao tom-marinho">
+          <span class="icone"><i class="fas fa-check" aria-hidden="true"></i></span>
+          <h2>Sem alteração</h2>
+          <p>Declare que as informações continuam corretas. Esse registro comprova a revisão anual exigida pela CGU.</p>
+        </section>
+      </div>
+
+      <div class="campos-e-fluxo">
+        <div class="coluna" style="gap:10px">
+          <h2 class="subtitulo">Campos comuns a todas as respostas</h2>
+          <div class="comuns">
+            <ul>
+              <li>Superintendência e UORG responsáveis</li>
+              <li>Nome do serviço igual ao do gov.br</li>
+              <li>Tipo de resposta</li>
+            </ul>
+            <ul>
+              <li>E-mails do ponto focal e envolvidos</li>
+              <li>Pedido de reunião, se quiser</li>
+              <li>Observações (o registro é nominal)</li>
+            </ul>
+          </div>
+        </div>
+        <ol class="fluxo tom-amarelo" aria-label="Fluxo da proposta">
+          <li><span class="fluxo-passo">Formulário</span><i class="fas fa-arrow-right" aria-hidden="true"></i></li>
+          <li><span class="fluxo-passo">Análise da SAC</span><i class="fas fa-arrow-right" aria-hidden="true"></i></li>
+          <li><span class="fluxo-passo">Validação da UORG</span><i class="fas fa-arrow-right" aria-hidden="true"></i></li>
+          <li><span class="fluxo-passo">Publicação no gov.br</span><i class="fas fa-arrow-right" aria-hidden="true"></i></li>
+          <li><span class="fluxo-passo">Registro no SEI</span></li>
+        </ol>
+      </div>
     </div>
 
-    <footer class="pg-rodape">
+    <footer class="pagina-rodape">
       <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
-      <span class="pg-num">23</span>
+      <span class="pagina-numero">23</span>
     </footer>
   </main>
 

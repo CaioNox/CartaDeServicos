@@ -4,116 +4,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Etapas 7 a 11 — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Calendário do ciclo anual — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
-  <link rel="stylesheet" href="paginas.css">
   <style>
-    .duas { grid-template-columns: 1fr 1fr; gap: 0 56px; align-items: start; }
+    /* as quatro fases do ciclo, lado a lado */
+    .fases-ciclo { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+    .fase-ciclo { padding: 18px 20px; min-height: 128px; border-radius: 14px; background: var(--tom); color: #fff; }
+    .fase-ciclo b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 28px; margin-bottom: 6px; }
+    .fase-ciclo span { display: block; font-size: 19px; line-height: 1.35; }
   </style>
 </head>
 
-<body class="cap-3">
-  <main class="slide pg">
-    <header class="faixa">
-      <p class="faixa-rot">03 · PASSO A PASSO</p>
-      <img class="faixa-logo" src="Imagens/logo-antaq-azul.png" alt="ANTAQ">
+<body class="capitulo-3">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">03 · PASSO A PASSO</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-azul.png" alt="ANTAQ">
     </header>
 
-    <div class="pg-corpo">
-      <div class="pg-cab">
-        <h1 class="pg-titulo">Etapas 7 a 11</h1>
-        <p class="pg-lead">Da validação à revisão do ano seguinte.</p>
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Calendário do ciclo anual</h1>
+        <p class="pagina-resumo">A norma fixa a revisão anual e a data do relatório de gestão. Os meses de cada etapa saem do plano de ação (etapa 4).</p>
       </div>
 
-      <div class="grade duas">
-        <div>
-          <section class="etapa c-verde">
-            <span class="etapa-n">7</span>
-            <div>
-              <h2>Validar</h2>
-              <ul>
-                <li>A Ouvidoria aplica o checklist e devolve ajustes.</li>
-                <li>A unidade confirma o texto final.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="etapa-quem">Unidades e alta gestão</p>
-              <p class="etapa-quando">Texto final confirmado</p>
-            </div>
-          </section>
-          <section class="etapa c-roxo">
-            <span class="etapa-n">8</span>
-            <div>
-              <h2>Cadastrar no gov.br</h2>
-              <ul>
-                <li>Editores publicam o texto validado.</li>
-                <li>Exclusão primeiro como "privado": dá para reativar.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="etapa-quem">Editores gov.br</p>
-              <p class="etapa-quando">Print no SEI</p>
-            </div>
-          </section>
-          <section class="etapa c-roxo">
-            <span class="etapa-n">9</span>
-            <div>
-              <h2>Atualizar o site da ANTAQ</h2>
-              <ul>
-                <li>Link para a página da Agência no gov.br.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="etapa-quem">Comunicação Social</p>
-              <p class="etapa-quando">Link no site</p>
-            </div>
-          </section>
-        </div>
 
-        <div>
-          <section class="etapa c-roxo">
-            <span class="etapa-n">10</span>
-            <div>
-              <h2>Divulgar</h2>
-              <ul>
-                <li>Site, redes, Conselho de Usuários e setor regulado.</li>
-                <li>Atualizar a versão impressa.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="etapa-quem">Ouvidoria e Comunicação</p>
-              <p class="etapa-quando">Versão impressa atualizada</p>
-            </div>
-          </section>
-          <section class="etapa c-laranja">
-            <span class="etapa-n">11</span>
-            <div>
-              <h2>Manter e revisar</h2>
-              <ul>
-                <li>Mudanças entram na hora certa (pág. 25).</li>
-                <li>Consulta anual a todas as unidades.</li>
-                <li>Resultado no relatório de gestão, até 1º de abril.</li>
-              </ul>
-            </div>
-            <div>
-              <p class="etapa-quem">Unidades e Ouvidoria</p>
-              <p class="etapa-quando">Contínuo</p>
-            </div>
-          </section>
-        </div>
+      <ol class="fases-ciclo">
+        <li class="fase-ciclo tom-azul"><b>Preparar</b><span>Etapas 1 a 4: diagnóstico, alta gestão, forma de atuação e plano de ação</span></li>
+        <li class="fase-ciclo tom-verde"><b>Construir</b><span>Etapas 5 a 7: identificar os serviços, levantar as informações e validar</span></li>
+        <li class="fase-ciclo tom-roxo"><b>Publicar</b><span>Etapas 8 a 10: gov.br, site da ANTAQ e divulgação</span></li>
+        <li class="fase-ciclo tom-laranja"><b>Manter</b><span>Etapa 11: atualização contínua e revisão anual</span></li>
+      </ol>
+
+      <div class="grade grade-3">
+        <section class="cartao tom-amarelo">
+          <span class="icone"><i class="fas fa-rotate" aria-hidden="true"></i></span>
+          <h2>Uma vez por ano</h2>
+          <p>Revisão anual, com consulta da Ouvidoria às unidades gestoras.</p>
+          <span class="base-legal">Portaria CGU 116, art. 65, § 2º</span>
+        </section>
+        <section class="cartao tom-amarelo">
+          <span class="icone"><i class="fas fa-file-circle-check" aria-hidden="true"></i></span>
+          <h2>"Sem alteração"</h2>
+          <p>Também precisa ser informado.</p>
+        </section>
+        <section class="cartao tom-amarelo">
+          <span class="icone"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
+          <h2>1º de abril</h2>
+          <p>Relatório de gestão traz a atualização da Carta.</p>
+          <span class="base-legal">Portaria CGU 116, art. 60, caput e § 1º, VII</span>
+        </section>
       </div>
-
-      <p class="nota">Base: Guia Orientativo da CGU, itens 3.7 a 3.11 · Lei 13.460, art. 7º, § 4º · Decreto 9.094, art. 18, II · Portaria CGU 116/2024, arts. 60 e 65.</p>
     </div>
 
-    <footer class="pg-rodape">
+    <footer class="pagina-rodape">
       <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
-      <span class="pg-num">21</span>
+      <span class="pagina-numero">21</span>
     </footer>
   </main>
 

@@ -11,21 +11,20 @@
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
-  <link rel="stylesheet" href="paginas.css">
   <style>
     .capa { justify-content: flex-start; padding: 0 160px; }
-    .capa .circ { background: none; }
-    .circ-azul { width: 900px; height: 900px; right: -120px; top: -470px; background: #0B5A9A !important; opacity: .95; }
-    .circ-verde { width: 640px; height: 640px; right: 380px; top: 300px; background: #0F9D8A !important; opacity: .55; }
-    .circ-amarelo { width: 480px; height: 480px; left: -250px; bottom: -230px; background: #DB9D0A !important; }
+    .capa .circulo { background: none; }
+    .circulo-azul { width: 900px; height: 900px; right: -120px; top: -470px; background: #0B5A9A !important; opacity: .95; }
+    .circulo-verde { width: 640px; height: 640px; right: 380px; top: 300px; background: #0F9D8A !important; opacity: .55; }
+    .circulo-amarelo { width: 480px; height: 480px; left: -250px; bottom: -230px; background: #DB9D0A !important; }
     .capa-logo-topo { position: relative; height: 104px; width: auto; margin-top: 90px; }
-    .capa-kicker { margin: 120px 0 20px; font-weight: 800; font-size: 26px; letter-spacing: .3em; color: var(--pdf-amarelo); position: relative; }
-    .capa-h1 { margin: 0; font-weight: 900; font-size: 96px; line-height: 1.04; color: #fff; position: relative; }
-    .capa-sub { margin: 26px 0 34px; font-family: 'Open Sans', sans-serif; font-size: 34px; color: rgba(255, 255, 255, .92); position: relative; }
+    .capa-chamada { margin: 120px 0 20px; font-weight: 800; font-size: 26px; letter-spacing: .3em; color: var(--cor-amarelo); position: relative; }
+    .capa-titulo-principal { margin: 0; font-weight: 900; font-size: 96px; line-height: 1.04; color: #fff; position: relative; }
+    .capa-subtitulo { margin: 26px 0 34px; font-family: 'Open Sans', sans-serif; font-size: 34px; color: rgba(255, 255, 255, .92); position: relative; }
     .capa-botao {
       align-self: flex-start; position: relative;
-      padding: 18px 44px; border-radius: 999px; background: var(--pdf-amarelo);
-      font-weight: 800; font-size: 30px; color: var(--pdf-marinho);
+      padding: 18px 44px; border-radius: 999px; background: var(--cor-amarelo);
+      font-weight: 800; font-size: 30px; color: var(--cor-marinho);
     }
     .capa-data { position: absolute; left: 160px; bottom: 64px; margin: 0; font-family: 'Open Sans', sans-serif; font-size: 26px; color: rgba(255, 255, 255, .9); }
     .tarja { position: absolute; left: 0; right: 0; bottom: 0; height: 28px; display: flex; }
@@ -33,16 +32,16 @@
   </style>
 </head>
 
-<body class="cap-ab">
+<body class="capitulo-abertura">
   <main class="capa">
-    <div class="circ circ-azul" aria-hidden="true"></div>
-    <div class="circ circ-verde" aria-hidden="true"></div>
-    <div class="circ circ-amarelo" aria-hidden="true"></div>
+    <div class="circulo circulo-azul" aria-hidden="true"></div>
+    <div class="circulo circulo-verde" aria-hidden="true"></div>
+    <div class="circulo circulo-amarelo" aria-hidden="true"></div>
 
     <img class="capa-logo-topo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ — Agência Nacional de Transportes Aquaviários" style="align-self:flex-start">
-    <p class="capa-kicker">OUVIDORIA DA ANTAQ</p>
-    <h1 class="capa-h1">Guia Prático<br>da Carta de<br>Serviços</h1>
-    <p class="capa-sub">Revisão e atualização da Carta de Serviços ao Usuário</p>
+    <p class="capa-chamada">OUVIDORIA DA ANTAQ</p>
+    <h1 class="capa-titulo-principal">Guia Prático<br>da Carta de<br>Serviços</h1>
+    <p class="capa-subtitulo">Revisão e atualização da Carta de Serviços ao Usuário</p>
     <p class="capa-botao">Passo a passo para as unidades</p>
     <p class="capa-data">Brasília · outubro de 2026 · Versão 2.0</p>
 
