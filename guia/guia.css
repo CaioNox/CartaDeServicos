@@ -176,6 +176,8 @@ html, body {
   letter-spacing: .02em;
 }
 .base::before { content: '\00A7'; color: var(--accent); font-weight: 900; }
+.cartao--escuro .base { background: rgba(255, 255, 255, .12); color: #fff; border-color: rgba(255, 255, 255, .28); }
+.cartao--escuro .base::before { color: var(--dourado); }
 
 /* informação ainda não confirmada pela Ouvidoria (mesma ideia do .todo-dado) */
 .a-validar {

@@ -1,0 +1,524 @@
+/* =====================================================================
+   guia.css — estilos das telas do Guia Prático da Carta de Serviços
+   (Ouvidoria da ANTAQ), versão 2.0.
+
+   Cada tela é uma página de 1920×1080 aberta dentro de um iframe pelo
+   visualizador (index.html) ou pela versão A4 (relatorio.html). Como o
+   tamanho é fixo, as medidas estão em px.
+
+   Organização deste arquivo:
+     1. Base e moldura da página
+     2. Temas de capítulo e tons de destaque
+     3. Cabeçalho, conteúdo e rodapé
+     4. Layout (grades e colunas)
+     5. Componentes: cartões, base legal, ícones, destaque, indicadores
+     6. Tabelas
+     7. Capas de capítulo
+     8. Etapas do ciclo e fluxos
+     9. Estados, atalhos e movimento
+
+   As cores vêm de base.css. Estilo usado por uma única tela fica no
+   <style> da própria tela.
+   ===================================================================== */
+
+
+/* ---------- 1. Base e moldura da página ---------- */
+
+/* Elementos sem tamanho de fonte definido herdam deste valor. */
+html { font-size: 38px; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+a { color: var(--brand-secondary); }
+
+/* Tela de conteúdo: cabeçalho, conteúdo e rodapé empilhados. */
+.pagina {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--cor-texto);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+
+/* ---------- 2. Temas de capítulo e tons de destaque ----------
+   A classe no <body> define a cor do capítulo, usada no cabeçalho, no
+   número da página e no cabeçalho das tabelas:
+     .capitulo-abertura  Abertura e "Antes de começar"   marinho
+     .capitulo-1         01 Entendendo a Carta            azul
+     .capitulo-2         02 Papéis                        verde
+     .capitulo-3         03 Passo a passo                 amarelo
+     .capitulo-4         04 Qualidade                     roxo
+     .capitulo-5         05 Monitoramento                 laranja
+     .capitulo-6         06 Apêndice                      marinho      */
+
+body {
+  --capitulo-cor: var(--cor-marinho);
+  --capitulo-texto: #fff;
+  --capitulo-filete: var(--cor-amarelo);
+  --capitulo-fundo: #F1F4F7;
+}
+.capitulo-1 { --capitulo-cor: var(--cor-azul); --capitulo-fundo: #E8F2F9; }
+.capitulo-2 { --capitulo-cor: var(--cor-verde); --capitulo-fundo: #E9F6F4; }
+.capitulo-3 {
+  --capitulo-cor: var(--cor-amarelo);
+  --capitulo-texto: var(--cor-marinho);
+  --capitulo-filete: var(--cor-marinho);
+  --capitulo-fundo: #FEF7E8;
+}
+.capitulo-4 { --capitulo-cor: var(--cor-roxo); --capitulo-fundo: #F3EFF9; }
+.capitulo-5 { --capitulo-cor: var(--cor-laranja); --capitulo-fundo: #FCEFEB; }
+
+/* Tom de um componente, independente do capítulo:
+   --tom (borda e ícone), --tom-fundo e --tom-texto (texto sobre o fundo claro). */
+.tom-azul { --tom: var(--cor-azul); --tom-fundo: #E8F2F9; --tom-texto: #0062A8; }
+.tom-verde { --tom: var(--cor-verde); --tom-fundo: #E9F6F4; --tom-texto: #0B7D6E; }
+.tom-amarelo { --tom: var(--cor-amarelo); --tom-fundo: #FEF7E8; --tom-texto: #7A5300; }
+.tom-roxo { --tom: var(--cor-roxo); --tom-fundo: #F3EFF9; --tom-texto: #6A3FA6; }
+.tom-laranja { --tom: var(--cor-laranja); --tom-fundo: #FCEFEB; --tom-texto: #C4431D; }
+.tom-marinho { --tom: var(--cor-marinho); --tom-fundo: #E8ECF0; --tom-texto: var(--cor-marinho); }
+.tom-sucesso { --tom: var(--cor-sucesso); --tom-fundo: #EBF6F0; --tom-texto: #17804A; }
+.tom-erro { --tom: var(--cor-erro); --tom-fundo: #FBEEEE; --tom-texto: #B83434; }
+
+
+/* ---------- 3. Cabeçalho, conteúdo e rodapé ---------- */
+
+.pagina-cabecalho {
+  flex-shrink: 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 93px;
+  background: var(--capitulo-cor);
+  border-bottom: 8px solid var(--capitulo-filete);
+  position: relative;
+  z-index: 10;
+}
+.pagina-secao {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--capitulo-texto);
+}
+.pagina-logo { height: 48px; width: auto; display: block; }
+
+.pagina-conteudo {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 30px 93px 0;
+  position: relative;
+  z-index: 5;
+  animation: entrar .5s cubic-bezier(.2, .7, .3, 1) both;
+}
+
+/* Título da página e o texto logo abaixo dele. */
+.pagina-topo { display: flex; flex-direction: column; gap: 8px; }
+.pagina-titulo {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 54px;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  color: var(--cor-marinho);
+}
+.pagina-resumo { margin: 0; font-size: 25px; line-height: 1.45; color: #5B6B7F; max-width: 1500px; }
+.pagina-introducao { margin: 0; font-size: 24px; line-height: 1.5; color: var(--cor-texto-forte); }
+.pagina-introducao b, .pagina-introducao strong { color: var(--cor-marinho); font-weight: 700; }
+
+.pagina-rodape {
+  flex-shrink: 0;
+  margin: 0 93px;
+  padding: 12px 0 18px;
+  border-top: 1.5px solid var(--cor-borda);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: #64748B;
+  position: relative;
+  z-index: 10;
+}
+.pagina-numero { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--capitulo-cor); }
+/* o amarelo do capítulo 3 não tem contraste suficiente para texto */
+.capitulo-3 .pagina-numero { color: #C98C00; }
+
+
+/* ---------- 4. Layout ---------- */
+
+.grade { display: grid; gap: 22px; min-height: 0; }
+.grade-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grade-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grade-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grade-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.grade-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+
+/* Coluna de blocos empilhados. */
+.coluna { display: flex; flex-direction: column; gap: 18px; min-width: 0; min-height: 0; }
+
+.subtitulo {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--cor-marinho);
+}
+.subtitulo--tom { color: var(--tom); }
+.subtitulo > i { color: var(--tom); }
+
+.nota { margin: 0; font-size: 17px; line-height: 1.45; color: #64748B; }
+
+
+/* ---------- 5. Componentes ---------- */
+
+/* Base legal em forma de pílula: "Lei 13.460/2017, art. 7º". */
+.base-legal {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 3px 13px;
+  border: 1.5px solid var(--tom, var(--cor-azul));
+  border-radius: 999px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--tom-texto, var(--cor-azul));
+}
+
+/* Cartão com filete colorido à esquerda; a cor vem da classe .tom-*. */
+.cartao {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 24px 26px 24px 30px;
+  background: var(--tom-fundo, #F1F5F9);
+  border-radius: 18px;
+  border-left: 7px solid var(--tom, var(--cor-azul));
+}
+.cartao h2, .cartao h3 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.3;
+  color: var(--cor-marinho);
+}
+.cartao h3 > i { color: var(--cor-marinho); margin-right: 6px; }
+.cartao p { margin: 0; font-size: 22px; line-height: 1.5; color: var(--cor-texto); }
+.cartao p b, .cartao p strong { color: var(--cor-marinho); }
+.cartao .base-legal { margin-top: 4px; }
+
+/* Ícone redondo no topo dos cartões. */
+.icone {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--tom, var(--cor-azul));
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+/* variante com um número no lugar do ícone */
+.icone-numero { font-family: 'Open Sans', sans-serif; font-weight: 400; font-size: 24px; }
+
+.rotulo {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 2px 12px;
+  border: 1.5px solid var(--tom);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--cor-texto-forte);
+}
+
+/* Faixa escura para a mensagem principal da página. */
+.destaque {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 26px 36px;
+  border-radius: 18px;
+  background: var(--cor-marinho);
+  color: #fff;
+}
+.destaque > i { font-size: 40px; color: var(--cor-amarelo); flex-shrink: 0; }
+.destaque p { margin: 0; font-size: 22px; line-height: 1.5; color: #fff; }
+.destaque p b, .destaque p strong { color: var(--cor-amarelo); }
+.destaque .destaque-base { font-size: 17px; color: rgba(255, 255, 255, .85); margin-top: 4px; }
+.destaque .icone-duvida {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--cor-amarelo);
+  color: var(--cor-marinho);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/* Aviso em fundo claro (ex.: "O que a Ouvidoria não faz"). */
+.aviso {
+  padding: 22px 30px;
+  border-radius: 18px;
+  background: var(--tom-fundo);
+  border-left: 7px solid var(--tom);
+}
+.aviso h3 {
+  margin: 0 0 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--cor-marinho);
+}
+.aviso h3 > i { color: var(--tom); margin-right: 8px; }
+.aviso p { margin: 0; font-size: 21px; line-height: 1.5; color: var(--cor-texto); }
+
+/* Número em destaque com legenda. O valor é animado por vida.js. */
+.indicador {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 22px 28px;
+  border-radius: 18px;
+  background: var(--tom);
+  color: #fff;
+}
+.indicador.tom-amarelo { color: var(--cor-marinho); }
+.indicador-valor {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 66px;
+  line-height: 1;
+  color: inherit;
+}
+.indicador-legenda { font-family: 'Open Sans', sans-serif; font-weight: 400; font-size: 21px; line-height: 1.35; color: inherit; }
+
+/* Dado que ainda depende de confirmação da Ouvidoria (regra 6 do AGENTS.md). */
+.a-validar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 15px;
+  border-radius: 999px;
+  border: 1.5px dashed var(--dourado);
+  background: #FFF8E6;
+  color: #7A5300;
+  font-weight: 700;
+  font-size: .9em;
+}
+.a-validar::before { content: '\25CF'; font-size: .7em; color: var(--dourado); }
+
+
+/* ---------- 6. Tabelas ----------
+   O cabeçalho usa a cor do capítulo e as linhas ímpares, o fundo do
+   capítulo. Em <th scope="row"> fica o nome de cada linha. */
+
+.tabela { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 20px; }
+.tabela th {
+  text-align: left;
+  padding: 13px 16px;
+  background: var(--capitulo-cor);
+  color: var(--capitulo-texto);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+}
+.tabela th:first-child { border-top-left-radius: 16px; }
+.tabela th:last-child { border-top-right-radius: 16px; }
+.tabela td {
+  padding: 11px 16px;
+  border-bottom: 1.5px solid var(--cor-borda);
+  vertical-align: top;
+  line-height: 1.4;
+  color: var(--cor-texto-forte);
+}
+.tabela tbody tr:nth-child(odd) td { background: var(--capitulo-fundo); }
+.tabela th[scope="row"] {
+  background: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cor-marinho);
+  padding: 11px 16px;
+  border-bottom: 1.5px solid var(--cor-borda);
+  border-radius: 0;
+  vertical-align: top;
+  line-height: 1.4;
+}
+.tabela tbody tr:nth-child(odd) th[scope="row"] { background: var(--capitulo-fundo); }
+/* coluna com a base legal de cada linha */
+.tabela td.referencia { font-size: 17px; color: #64748B; }
+.tabela th small, .tabela td small { display: block; font-size: 18px; font-weight: 400; color: var(--cor-texto-forte); }
+.tabela--azul { --capitulo-cor: var(--cor-azul); --capitulo-fundo: #EEF5FC; --capitulo-texto: #fff; }
+
+
+/* ---------- 7. Capas de capítulo ---------- */
+
+.capa {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--capitulo-cor);
+  color: var(--capitulo-texto);
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 150px 110px;
+}
+/* círculos decorativos; tamanho e posição ficam no style de cada capa */
+.capa .circulo { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, .13); pointer-events: none; }
+.capa-numero {
+  margin: 0;
+  font-weight: 900;
+  font-size: 250px;
+  line-height: .9;
+  letter-spacing: -.02em;
+  color: rgba(255, 255, 255, .22);
+  position: relative;
+}
+.capitulo-3 .capa-numero { color: rgba(16, 48, 80, .25); }
+.capitulo-6 .capa-numero, .capitulo-abertura .capa-numero { color: rgba(255, 255, 255, .25); }
+.capa-titulo {
+  margin: 20px 0 46px;
+  font-weight: 900;
+  font-size: 92px;
+  line-height: 1.05;
+  color: var(--capitulo-texto);
+  position: relative;
+}
+
+/* Lista de tópicos: cada item abre a tela correspondente. */
+.capa-topicos { list-style: none; margin: 0; padding: 0; width: 900px; position: relative; }
+.capa-topicos li { border-bottom: 1.5px solid rgba(255, 255, 255, .45); }
+.capitulo-3 .capa-topicos li { border-bottom-color: rgba(16, 48, 80, .45); }
+.capa-topicos button {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  padding: 16px 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  color: var(--capitulo-texto);
+  cursor: pointer;
+}
+.capa-topicos button > i { color: var(--cor-amarelo); font-size: 26px; }
+.capitulo-3 .capa-topicos button > i { color: var(--cor-marinho); }
+.capa-topicos button:hover { text-decoration: underline; }
+.capa-topicos button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.capa-logo { position: absolute; left: 150px; bottom: 70px; height: 70px; width: auto; }
+
+
+/* ---------- 8. Etapas do ciclo e fluxos ---------- */
+
+/* Uma linha por etapa: número, o que fazer e quem faz (págs. 20 e 21). */
+.etapa {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 250px;
+  gap: 22px;
+  padding: 26px 0;
+  border-bottom: 1.5px dashed #D5DCE5;
+}
+.etapa-numero {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tom);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+}
+.etapa h2 {
+  margin: 2px 0 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--cor-marinho);
+}
+.etapa ul { margin: 0; padding-left: 24px; }
+.etapa li { font-size: 23px; line-height: 1.45; color: var(--cor-texto-forte); }
+.etapa-responsavel {
+  margin: 4px 0 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.35;
+  color: var(--cor-marinho);
+}
+.etapa-registro { margin: 0; font-size: 20px; line-height: 1.4; color: #64748B; }
+
+/* Fluxo horizontal em pílulas ligadas por setas (págs. 24 e 32).
+   --tom-contraste: cor do texto sobre a pílula (branco por padrão). */
+.fluxo { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin: 0; padding: 0; list-style: none; }
+.fluxo li { display: inline-flex; align-items: center; gap: 14px; }
+.fluxo-passo {
+  padding: 8px 22px;
+  border-radius: 999px;
+  background: var(--tom);
+  color: var(--tom-contraste, #fff);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+.fluxo i { color: var(--tom); font-size: 20px; }
+
+
+/* ---------- 9. Estados, atalhos e movimento ---------- */
+
+/* Elementos com data-ir abrem outra tela (comportamento em guia.js). */
+[data-ir] { cursor: pointer; }
+[data-ir]:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

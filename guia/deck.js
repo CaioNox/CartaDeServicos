@@ -22,8 +22,8 @@ window.RELATORIO = {
   blocos: [
     {
       block: 'Abertura', short: 'Abertura', tint: 0.35,
-      files: ['slide-00.html', 'slide-ficha.html', 'slide-sumario.html', 'slide-apresentacao.html',
-        'slide-certificado.html'],
+      files: ['slide-00.html', 'slide-um-minuto.html', 'slide-ficha.html', 'slide-sumario.html', 'slide-apresentacao.html',
+        'slide-guia-cgu.html', 'slide-certificado.html'],
     },
     {
       block: 'Capítulo 1 · Entendendo a Carta', short: 'Entendendo a Carta', tint: 1,
@@ -67,8 +67,8 @@ window.RELATORIO = {
         nome: txt(el, '.et-tit'),
         tag: txt(el, '.et-fase'),
         desc: Array.from(el.querySelectorAll('.et-lista li')).map((li) => '• ' + li.textContent.trim()).join(' ') +
-          ' — Quem faz: ' + txt(el, '.et-quem') + '. Registro no SEI: ' + txt(el, '.et-prod') +
-          '. Quando: ' + txt(el, '.et-quando') + '. Base: ' + txt(el, '.et-base') + '.'
+          ' — Quem faz: ' + txt(el, '.et-quem') + '. Resultado: ' + txt(el, '.et-prod') +
+          '. Prazo em norma: ' + txt(el, '.et-quando') + '. Base: ' + txt(el, '.et-base') + '.'
       })
     },
     'slide-normas.html': {

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário do ciclo anual — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <style>
+    /* as quatro fases do ciclo, lado a lado */
+    .fases-ciclo { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+    .fase-ciclo { padding: 18px 20px; min-height: 128px; border-radius: 14px; background: var(--tom); color: #fff; }
+    .fase-ciclo b { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 28px; margin-bottom: 6px; }
+    .fase-ciclo span { display: block; font-size: 19px; line-height: 1.35; }
+  </style>
+</head>
+
+<body class="capitulo-3">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">03 · PASSO A PASSO</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-azul.png" alt="ANTAQ">
+    </header>
+
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Calendário do ciclo anual</h1>
+        <p class="pagina-resumo">A norma fixa a revisão anual e a data do relatório de gestão. Os meses de cada etapa saem do plano de ação (etapa 4).</p>
+      </div>
+
+
+      <ol class="fases-ciclo">
+        <li class="fase-ciclo tom-azul"><b>Preparar</b><span>Etapas 1 a 4: diagnóstico, alta gestão, forma de atuação e plano de ação</span></li>
+        <li class="fase-ciclo tom-verde"><b>Construir</b><span>Etapas 5 a 7: identificar os serviços, levantar as informações e validar</span></li>
+        <li class="fase-ciclo tom-roxo"><b>Publicar</b><span>Etapas 8 a 10: gov.br, site da ANTAQ e divulgação</span></li>
+        <li class="fase-ciclo tom-laranja"><b>Manter</b><span>Etapa 11: atualização contínua e revisão anual</span></li>
+      </ol>
+
+      <div class="grade grade-3">
+        <section class="cartao tom-amarelo">
+          <span class="icone"><i class="fas fa-rotate" aria-hidden="true"></i></span>
+          <h2>Uma vez por ano</h2>
+          <p>Revisão anual, com consulta da Ouvidoria às unidades gestoras.</p>
+          <span class="base-legal">Portaria CGU 116, art. 65, § 2º</span>
+        </section>
+        <section class="cartao tom-amarelo">
+          <span class="icone"><i class="fas fa-file-circle-check" aria-hidden="true"></i></span>
+          <h2>"Sem alteração"</h2>
+          <p>Também precisa ser informado.</p>
+        </section>
+        <section class="cartao tom-amarelo">
+          <span class="icone"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
+          <h2>1º de abril</h2>
+          <p>Relatório de gestão traz a atualização da Carta.</p>
+          <span class="base-legal">Portaria CGU 116, art. 60, caput e § 1º, VII</span>
+        </section>
+      </div>
+    </div>
+
+    <footer class="pagina-rodape">
+      <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
+      <span class="pagina-numero">21</span>
+    </footer>
+  </main>
+
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>
