@@ -1,0 +1,375 @@
+/* =====================================================================
+   paginas.css — componentes das telas do Guia Prático da Carta de
+   Serviços, versão 2.0 (outubro de 2026): uma tela por página do PDF.
+
+   Carregado depois de guia.css (moldura .slide, fontes, animação
+   `entrar`). Tela fixa de 1920×1080, por isso as medidas em px.
+
+   Cor de cada capítulo, igual ao PDF (classe no <body>):
+     .cap-ab  Abertura / Antes de começar   #103050
+     .cap-1   01 Entendendo a Carta          #0070C0  azul
+     .cap-2   02 Papéis                      #0F9D8A  verde
+     .cap-3   03 Passo a passo               #F2A900  amarelo
+     .cap-4   04 Qualidade                   #7B4FB8  roxo
+     .cap-5   05 Monitoramento               #E4572E  laranja
+     .cap-6   06 Apêndice                    #103050  azul-escuro
+   ===================================================================== */
+
+:root {
+  --pdf-marinho: #103050;
+  --pdf-azul: #0070C0;
+  --pdf-verde: #0F9D8A;
+  --pdf-amarelo: #F2A900;
+  --pdf-roxo: #7B4FB8;
+  --pdf-laranja: #E4572E;
+  --pdf-ok: #1F9D55;
+  --pdf-erro: #D64545;
+  --pdf-cinza: #94A3B8;
+  --pdf-texto: #475569;
+  --pdf-escuro: #1D2939;
+  --pdf-linha: #E3E8EF;
+}
+
+body { --cap: var(--pdf-marinho); --cap-txt: #fff; --cap-linha: var(--pdf-amarelo); --cap-fundo: #F1F4F7; }
+.cap-1 { --cap: var(--pdf-azul); --cap-fundo: #E8F2F9; }
+.cap-2 { --cap: var(--pdf-verde); --cap-fundo: #E9F6F4; }
+.cap-3 { --cap: var(--pdf-amarelo); --cap-txt: var(--pdf-marinho); --cap-linha: var(--pdf-marinho); --cap-fundo: #FEF7E8; }
+.cap-4 { --cap: var(--pdf-roxo); --cap-fundo: #F3EFF9; }
+.cap-5 { --cap: var(--pdf-laranja); --cap-fundo: #FCEFEB; }
+
+/* ---------- cores de cartão (independentes do capítulo, como no PDF) ---------- */
+.c-azul { --c: var(--pdf-azul); --c-fundo: #E8F2F9; --c-txt: #0062A8; }
+.c-verde { --c: var(--pdf-verde); --c-fundo: #E9F6F4; --c-txt: #0B7D6E; }
+.c-amarelo { --c: var(--pdf-amarelo); --c-fundo: #FEF7E8; --c-txt: #7A5300; }
+.c-roxo { --c: var(--pdf-roxo); --c-fundo: #F3EFF9; --c-txt: #6A3FA6; }
+.c-laranja { --c: var(--pdf-laranja); --c-fundo: #FCEFEB; --c-txt: #C4431D; }
+.c-marinho { --c: var(--pdf-marinho); --c-fundo: #E8ECF0; --c-txt: var(--pdf-marinho); }
+.c-ok { --c: var(--pdf-ok); --c-fundo: #EBF6F0; --c-txt: #17804A; }
+.c-erro { --c: var(--pdf-erro); --c-fundo: #FBEEEE; --c-txt: #B83434; }
+
+/* ---------- moldura da página ---------- */
+.pg { color: var(--pdf-texto); }
+
+.faixa {
+  flex-shrink: 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 93px;
+  background: var(--cap);
+  border-bottom: 8px solid var(--cap-linha);
+  position: relative;
+  z-index: 10;
+}
+.faixa-rot {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--cap-txt);
+}
+.faixa-logo { height: 48px; width: auto; display: block; }
+
+.pg-corpo {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 30px 93px 0;
+  position: relative;
+  z-index: 5;
+  animation: entrar .5s cubic-bezier(.2, .7, .3, 1) both;
+}
+
+.pg-cab { display: flex; flex-direction: column; gap: 8px; }
+.pg-titulo {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 54px;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  color: var(--pdf-marinho);
+}
+.pg-lead { margin: 0; font-size: 25px; line-height: 1.45; color: #5B6B7F; max-width: 1500px; }
+.pg-intro { margin: 0; font-size: 24px; line-height: 1.5; color: var(--pdf-escuro); }
+.pg-intro b, .pg-intro strong { color: var(--pdf-marinho); font-weight: 700; }
+
+.pg-rodape {
+  flex-shrink: 0;
+  margin: 0 93px;
+  padding: 12px 0 18px;
+  border-top: 1.5px solid var(--pdf-linha);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: #64748B;
+  position: relative;
+  z-index: 10;
+}
+.pg-num { font-family: 'Montserrat', sans-serif; font-weight: 800; color: var(--cap); }
+.cap-3 .pg-num { color: #C98C00; }
+
+/* ---------- utilidades de grade ---------- */
+.grade { display: grid; gap: 22px; min-height: 0; }
+.col2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.col3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.col4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.col5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.col6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.pilha { display: flex; flex-direction: column; gap: 18px; min-width: 0; min-height: 0; }
+
+.sec {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: var(--pdf-marinho);
+}
+.sec--cor { color: var(--c); }
+.sec > i { color: var(--c); }
+
+.nota { margin: 0; font-size: 17px; line-height: 1.45; color: #64748B; }
+
+/* ---------- citação legal (pílula) ---------- */
+.cita {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 3px 13px;
+  border: 1.5px solid var(--c, var(--pdf-azul));
+  border-radius: 999px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--c-txt, var(--pdf-azul));
+}
+.cita--escura { --c: var(--pdf-marinho); --c-txt: var(--pdf-marinho); }
+
+/* ---------- cartão com borda colorida à esquerda ---------- */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 24px 26px 24px 30px;
+  background: var(--c-fundo, #F1F5F9);
+  border-radius: 18px;
+  border-left: 7px solid var(--c, var(--pdf-azul));
+}
+.card h2, .card h3 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.3;
+  color: var(--pdf-marinho);
+}
+.card h3 > i { color: var(--pdf-marinho); margin-right: 6px; }
+.card p { margin: 0; font-size: 22px; line-height: 1.5; color: var(--pdf-texto); }
+.card p b, .card p strong { color: var(--pdf-marinho); }
+.card .cita { margin-top: 4px; }
+.card--sem-borda { border-left: 0; }
+
+.ic {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--c, var(--pdf-azul));
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+.num-ic { font-family: 'Open Sans', sans-serif; font-weight: 400; font-size: 24px; }
+
+.rotulo {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 2px 12px;
+  border: 1.5px solid var(--c);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--pdf-escuro);
+}
+
+/* ---------- destaque escuro ---------- */
+.escuro {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 26px 36px;
+  border-radius: 18px;
+  background: var(--pdf-marinho);
+  color: #fff;
+}
+.escuro > i { font-size: 40px; color: var(--pdf-amarelo); flex-shrink: 0; }
+.escuro p { margin: 0; font-size: 22px; line-height: 1.5; color: #fff; }
+.escuro p b, .escuro p strong { color: var(--pdf-amarelo); }
+.escuro .escuro-base { font-size: 17px; color: rgba(255, 255, 255, .85); margin-top: 4px; }
+.escuro .ic-duvida {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--pdf-amarelo); color: var(--pdf-marinho);
+  display: inline-flex; align-items: center; justify-content: center; font-size: 24px;
+}
+
+/* aviso claro (ex.: "O que a Ouvidoria não faz") */
+.aviso {
+  padding: 22px 30px;
+  border-radius: 18px;
+  background: var(--c-fundo);
+  border-left: 7px solid var(--c);
+}
+.aviso h3 { margin: 0 0 6px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 25px; color: var(--pdf-marinho); }
+.aviso h3 > i { color: var(--c); margin-right: 8px; }
+.aviso p { margin: 0; font-size: 21px; line-height: 1.5; color: var(--pdf-texto); }
+
+/* ---------- números (KPI) ---------- */
+.kpi-pdf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 22px 28px;
+  border-radius: 18px;
+  background: var(--c);
+  color: #fff;
+}
+.kpi-pdf .kpi-num {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 66px;
+  line-height: 1;
+  color: inherit;
+}
+.kpi-pdf .kpi-rot { font-family: 'Open Sans', sans-serif; font-weight: 400; font-size: 21px; line-height: 1.35; color: inherit; }
+.kpi-pdf.c-amarelo { color: var(--pdf-marinho); }
+
+/* ---------- tabelas ---------- */
+.tab { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 20px; }
+.tab th {
+  text-align: left;
+  padding: 13px 16px;
+  background: var(--cap);
+  color: var(--cap-txt);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+}
+.tab th:first-child { border-top-left-radius: 16px; }
+.tab th:last-child { border-top-right-radius: 16px; }
+.tab td { padding: 11px 16px; border-bottom: 1.5px solid var(--pdf-linha); vertical-align: top; line-height: 1.4; color: var(--pdf-escuro); }
+.tab tbody tr:nth-child(odd) td { background: var(--cap-fundo); }
+.tab td.forte, .tab th[scope="row"] { font-weight: 700; color: var(--pdf-marinho); }
+.tab th[scope="row"] { background: transparent; font-family: 'Open Sans', sans-serif; font-size: 20px; padding: 11px 16px; border-bottom: 1.5px solid var(--pdf-linha); border-radius: 0; vertical-align: top; line-height: 1.4; }
+.tab tbody tr:nth-child(odd) th[scope="row"] { background: var(--cap-fundo); }
+.tab td.ref { font-size: 17px; color: #64748B; }
+.tab th small { display: block; font-size: 18px; font-weight: 400; color: var(--pdf-escuro); }
+.tab td small { display: block; font-size: 18px; font-weight: 400; color: var(--pdf-escuro); }
+.tab--azul { --cap: var(--pdf-azul); --cap-fundo: #EEF5FC; --cap-txt: #fff; }
+
+/* ---------- capas de capítulo ---------- */
+.capa {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: var(--cap);
+  color: var(--cap-txt);
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 150px 110px;
+}
+.capa .circ { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, .13); pointer-events: none; }
+.capa-num {
+  margin: 0;
+  font-weight: 900;
+  font-size: 250px;
+  line-height: .9;
+  letter-spacing: -.02em;
+  color: rgba(255, 255, 255, .22);
+  position: relative;
+}
+.cap-3 .capa-num { color: rgba(16, 48, 80, .25); }
+.cap-6 .capa-num, .cap-ab .capa-num { color: rgba(255, 255, 255, .25); }
+.capa-titulo {
+  margin: 20px 0 46px;
+  font-weight: 900;
+  font-size: 92px;
+  line-height: 1.05;
+  color: var(--cap-txt);
+  position: relative;
+}
+.capa-topicos { list-style: none; margin: 0; padding: 0; width: 900px; position: relative; }
+.capa-topicos li { border-bottom: 1.5px solid rgba(255, 255, 255, .45); }
+.cap-3 .capa-topicos li { border-bottom-color: rgba(16, 48, 80, .45); }
+.capa-topicos button {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+  padding: 16px 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  color: var(--cap-txt);
+  cursor: pointer;
+}
+.capa-topicos button > i { color: var(--pdf-amarelo); font-size: 26px; }
+.cap-3 .capa-topicos button > i { color: var(--pdf-marinho); }
+.capa-topicos button:hover { text-decoration: underline; }
+.capa-topicos button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.capa-logo { position: absolute; left: 150px; bottom: 70px; height: 70px; width: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pg-corpo { animation: none; }
+}
+
+/* ---------- etapas do ciclo (págs. 19 e 20) ---------- */
+.etapa {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) 250px;
+  gap: 22px;
+  padding: 26px 0;
+  border-bottom: 1.5px dashed #D5DCE5;
+}
+.etapa-n {
+  width: 58px; height: 58px; border-radius: 12px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--c); color: #fff;
+  font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 28px;
+}
+.etapa h2 { margin: 2px 0 6px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 28px; color: var(--pdf-marinho); }
+.etapa ul { margin: 0; padding-left: 24px; }
+.etapa li { font-size: 23px; line-height: 1.45; color: var(--pdf-escuro); }
+.etapa-quem { margin: 4px 0 2px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 21px; line-height: 1.35; color: var(--pdf-marinho); }
+.etapa-quando { margin: 0; font-size: 20px; line-height: 1.4; color: #64748B; }
+
+/* ---------- fluxo em pílulas (págs. 23 e 31) ---------- */
+.fluxo { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin: 0; padding: 0; list-style: none; }
+.fluxo li { display: inline-flex; align-items: center; gap: 14px; }
+.fluxo .passo-f {
+  padding: 8px 22px; border-radius: 999px;
+  background: var(--c); color: var(--c-tx, #fff);
+  font-family: 'Open Sans', sans-serif; font-weight: 600; font-size: 20px;
+}
+.fluxo i { color: var(--c); font-size: 20px; }

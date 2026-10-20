@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retrato da Carta da ANTAQ — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <link rel="stylesheet" href="paginas.css">
+  <style>
+    .kpis .kpi-pdf { padding: 20px 28px; }
+    .graficos { grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    /* barras horizontais: largura = valor ÷ maior valor (18) */
+    .barras { display: flex; flex-direction: column; gap: 22px; margin-top: 6px; }
+    .barra-l { display: grid; grid-template-columns: 70px minmax(0, 1fr) 40px; align-items: center; gap: 18px; font-size: 22px; color: var(--pdf-escuro); }
+    .barra-l b { font-family: 'Montserrat', sans-serif; font-weight: 800; text-align: right; }
+    .trilho { height: 36px; border-radius: 8px; background: #EEF1F5; overflow: hidden; }
+    .trilho > span { display: block; height: 100%; border-radius: 8px; background: var(--pdf-laranja); }
+    /* barra empilhada: largura = parte ÷ 33 */
+    .empilhada { display: flex; height: 54px; border-radius: 10px; overflow: hidden; margin-top: 6px; }
+    .empilhada > span {
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 18px; color: #fff;
+    }
+    .seg-1 { background: #1F9D55; }
+    .seg-2 { background: var(--pdf-amarelo); color: var(--pdf-marinho) !important; }
+    .seg-3 { background: var(--pdf-laranja); }
+    .seg-4 { background: #7A8597; }
+    .leg { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 22px; color: var(--pdf-escuro); }
+    .leg .q { margin-right: 2px; }
+    .corrigir .card { padding-top: 24px; padding-bottom: 24px; }
+    .corrigir .card p { font-size: 23px; }
+    .pg-corpo { gap: 26px; }
+  </style>
+</head>
+
+<body class="cap-5">
+  <main class="slide pg">
+    <header class="faixa">
+      <p class="faixa-rot">05 · MONITORAMENTO</p>
+      <img class="faixa-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
+    </header>
+
+    <div class="pg-corpo">
+      <div class="pg-cab">
+        <h1 class="pg-titulo">Retrato da Carta da ANTAQ</h1>
+        <p class="pg-lead">Carta publicada no gov.br em 15/10/2026. É a linha de base do primeiro ciclo.</p>
+      </div>
+
+      <div class="grade col4 kpis">
+        <div class="kpi-pdf c-marinho"><span class="kpi-num">33</span><span class="kpi-rot">serviços</span></div>
+        <div class="kpi-pdf c-amarelo"><span class="kpi-num">15</span><span class="kpi-rot">com prazo máximo</span></div>
+        <div class="kpi-pdf c-laranja"><span class="kpi-num">11</span><span class="kpi-rot">indicam a Ouvidoria</span></div>
+        <div class="kpi-pdf c-roxo"><span class="kpi-num">8</span><span class="kpi-rot">nomes com ponto final</span></div>
+      </div>
+
+      <div class="grade graficos">
+        <section aria-label="Serviços por superintendência: SOG 18, SRG 8, SAF 4, SFC 3">
+          <h2 class="sec">Serviços por superintendência</h2>
+          <div class="barras">
+            <div class="barra-l"><span>SOG</span><span class="trilho"><span style="width:100%"></span></span><b>18</b></div>
+            <div class="barra-l"><span>SRG</span><span class="trilho"><span style="width:44.44%"></span></span><b>8</b></div>
+            <div class="barra-l"><span>SAF</span><span class="trilho"><span style="width:22.22%"></span></span><b>4</b></div>
+            <div class="barra-l"><span>SFC</span><span class="trilho"><span style="width:16.67%"></span></span><b>3</b></div>
+          </div>
+        </section>
+        <section aria-label="Como o prazo aparece, em 33 serviços: 15 com &quot;Até N dias&quot; ou imediato, 11 só média, 6 intervalo, 1 não estimado">
+          <h2 class="sec">Como o prazo aparece</h2>
+          <div class="empilhada">
+            <span class="seg-1" style="width:45.45%">15</span>
+            <span class="seg-2" style="width:33.33%">11</span>
+            <span class="seg-3" style="width:18.18%">6</span>
+            <span class="seg-4" style="width:3.03%"></span>
+          </div>
+          <ul class="leg">
+            <li><span class="q" style="color:#1F9D55">■</span> "Até N dias" ou imediato</li>
+            <li><span class="q" style="color:#F2A900">■</span> Só média</li>
+            <li><span class="q" style="color:#E4572E">■</span> Intervalo ("entre 20 e 40")</li>
+            <li><span class="q" style="color:#7A8597">■</span> Não estimado (1)</li>
+          </ul>
+        </section>
+      </div>
+
+      <h2 class="sec">O que corrigir primeiro</h2>
+      <div class="grade col3 corrigir">
+        <section class="card c-laranja"><p><b>18 serviços</b> sem prazo máximo.</p></section>
+        <section class="card c-laranja"><p><b>22 serviços</b> sem indicar Ouvidoria ou Fala.BR.</p></section>
+        <section class="card c-laranja"><p><b>4 serviços</b> com link sem HTTPS.</p></section>
+      </div>
+
+      <p class="nota">Fonte: PDF da Carta gerado pelo gov.br. Confirme cada caso na página do serviço antes de pedir a correção.</p>
+    </div>
+
+    <footer class="pg-rodape">
+      <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
+      <span class="pg-num">30</span>
+    </footer>
+  </main>
+
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>

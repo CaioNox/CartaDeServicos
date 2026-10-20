@@ -1,0 +1,103 @@
+/* deck.js — MANIFESTO ÚNICO do Guia Prático da Carta de Serviços, versão 2.0
+ * (outubro de 2026). Mesmo formato dos relatórios da Ouvidoria.
+ *
+ * Fonte única: Guia-Carta-de-Servicos-ANTAQ.pdf (36 páginas), mais a página 6
+ * (as 11 etapas do Guia da CGU), incluída em 20/10/2026. Uma tela por página,
+ * na mesma ordem: slide-NN.html = página NN.
+ *
+ *   - index.html      → apresentação navegável  (paraApresentacao)
+ *   - relatorio.html  → versão A4 / PDF + PPTX  (paraRelatorio)
+ *
+ * Um item de `files` pode ser 'arquivo.html' (entra nas duas saídas) ou
+ * { file, apresentacao: false } / { file, relatorio: false }. */
+
+window.RELATORIO = {
+  meta: {
+    titulo: 'Guia Prático da Carta de Serviços · Ouvidoria ANTAQ',
+    rodapeAnexo: 'Guia Prático da Carta de Serviços · Ouvidoria ANTAQ',
+    arquivoPptx: 'Guia-Carta-de-Servicos-ANTAQ-v2.0.pptx',
+  },
+
+  blocos: [
+    {
+      block: 'Abertura', short: 'Abertura', tint: 0.35,
+      files: ['slide-01.html', 'slide-02.html', 'slide-03.html', 'slide-04.html'],
+    },
+    {
+      block: 'Antes de começar', short: 'Antes de começar', tint: 0.4,
+      files: ['slide-05.html', 'slide-06.html', 'slide-07.html'],
+    },
+    {
+      block: '01 · Entendendo a Carta', short: 'Entendendo a Carta', tint: 1,
+      files: ['slide-08.html', 'slide-09.html', 'slide-10.html', 'slide-11.html', 'slide-12.html'],
+    },
+    {
+      block: '02 · Papéis e responsabilidades', short: 'Papéis', tint: 0.85,
+      files: ['slide-13.html', 'slide-14.html', 'slide-15.html', 'slide-16.html', 'slide-17.html'],
+    },
+    {
+      block: '03 · Passo a passo', short: 'Passo a passo', tint: 0.7,
+      files: ['slide-18.html', 'slide-19.html', 'slide-20.html', 'slide-21.html', 'slide-22.html',
+        'slide-23.html', 'slide-24.html', 'slide-25.html'],
+    },
+    {
+      block: '04 · Qualidade da informação', short: 'Qualidade', tint: 0.55,
+      files: ['slide-26.html', 'slide-27.html', 'slide-28.html'],
+    },
+    {
+      block: '05 · Monitoramento', short: 'Monitoramento', tint: 0.45,
+      files: ['slide-29.html', 'slide-30.html', 'slide-31.html', 'slide-32.html'],
+    },
+    {
+      block: '06 · Apêndice', short: 'Apêndice', tint: 0.3,
+      files: ['slide-33.html', 'slide-34.html', 'slide-35.html', 'slide-36.html', 'slide-37.html'],
+    },
+  ],
+
+  /* nenhuma tela esconde conteúdo: todo o texto da página está visível */
+  anexos: {},
+
+  capturaPptx: {},
+};
+
+(function () {
+  function normalizar(it) {
+    if (typeof it === 'string') return { file: it, apresentacao: true, relatorio: true };
+    return { file: it.file, apresentacao: it.apresentacao !== false, relatorio: it.relatorio !== false };
+  }
+
+  window.RELATORIO.paraApresentacao = function () {
+    const out = [];
+    this.blocos.forEach((b, bi) => {
+      b.files.forEach((it) => {
+        const n = normalizar(it);
+        if (n.apresentacao) out.push({ file: n.file, block: b.block, blockShort: b.short, blockIndex: bi, tint: b.tint });
+      });
+    });
+    return out;
+  };
+
+  window.RELATORIO.paraRelatorio = function () {
+    const out = [];
+    this.blocos.forEach((b) => {
+      b.files.forEach((it) => {
+        const n = normalizar(it);
+        if (n.relatorio) out.push(n.file);
+      });
+    });
+    return out;
+  };
+
+  window.RELATORIO.checarSanidade = function () {
+    const vistos = new Set();
+    this.paraApresentacao().forEach((s) => {
+      if (vistos.has(s.file)) console.warn('[deck.js] arquivo duplicado na apresentação:', s.file);
+      vistos.add(s.file);
+    });
+    this.paraRelatorio().forEach((file) => {
+      fetch(file, { method: 'HEAD' }).then((r) => {
+        if (!r.ok) console.warn('[deck.js] arquivo referenciado no relatório não encontrado:', file);
+      }).catch(() => console.warn('[deck.js] falha ao checar arquivo:', file));
+    });
+  };
+})();
