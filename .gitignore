@@ -4,3 +4,6 @@ _site/
 .DS_Store
 Thumbs.db
 *.log
+
+# Documentação local (não vai para o GitHub)
+*.md
