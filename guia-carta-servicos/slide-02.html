@@ -12,13 +12,42 @@
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
   <style>
-    .indicadores {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* Faixa final: indicador e certificado lado a lado. */
+    .fechamento {
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: stretch;
+    }
+
+    .fechamento .indicador {
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 40px;
+    }
+
+    .fechamento .indicador-legenda {
+      max-width: 7.5em;
+    }
+
+    .certificado {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin: 0;
+      padding: 22px 34px;
+      border-radius: 18px;
+      border-left: 6px solid var(--tom);
+      background: var(--tom-fundo);
+      font-size: 21px;
+      line-height: 1.45;
+      color: var(--cor-texto);
+      text-wrap: balance;
     }
 
     .selo {
+      flex-shrink: 0;
+      font-size: 44px;
       color: var(--cor-amarelo);
-      margin-right: 4px;
     }
   </style>
 </head>
@@ -61,8 +90,8 @@
         <section class="cartao tom-roxo">
           <span class="icone"><i class="fas fa-folder-open" aria-hidden="true"></i></span>
           <h2>Onde registrar?</h2>
-          <p>Na plataforma SEI: diagnóstico, fichas, validação e publicação.</p>
-          <span class="base-legal">Processo do ciclo anual · Decreto 8.539/2015, art. 4º</span>
+          <p>O registro é realizado no SEI e no gov.br.</p>
+          <span class="base-legal">Decreto 8.539/2015, art. 4º · Portaria SGD/MGI 1.083/2025, art. 6º, II</span>
         </section>
       </div>
 
@@ -72,24 +101,17 @@
           <p><b>Atenção.</b> A ANTAQ não pode exigir do usuário nenhum documento, requisito ou procedimento
             que
             não esteja no gov.br. Mudou a exigência? Publique antes de cobrar.</p>
-          <p class="destaque-base">Decreto nº 9.094/2017, art. 18</p>
+          <p class="destaque-base">Decreto nº 9.094/2017, art. 18-A, caput e § 2º</p>
         </div>
       </div>
 
-      <div class="grade indicadores">
+      <div class="grade fechamento">
         <div class="indicador tom-azul"><span class="indicador-valor">33</span><span class="indicador-legenda">serviços
             na Carta hoje</span>
         </div>
-        <div class="indicador tom-verde"><span class="indicador-valor">11</span><span class="indicador-legenda">etapas
-            no ciclo anual</span>
-        </div>
-        <div class="indicador tom-laranja"><span class="indicador-valor">16</span><span class="indicador-legenda">itens
-            no checklist</span>
-        </div>
+        <p class="certificado tom-amarelo"><i class="fas fa-award selo" aria-hidden="true"></i><span>Em 6/8/2026, a ANTAQ recebeu da
+        Ouvidoria-Geral da União o certificado de participação no Mês da Carta de Serviços (pág. 6).</span></p>
       </div>
-
-      <p class="nota"><i class="fas fa-award selo" aria-hidden="true"></i>Em 6/8/2026, a ANTAQ recebeu da
-        Ouvidoria-Geral da União o certificado de participação no Mês da Carta de Serviços (pág. 6).</p>
     </div>
 
     <footer class="pagina-rodape">

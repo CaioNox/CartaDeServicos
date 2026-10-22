@@ -4,13 +4,80 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Isto é um serviço? — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Entra ou sai da Carta? — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
+  <style>
+    /* Duas colunas: o que entra (serviços reais da Carta) e o que sai (atividade
+       que não tem uma das cinco características da Portaria SGD/MGI 1.083/2025). */
+    .entra-sai { align-items: stretch; }
+
+    .lado {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px 22px 22px;
+      border-radius: 22px;
+      background: var(--tom-fundo);
+    }
+
+    .lado h2 {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 30px;
+      color: var(--tom-texto);
+    }
+
+    .lado h2 .icone { margin: 0; width: 46px; height: 46px; font-size: 22px; }
+
+    .lado ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .lado li {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 18px;
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .lado li b {
+      font-size: 19px;
+      line-height: 1.35;
+      color: var(--cor-marinho);
+    }
+
+    .lado li span {
+      font-size: 17px;
+      line-height: 1.35;
+      color: var(--cor-texto);
+    }
+
+    .lado .falta {
+      align-self: flex-start;
+      padding: 1px 12px;
+      border-radius: 999px;
+      background: var(--tom-fundo);
+      color: var(--tom-texto);
+      font-weight: 700;
+      font-size: 15px;
+    }
+  </style>
 </head>
 
 <body class="capitulo-1">
@@ -22,51 +89,31 @@
 
     <div class="pagina-conteudo">
       <div class="pagina-topo">
-        <h1 class="pagina-titulo">Isto é um serviço?</h1>
-        <p class="pagina-resumo">Só entra na Carta a atividade que tem as cinco características abaixo. Faltou uma, fica fora.</p>
+        <h1 class="pagina-titulo">Entra ou sai da Carta?</h1>
+        <p class="pagina-resumo">Exemplos concretos das cinco características na prática. Faltou uma, fica fora.</p>
       </div>
 
-      <div class="grade grade-5">
-        <section class="cartao tom-azul">
-          <span class="icone"><i class="fas fa-comments" aria-hidden="true"></i></span>
-          <h2>Interação</h2>
-          <p>Há contato entre a área e o usuário.</p>
+      <div class="grade grade-2 entra-sai">
+        <section class="lado tom-azul">
+          <h2><span class="icone"><i class="fas fa-check" aria-hidden="true"></i></span>Entra</h2>
+          <ul>
+            <li><b>"Obter parcelamento de multas emitidas pela Antaq"</b><span>A empresa pede, a área analisa e responde ao pedido dela.</span></li>
+            <li><b>"Obter declaração da Antaq para fins de credenciamento, validação ou outros atestados"</b><span>Pedido individual, com etapas definidas e uma resposta final: a declaração.</span></li>
+            <li><b>"Obter autorização da Antaq para transporte de passageiros, veículos e cargas na navegação interior de travessia"</b><span>A empresa de fora da ANTAQ faz o pedido e recebe a decisão.</span></li>
+            <li><b>"Solicitar autorização e registro na Antaq para afretamento de embarcação estrangeira"</b><span>Segue etapas padrão, do requerimento ao registro.</span></li>
+          </ul>
         </section>
-        <section class="cartao tom-azul">
-          <span class="icone"><i class="fas fa-flag-checkered" aria-hidden="true"></i></span>
-          <h2>Suficiência</h2>
-          <p>Vai do pedido à resposta final.</p>
-        </section>
-        <section class="cartao tom-azul">
-          <span class="icone"><i class="fas fa-user" aria-hidden="true"></i></span>
-          <h2>Individual</h2>
-          <p>Atende cada usuário.</p>
-        </section>
-        <section class="cartao tom-azul">
-          <span class="icone"><i class="fas fa-diagram-next" aria-hidden="true"></i></span>
-          <h2>Padrão</h2>
-          <p>Segue etapas definidas.</p>
-        </section>
-        <section class="cartao tom-azul">
-          <span class="icone"><i class="fas fa-door-open" aria-hidden="true"></i></span>
-          <h2>Externo</h2>
-          <p>É para quem está fora da ANTAQ.</p>
+        <section class="lado tom-erro">
+          <h2><span class="icone"><i class="fas fa-xmark" aria-hidden="true"></i></span>Sai</h2>
+          <ul>
+            <li><b>Edição de resolução que regula o setor</b><span>Ato geral, vale para todos ao mesmo tempo.</span><span class="falta">Falta: Individual</span></li>
+            <li><b>Gestão de pessoas e demandas entre áreas da ANTAQ</b><span>Atividade interna, sem usuário de fora.</span><span class="falta">Falta: Externo</span></li>
+            <li><b>Fiscalização feita por iniciativa da ANTAQ</b><span>Não parte de um pedido do usuário, então não há resposta a uma demanda dele.</span><span class="falta">Falta: Suficiência</span></li>
+            <li><b>Notícias e comunicados publicados no site</b><span>Não há contato nem atendimento a cada pessoa.</span><span class="falta">Falta: Interação e Individual</span></li>
+          </ul>
         </section>
       </div>
-      <p class="nota">Base: Portaria SGD/MGI nº 1.083/2025, art. 3º.</p>
-
-      <div class="grade grade-2">
-        <section class="cartao tom-sucesso">
-          <span class="icone"><i class="fas fa-check" aria-hidden="true"></i></span>
-          <h2>Entra na Carta</h2>
-          <p>"Obter autorização para revisão ou reajuste das tarifas portuárias": pedido individual, com etapas e resposta final.</p>
-        </section>
-        <section class="cartao tom-erro">
-          <span class="icone"><i class="fas fa-xmark" aria-hidden="true"></i></span>
-          <h2>Fica fora</h2>
-          <p>Consulta pública aberta a todos: não é individual nem gera resposta a cada pessoa. Divulgue no site.</p>
-        </section>
-      </div>
+      <p class="nota">Base: Portaria SGD/MGI nº 1.083/2025, art. 3º. Os exemplos de "Entra" estão publicados na Carta de Serviços da ANTAQ no portal gov.br (conferida em 19/10/2026).</p>
 
       <div class="destaque">
         <span class="icone-duvida"><i class="fas fa-question" aria-hidden="true"></i></span>

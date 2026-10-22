@@ -95,6 +95,14 @@ body {
 .tom-sucesso { --tom: var(--cor-sucesso); --tom-fundo: #EBF6F0; --tom-texto: #17804A; }
 .tom-erro { --tom: var(--cor-erro); --tom-fundo: #FBEEEE; --tom-texto: #B83434; }
 
+/* Cor de cada superintendência (tokens --sup-* em base.css). Funciona como um tom:
+   use sempre estas classes quando a tela separar SOG, SRG, SAF e SFC. */
+.sup-sog { --tom: var(--sup-sog); --tom-fundo: #E8F2F9; --tom-texto: #0062A8; }
+.sup-srg { --tom: var(--sup-srg); --tom-fundo: #F3EFF9; --tom-texto: #6A3FA6; }
+.sup-saf { --tom: var(--sup-saf); --tom-fundo: #FCEFEB; --tom-texto: #C4431D; }
+.sup-sfc { --tom: var(--sup-sfc); --tom-fundo: #E8ECF0; --tom-texto: var(--cor-marinho); }
+.sup-sigla { color: var(--tom-texto); font-weight: 800; }
+
 
 /* ---------- 3. Cabeçalho, conteúdo e rodapé ---------- */
 

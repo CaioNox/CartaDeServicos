@@ -19,7 +19,11 @@
     .barra-linha { display: grid; grid-template-columns: 70px minmax(0, 1fr) 40px; align-items: center; gap: 18px; font-size: 22px; color: var(--cor-texto-forte); }
     .barra-linha b { font-family: 'Montserrat', sans-serif; font-weight: 800; text-align: right; }
     .trilho { height: 36px; border-radius: 8px; background: #EEF1F5; overflow: hidden; }
-    .trilho > span { display: block; height: 100%; border-radius: 8px; background: var(--cor-laranja); }
+    .trilho > span { display: block; height: 100%; border-radius: 8px; background: var(--tom, var(--cor-laranja)); }
+    .trilho > span { transform-origin: left center; animation: crescer .9s cubic-bezier(.2, .7, .3, 1) .2s backwards; }
+    @keyframes crescer { from { transform: scaleX(0); } to { transform: none; } }
+    .vida-parado .trilho > span { animation: none; }
+    .barra-linha > span:first-child { color: var(--tom-texto); font-weight: 800; }
     /* barra empilhada: largura = parte ÷ 33 */
     .empilhada { display: flex; height: 54px; border-radius: 10px; overflow: hidden; margin-top: 6px; }
     .empilhada > span {
@@ -62,10 +66,10 @@
         <section aria-label="Serviços por superintendência: SOG 18, SRG 8, SAF 4, SFC 3">
           <h2 class="subtitulo">Serviços por superintendência</h2>
           <div class="barras">
-            <div class="barra-linha"><span>SOG</span><span class="trilho"><span style="width:100%"></span></span><b>18</b></div>
-            <div class="barra-linha"><span>SRG</span><span class="trilho"><span style="width:44.44%"></span></span><b>8</b></div>
-            <div class="barra-linha"><span>SAF</span><span class="trilho"><span style="width:22.22%"></span></span><b>4</b></div>
-            <div class="barra-linha"><span>SFC</span><span class="trilho"><span style="width:16.67%"></span></span><b>3</b></div>
+            <div class="barra-linha sup-sog"><span>SOG</span><span class="trilho"><span style="width:100%"></span></span><b>18</b></div>
+            <div class="barra-linha sup-srg"><span>SRG</span><span class="trilho"><span style="width:44.44%"></span></span><b>8</b></div>
+            <div class="barra-linha sup-saf"><span>SAF</span><span class="trilho"><span style="width:22.22%"></span></span><b>4</b></div>
+            <div class="barra-linha sup-sfc"><span>SFC</span><span class="trilho"><span style="width:16.67%"></span></span><b>3</b></div>
           </div>
         </section>
         <section aria-label="Como o prazo aparece, em 33 serviços: 15 com &quot;Até N dias&quot; ou imediato, 11 só média, 6 intervalo, 1 não estimado">

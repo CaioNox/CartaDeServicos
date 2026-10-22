@@ -64,7 +64,7 @@ for (const pasta of ['guia', 'guia-carta-servicos']) {
 /* ---------- 2 a 5. arquivos HTML e CSS ---------- */
 function listar(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
-    if (['.git', 'node_modules', 'vendor', 'saida-testes'].includes(e.name)) return [];
+    if (['.git', 'node_modules', 'vendor', 'saida-testes', 'leis'].includes(e.name)) return [];
     const p = path.join(dir, e.name);
     return e.isDirectory() ? listar(p) : [p];
   });

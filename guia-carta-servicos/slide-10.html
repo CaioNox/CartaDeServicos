@@ -17,6 +17,11 @@
     .campos .cartao p { font-size: 23px; }
     .pagina-conteudo { gap: 28px; }
     .subtitulo .base-legal { font-family: 'Open Sans', sans-serif; margin-left: 4px; }
+    .servico-teste { display: flex; flex-direction: column; gap: 8px; }
+    .servico-teste-texto { margin: 0; font-size: 22px; line-height: 1.45; color: var(--cor-texto); }
+    .caracteristicas .cartao { padding: 24px 22px 24px 26px; gap: 8px; }
+    .caracteristicas .cartao h3 { font-size: 26px; }
+    .caracteristicas .cartao p { font-size: 22px; }
   </style>
 </head>
 
@@ -61,35 +66,37 @@
         </section>
       </div>
 
-      <h2 class="subtitulo subtitulo--tom tom-verde"><i class="fas fa-handshake" aria-hidden="true"></i>Compromissos de atendimento <span class="base-legal">Lei 13.460, art. 7º, § 3º · Decreto 9.094, art. 11, § 3º</span></h2>
-      <div class="grade grade-6 campos">
-        <section class="cartao tom-verde">
-          <h3>Prioridades</h3>
-          <p>Incluindo pessoas com autismo, com mobilidade reduzida e doadores de sangue.</p>
+      <div class="servico-teste">
+        <h2 class="subtitulo subtitulo--tom tom-roxo"><i class="fas fa-circle-question" aria-hidden="true"></i>Isto é um serviço? <span class="base-legal">Portaria SGD/MGI 1.083/2025, art. 3º</span></h2>
+        <p class="servico-teste-texto">Só entra na Carta a atividade que tem as cinco características abaixo. Faltou uma, fica fora.</p>
+      </div>
+      <div class="grade grade-5 caracteristicas">
+        <section class="cartao tom-roxo">
+          <span class="icone"><i class="fas fa-comments" aria-hidden="true"></i></span>
+          <h3>Interação</h3>
+          <p>Há contato entre a área e o usuário.</p>
         </section>
-        <section class="cartao tom-verde">
-          <h3>Tempo de espera</h3>
-          <p>No atendimento presencial ou por telefone.</p>
+        <section class="cartao tom-roxo">
+          <span class="icone"><i class="fas fa-flag-checkered" aria-hidden="true"></i></span>
+          <h3>Suficiência</h3>
+          <p>Vai do pedido à resposta final.</p>
         </section>
-        <section class="cartao tom-verde">
-          <h3>Canais de contato</h3>
-          <p>Onde tirar dúvidas.</p>
+        <section class="cartao tom-roxo">
+          <span class="icone"><i class="fas fa-user" aria-hidden="true"></i></span>
+          <h3>Individual</h3>
+          <p>Atende cada usuário.</p>
         </section>
-        <section class="cartao tom-verde">
-          <h3>Acompanhar o pedido</h3>
-          <p>Como consultar o andamento.</p>
+        <section class="cartao tom-roxo">
+          <span class="icone"><i class="fas fa-diagram-next" aria-hidden="true"></i></span>
+          <h3>Padrão</h3>
+          <p>Segue etapas definidas.</p>
         </section>
-        <section class="cartao tom-verde">
-          <h3>Custos</h3>
-          <p>Valor da taxa ou "é gratuito".</p>
-        </section>
-        <section class="cartao tom-verde">
-          <h3>Sistema fora do ar</h3>
-          <p>O que fazer se cair.</p>
+        <section class="cartao tom-roxo">
+          <span class="icone"><i class="fas fa-door-open" aria-hidden="true"></i></span>
+          <h3>Externo</h3>
+          <p>É para quem está fora da ANTAQ.</p>
         </section>
       </div>
-
-      <p class="nota">Custos: Lei 13.460/2017, art. 6º, VI, "e". Prioridades: Lei 10.048/2000, art. 1º, com a redação da Lei 14.626/2023.</p>
     </div>
 
     <footer class="pagina-rodape">

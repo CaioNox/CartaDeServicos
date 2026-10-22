@@ -22,6 +22,12 @@
   --cor-laranja: #E4572E;
   --cor-cinza: #94A3B8;
 
+  /* cor fixa de cada superintendência — a mesma em todo o guia */
+  --sup-sog: var(--cor-azul);
+  --sup-srg: var(--cor-roxo);
+  --sup-saf: var(--cor-laranja);
+  --sup-sfc: var(--cor-marinho);
+
   /* estados */
   --cor-sucesso: #1F9D55;
   --cor-erro: #D64545;
