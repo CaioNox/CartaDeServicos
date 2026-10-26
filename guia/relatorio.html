@@ -340,7 +340,6 @@
   <div class="sheets" id="sheets"></div>
 
   <script src="deck.js"></script>
-  <script src="dados/servicos.js"></script>
   <script>
 
     const files = RELATORIO.paraRelatorio();
@@ -776,7 +775,7 @@
         }
 
         btnPptx.textContent = 'Salvando…';
-        await pptx.writeFile({ fileName: RELATORIO.meta.arquivoPptx || 'Guia-Carta-de-Servicos-ANTAQ.pptx' });
+        await pptx.writeFile({ fileName: RELATORIO.meta.arquivoPptx || 'Guia-Carta-de-Servicos-ANTAQ-v2.0.pptx' });
       } catch (err) {
         console.error('Falha ao gerar o PowerPoint:', err);
         alert('Não foi possível gerar o PowerPoint. Veja o console para detalhes.');

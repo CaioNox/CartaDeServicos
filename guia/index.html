@@ -771,7 +771,7 @@
     <div class="pptx-box" role="dialog" aria-modal="true" aria-labelledby="pptxTitulo">
       <div class="pptx-ico"><i class="fa-solid fa-file-powerpoint" aria-hidden="true"></i></div>
       <h3 id="pptxTitulo">Deseja baixar o arquivo PowerPoint dos slides apresentados?</h3>
-      <p>O download comeca imediatamente.<span class="pptx-arq">Guia-Carta-de-Servicos-ANTAQ.pptx</span></p>
+      <p>O download comeca imediatamente.<span class="pptx-arq">Guia-Carta-de-Servicos-ANTAQ-v2.0.pptx</span></p>
       <div class="pptx-acoes">
         <button class="pptx-nao" type="button" id="pptxNao">Nao</button>
         <button class="pptx-sim" type="button" id="pptxSim">Sim, baixar</button>
@@ -1006,7 +1006,7 @@
     document.getElementById('clickLeft').addEventListener('click', () => cliqueLateral('ArrowLeft', prev));
     document.getElementById('clickRight').addEventListener('click', () => cliqueLateral('ArrowRight', next));
 
-    /* link direto para uma tela: index.html?tela=slide-formulario
+    /* link direto para uma tela: index.html?tela=slide-24
        (o endereço acompanha a navegação, para dar para compartilhar) */
     const pedido = new URLSearchParams(window.location.search).get('tela');
     if (pedido) {
@@ -1090,7 +1090,7 @@
     new ResizeObserver(scaleFrame).observe(stage);
 
     /* ---- confirmacao de download do PPTX ---- */
-    const ARQUIVO_PPTX = 'Guia-Carta-de-Servicos-ANTAQ.pptx';
+    const ARQUIVO_PPTX = 'Guia-Carta-de-Servicos-ANTAQ-v2.0.pptx';
     const pptxOverlay = document.getElementById('pptxOverlay');
     const pptxBtn = document.getElementById('pptxBtn');
 

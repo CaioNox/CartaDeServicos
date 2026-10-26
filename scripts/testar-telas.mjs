@@ -20,6 +20,7 @@ import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const PASTA = 'guia';
 const SAIDA = path.join(RAIZ, 'saida-testes');
 fs.mkdirSync(SAIDA, { recursive: true });
 
@@ -42,7 +43,7 @@ const BASE = `http://127.0.0.1:${servidor.address().port}/`;
 
 const ctx = { window: {}, console, fetch: () => Promise.resolve({ ok: true }) };
 vm.createContext(ctx);
-vm.runInContext(fs.readFileSync(path.join(RAIZ, 'guia/deck.js'), 'utf8'), ctx);
+vm.runInContext(fs.readFileSync(path.join(RAIZ, PASTA, 'deck.js'), 'utf8'), ctx);
 const telas = ctx.window.RELATORIO.paraApresentacao().map((s) => s.file);
 
 const falhas = [];
@@ -55,18 +56,20 @@ pagina.on('response', (r) => { if (r.status() >= 400) falhas.push(`${atual}: HTT
 
 for (const f of telas) {
   atual = f;
-  await pagina.goto(BASE + 'guia/' + f, { waitUntil: 'networkidle' });
+  await pagina.goto(BASE + PASTA + '/' + f, { waitUntil: 'networkidle' });
   await pagina.waitForTimeout(300);
   const fora = await pagina.evaluate(() => {
     const out = [];
-    document.querySelectorAll('.corpo *, .cab *').forEach((el) => {
+    const rodape = document.querySelector('.pagina-rodape');
+    const limite = rodape ? rodape.getBoundingClientRect().top : window.innerHeight;
+    document.querySelectorAll('.pagina-conteudo *').forEach((el) => {
       if (el.closest('[hidden], .etapa-foco:not(.ativa)')) return;
       const r = el.getBoundingClientRect();
-      if (r.width && (r.bottom > window.innerHeight - 18 || r.right > window.innerWidth + 1)) {
+      if (r.width && (r.bottom > limite + 1 || r.right > window.innerWidth + 1)) {
         out.push(`${el.tagName.toLowerCase()}.${String(el.className).split(' ')[0]}`);
       }
     });
-    const c = document.querySelector('.corpo');
+    const c = document.querySelector('.pagina-conteudo');
     return { n: out.length, ex: out.slice(0, 3), rolagem: c ? c.scrollHeight - c.clientHeight : 0 };
   });
   if (fora.n || fora.rolagem > 2) falhas.push(`${f}: conteúdo sai da tela (${fora.ex.join(', ') || 'rolagem ' + fora.rolagem + 'px'})`);
@@ -74,10 +77,10 @@ for (const f of telas) {
 }
 
 /* visualizador: as setas percorrem as etapas internas antes de trocar de tela */
-const comEtapas = telas.find((f) => fs.readFileSync(path.join(RAIZ, 'guia', f), 'utf8').includes('passo-btn'));
+const comEtapas = telas.find((f) => fs.readFileSync(path.join(RAIZ, PASTA, f), 'utf8').includes('passo-btn'));
 if (comEtapas) {
   atual = 'index.html';
-  await pagina.goto(BASE + 'guia/index.html?tela=' + comEtapas.replace('.html', ''), { waitUntil: 'networkidle' });
+  await pagina.goto(BASE + PASTA + '/index.html?tela=' + comEtapas.replace('.html', ''), { waitUntil: 'networkidle' });
   await pagina.keyboard.press('Escape');
   await pagina.waitForTimeout(600);
   const antes = await pagina.textContent('#pageInfo');
@@ -89,7 +92,7 @@ if (comEtapas) {
 
 /* versão A4: uma página por tela + anexos */
 atual = 'relatorio.html';
-await pagina.goto(BASE + 'guia/relatorio.html', { waitUntil: 'networkidle' });
+await pagina.goto(BASE + PASTA + '/relatorio.html', { waitUntil: 'networkidle' });
 await pagina.waitForTimeout(1500);
 const paginasA4 = await pagina.locator('.page').count();
 if (paginasA4 < ctx.window.RELATORIO.paraRelatorio().length) falhas.push(`relatorio.html: ${paginasA4} páginas para ${ctx.window.RELATORIO.paraRelatorio().length} telas`);

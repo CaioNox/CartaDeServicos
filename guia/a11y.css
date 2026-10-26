@@ -1,4 +1,8 @@
-
+/* =====================================================================
+   a11y.css — acessibilidade comum às telas e aos visualizadores:
+   foco visível, "reduzir movimento", texto só para leitor de tela
+   (.sr-only) e o link "pular para o conteúdo" (.skip-link).
+   ===================================================================== */
 
 :focus-visible {
   outline: 3px solid #0090C0;
@@ -46,11 +50,3 @@
   left: 0;
 }
 
-.a11y-cue {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: .35em;
-  font-size: .85em;
-  line-height: 1;
-}

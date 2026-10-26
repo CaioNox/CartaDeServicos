@@ -22,14 +22,13 @@ import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const GUIA = path.join(RAIZ, 'guia');
 const erros = [];
 const avisos = [];
 const rel = (p) => path.relative(RAIZ, p).split(path.sep).join('/');
 
 /* ---------- 1. manifesto (um por pasta de guia) ---------- */
 let telasNoManifesto = 0;
-for (const pasta of ['guia', 'guia-carta-servicos']) {
+for (const pasta of ['guia']) {
   const GUIA = path.join(RAIZ, pasta);
   if (!fs.existsSync(path.join(GUIA, 'deck.js'))) continue;
   const ctx = { window: {}, console, fetch: () => Promise.resolve({ ok: true }) };

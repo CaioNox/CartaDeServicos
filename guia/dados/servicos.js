@@ -5,7 +5,9 @@
  * Os nomes estão exatamente como aparecem no Portal (inclusive "Antaq"/"ANTAQ" e pontos finais),
  * porque a padronização desses nomes é um dos achados do diagnóstico.
  *
- * Usado por: slide-diagnostico.html, slide-inventario.html e relatorio.html (anexo).
+ * Referência dos números da Carta citados nas telas (ex.: slide-02, 33 serviços; slide-04, serviços
+ * por superintendência). As telas não carregam este arquivo: o número escrito na tela é conferido
+ * contra ele. tipoPrazo, siglas e resumo ficam como apoio para conferências.
  * Para atualizar: gere um novo PDF no Portal, confira serviço a serviço e troque `coleta`.
  * Campos booleanos indicam se a informação aparece na página do serviço:
  *   citaOuvidoria       — menciona Ouvidoria/Fala.BR (Lei 13.460, art. 7º, §2º, VI)
