@@ -12,16 +12,54 @@
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
   <style>
-    .campos .cartao { padding: 26px 22px 26px 26px; gap: 10px; min-height: 210px; }
-    .campos .cartao h3 { font-size: 26px; }
-    .campos .cartao p { font-size: 23px; }
-    .pagina-conteudo { gap: 28px; }
-    .subtitulo .base-legal { font-family: 'Open Sans', sans-serif; margin-left: 4px; }
-    .servico-teste { display: flex; flex-direction: column; gap: 8px; }
-    .servico-teste-texto { margin: 0; font-size: 22px; line-height: 1.45; color: var(--cor-texto); }
-    .caracteristicas .cartao { padding: 24px 22px 24px 26px; gap: 8px; }
-    .caracteristicas .cartao h3 { font-size: 26px; }
-    .caracteristicas .cartao p { font-size: 22px; }
+    .campos .cartao {
+      padding: 26px 22px 26px 26px;
+      gap: 10px;
+      min-height: 210px;
+    }
+
+    .campos .cartao h3 {
+      font-size: 26px;
+    }
+
+    .campos .cartao p {
+      font-size: 23px;
+    }
+
+    .pagina-conteudo {
+      gap: 22px;
+    }
+
+    .subtitulo .base-legal {
+      font-family: 'Open Sans', sans-serif;
+      margin-left: 4px;
+    }
+
+    .servico-teste {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .servico-teste-texto {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.45;
+      color: var(--cor-texto);
+    }
+
+    .caracteristicas .cartao {
+      padding: 24px 22px 24px 26px;
+      gap: 8px;
+    }
+
+    .caracteristicas .cartao h3 {
+      font-size: 26px;
+    }
+
+    .caracteristicas .cartao p {
+      font-size: 22px;
+    }
   </style>
 </head>
 
@@ -35,10 +73,13 @@
     <div class="pagina-conteudo">
       <div class="pagina-topo">
         <h1 class="pagina-titulo">Conteúdo obrigatório</h1>
-        <p class="pagina-resumo">Todo serviço precisa responder a estas perguntas. O formulário do gov.br tem um campo para cada uma.</p>
+        <p class="pagina-resumo">Todo serviço precisa responder a estas perguntas. O formulário do gov.br tem um campo
+          para cada uma.</p>
       </div>
 
-      <h2 class="subtitulo subtitulo--tom tom-azul"><i class="fas fa-list-check" aria-hidden="true"></i>Sobre o serviço <span class="base-legal">Lei 13.460, art. 7º, § 2º</span></h2>
+      <h2 class="subtitulo subtitulo--tom tom-azul"><i class="fas fa-list-check" aria-hidden="true"></i>Sobre o serviço
+        <span class="base-legal">Lei 13.460, art. 7º, § 2º · Decreto 9.094, art. 11, § 2º</span>
+      </h2>
       <div class="grade grade-6 campos">
         <section class="cartao tom-azul">
           <h3>O que é?</h3>
@@ -54,7 +95,9 @@
         </section>
         <section class="cartao tom-azul">
           <h3>Prazo máximo</h3>
-          <p>"Até N dias". Média não vale.</p>
+          <p>Não sendo permitido tempo medio. somente Tempo Exato
+            <i>("Sera Disponilizado em 3 dias")</i>
+          </p>
         </section>
         <section class="cartao tom-azul">
           <h3>Como é prestado</h3>
@@ -65,10 +108,14 @@
           <p>Ouvidoria e Fala.BR.</p>
         </section>
       </div>
+      <p class="nota">O Decreto 9.094/2017, art. 11, § 2º, VI e VII, pede também a forma de comunicação com o solicitante e os locais e as formas de acessar o serviço.</p>
 
       <div class="servico-teste">
-        <h2 class="subtitulo subtitulo--tom tom-roxo"><i class="fas fa-circle-question" aria-hidden="true"></i>Isto é um serviço? <span class="base-legal">Portaria SGD/MGI 1.083/2025, art. 3º</span></h2>
-        <p class="servico-teste-texto">Só entra na Carta a atividade que tem as cinco características abaixo. Faltou uma, fica fora.</p>
+        <h2 class="subtitulo subtitulo--tom tom-roxo"><i class="fas fa-circle-question"
+            aria-hidden="true"></i>Características para elaboração de um serviço <span class="base-legal">Portaria SGD/MGI
+            1.083/2025, art. 3º · Portaria CGU 116/2024, art. 65, § 1º, I · Guia CGU, p. 9</span></h2>
+        <p class="servico-teste-texto">Só entra na Carta a atividade que tem as cinco características abaixo. Faltou
+          uma, fica fora.</p>
       </div>
       <div class="grade grade-5 caracteristicas">
         <section class="cartao tom-roxo">

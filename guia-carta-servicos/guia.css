@@ -352,6 +352,22 @@ body {
 }
 .a-validar::before { content: '\25CF'; font-size: .7em; color: var(--dourado); }
 
+/* Trecho de frase sem base em norma, marcado sem tirar o texto do lugar:
+   o mesmo amarelo e o mesmo tracejado do selo, mas em linha com a frase. */
+.a-validar--trecho {
+  display: inline;
+  padding: 0 .12em;
+  border: 0;
+  border-bottom: 2px dashed var(--dourado);
+  border-radius: 0;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.a-validar--trecho::before { content: none; }
+
 
 /* ---------- 6. Tabelas ----------
    O cabeçalho usa a cor do capítulo e as linhas ímpares, o fundo do

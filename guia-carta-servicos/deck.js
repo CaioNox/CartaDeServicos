@@ -40,7 +40,7 @@ window.RELATORIO = {
     },
     {
       block: '03 · Passo a passo', short: 'Passo a passo', tint: 0.7,
-      files: ['slide-17.html', 'slide-18.html', 'slide-19.html', 'slide-20.html', 'slide-21.html',
+      files: ['slide-17.html', 'slide-21.html',
         'slide-22.html', 'slide-23.html', 'slide-24.html'],
     },
     {

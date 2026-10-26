@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matriz de responsabilidades — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Prazos de resposta — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
@@ -12,25 +12,8 @@
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
   <style>
-    .colunas { grid-template-columns: 1.75fr 1fr; gap: 40px; align-items: start; }
-    .matriz th { font-size: 16px; padding: 11px 10px; text-align: center; }
-    .matriz th:first-child { text-align: left; }
-    .matriz td { padding: 6px 10px; font-size: 19px; text-align: center; vertical-align: middle; }
-    .matriz td:first-child { text-align: left; }
-    /* papéis na matriz: Executa (azul), Aprova (laranja), Contribui (verde), é Informado (cinza) */
-    .papel {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 32px; height: 32px; border-radius: 8px;
-      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 15px; color: #fff;
-    }
-    .papel-executa { background: var(--cor-azul); }
-    .papel-aprova { background: var(--cor-laranja); }
-    .papel-contribui { background: var(--cor-verde); }
-    .papel-informado { background: var(--cor-cinza); }
-    .legenda { display: flex; gap: 34px; align-items: center; margin: 0; font-size: 20px; color: var(--cor-texto-forte); }
-    .legenda span { display: inline-flex; align-items: center; gap: 12px; }
-    .prazos .cartao { padding-top: 20px; padding-bottom: 20px; gap: 6px; }
-    .prazos .cartao p { font-size: 20px; }
+    .prazos .cartao { padding-top: 26px; padding-bottom: 26px; gap: 8px; }
+    .prazos .cartao h2 { font-size: 40px; }
   </style>
 </head>
 
@@ -43,39 +26,10 @@
 
     <div class="pagina-conteudo">
       <div class="pagina-topo">
-        <h1 class="pagina-titulo">Matriz de responsabilidades</h1>
-        <p class="pagina-introducao">Para cada etapa do ciclo: quem <b>executa</b>, quem <b>aprova</b>, quem <b>contribui</b> e quem é <b>informado</b>.</p>
+        <h1 class="pagina-titulo">Prazos de resposta</h1>
       </div>
 
-      <div class="grade colunas">
-        <div class="coluna">
-          <table class="tabela matriz">
-            <thead>
-              <tr><th scope="col">Etapa</th><th scope="col">Alta gestão</th><th scope="col">Ouvidoria</th><th scope="col">UORGs</th><th scope="col">Editores</th><th scope="col">Comunicação</th><th scope="col">Conselho</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>1 · Diagnóstico</td><td><span class="papel papel-informado">I</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-contribui">C</span></td><td><span class="papel papel-contribui">C</span></td><td></td><td></td></tr>
-              <tr><td>2 · Comunicação à alta gestão</td><td><span class="papel papel-aprova">A</span></td><td><span class="papel papel-executa">E</span></td><td></td><td></td><td></td><td></td></tr>
-              <tr><td>3 · Pontos focais e editores</td><td><span class="papel papel-aprova">A</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-contribui">C</span></td><td></td><td></td><td></td></tr>
-              <tr><td>4 · Plano de ação</td><td><span class="papel papel-informado">I</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-contribui">C</span></td><td></td><td></td><td></td></tr>
-              <tr><td>5 · Identificar serviços</td><td></td><td><span class="papel papel-contribui">C</span></td><td><span class="papel papel-executa">E</span></td><td></td><td></td><td><span class="papel papel-contribui">C</span></td></tr>
-              <tr><td>6 · Levantar informações</td><td></td><td><span class="papel papel-contribui">C</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-contribui">C</span></td><td></td><td><span class="papel papel-contribui">C</span></td></tr>
-              <tr><td>7 · Validar</td><td><span class="papel papel-aprova">A</span></td><td><span class="papel papel-contribui">C</span></td><td><span class="papel papel-executa">E</span></td><td></td><td></td><td></td></tr>
-              <tr><td>8 · Cadastrar no gov.br</td><td></td><td><span class="papel papel-contribui">C</span></td><td><span class="papel papel-aprova">A</span></td><td><span class="papel papel-executa">E</span></td><td></td><td></td></tr>
-              <tr><td>9 · Site da ANTAQ</td><td></td><td><span class="papel papel-contribui">C</span></td><td></td><td></td><td><span class="papel papel-executa">E</span></td><td></td></tr>
-              <tr><td>10 · Divulgar</td><td></td><td><span class="papel papel-executa">E</span></td><td></td><td></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-informado">I</span></td></tr>
-              <tr><td>11 · Manter e revisar</td><td><span class="papel papel-informado">I</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-executa">E</span></td><td><span class="papel papel-executa">E</span></td><td></td><td><span class="papel papel-contribui">C</span></td></tr>
-            </tbody>
-          </table>
-          <p class="legenda">
-            <span><span class="papel papel-executa">E</span>Executa</span>
-            <span><span class="papel papel-aprova">A</span>Aprova</span>
-            <span><span class="papel papel-contribui">C</span>Contribui</span>
-            <span><span class="papel papel-informado">I</span>É informado</span>
-          </p>
-        </div>
-
-        <div class="coluna prazos">
+      <div class="grade grade-3 prazos">
           <section class="cartao tom-verde">
             <span class="icone"><i class="fas fa-share-from-square" aria-hidden="true"></i></span>
             <h2>2 dias úteis</h2>
@@ -94,7 +48,6 @@
             <p>Para a Ouvidoria dar a decisão final ao usuário, prorrogáveis uma vez.</p>
             <span class="base-legal">Lei 13.460/2017, art. 16</span>
           </section>
-        </div>
       </div>
     </div>
 
