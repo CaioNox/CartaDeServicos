@@ -17,7 +17,11 @@
       --dourado: #F2A900;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Open Sans', sans-serif;
@@ -36,8 +40,19 @@
       z-index: 0;
     }
 
-    .header-bar { background-color: #103050; height: 12px; position: relative; z-index: 2; }
-    .secondary-bar { background-color: #0070C0; height: 6px; position: relative; z-index: 2; }
+    .header-bar {
+      background-color: #103050;
+      height: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .secondary-bar {
+      background-color: #0070C0;
+      height: 6px;
+      position: relative;
+      z-index: 2;
+    }
 
     /* logos */
     .org-bar {
@@ -48,9 +63,23 @@
       position: relative;
       z-index: 2;
     }
-    .org-bar-logo--ouvidoria { height: 84px; width: auto; filter: brightness(0) invert(1); }
-    .org-bar-logo--antaq { height: 76px; width: auto; display: block; }
-    .org-bar-divider { border-left: 1px solid rgba(255, 255, 255, 0.25); padding-left: 16px; }
+
+    .org-bar-logo--ouvidoria {
+      height: 84px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .org-bar-logo--antaq {
+      height: 76px;
+      width: auto;
+      display: block;
+    }
+
+    .org-bar-divider {
+      border-left: 1px solid rgba(255, 255, 255, 0.25);
+      padding-left: 16px;
+    }
 
     /* conteúdo */
     .main {
@@ -83,7 +112,10 @@
       letter-spacing: -0.5px;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
     }
-    .header-section h1 .gold { color: #0090C0; }
+
+    .header-section h1 .gold {
+      color: #0090C0;
+    }
 
     .header-section p {
       font-size: 14px;
@@ -106,7 +138,10 @@
       gap: 20px;
       width: 100%;
     }
-    .card:nth-child(2) { animation-delay: .08s; }
+
+    .card:nth-child(2) {
+      animation-delay: .08s;
+    }
 
     /* o cartão do guia: compacto, ícone em cima do texto */
     .card {
@@ -120,8 +155,7 @@
       background-color: rgba(255, 255, 255, 0.72);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      border-left: 5px solid var(--antaq-azul-900);
+      border: 2px solid var(--antaq-azul-900);
       border-radius: 14px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
       color: inherit;
@@ -129,32 +163,65 @@
       transition: transform .12s cubic-bezier(.2, .7, .3, 1), background-color .12s ease, box-shadow .12s ease;
       animation: cardIn .55s cubic-bezier(.2, .7, .3, 1) both;
     }
+
     .card:hover {
       transform: translateY(-6px);
       background-color: rgba(255, 255, 255, 0.86);
       box-shadow: 0 18px 34px rgba(16, 48, 80, 0.28);
     }
-    a.card:focus-visible { outline: 3px solid var(--dourado); outline-offset: 3px; }
+
+    a.card:focus-visible {
+      outline: 3px solid var(--dourado);
+      outline-offset: 3px;
+    }
 
     @keyframes cardIn {
-      from { opacity: 0; transform: translateY(22px); }
-      to { opacity: 1; transform: none; }
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
     }
 
-    .card-icon {
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 17px;
-      background-color: var(--antaq-azul-100);
-      color: var(--antaq-azul-900);
-      transition: transform .12s ease;
+    .card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      /* cores da água desenhada pelo agua.js: fundo e luz */
+      --agua-fundo: #A9CFE0;
+      --agua-luz: #E6F4FA;
+      /* mesma força de luz do painel de ajuda do guia; para voltar à água forte, apague esta linha */
+      --agua-intensidade: 0.3;
     }
-    .card:hover .card-icon { transform: scale(1.08) rotate(-6deg); }
+
+    /* fundo de água (agua.js); sem WebGL2 fica o fundo translúcido do cartão */
+    .agua-tela {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .7s ease-out;
+    }
+
+    .card.agua-ativa .agua-tela {
+      opacity: 1;
+    }
+
+    .card.agua-ativa,
+    .card.agua-ativa:hover {
+      background-color: transparent;
+    }
+
+    .card-content {
+      position: relative;
+    }
 
     .card-content h2 {
       font-family: 'Montserrat', sans-serif;
@@ -163,6 +230,7 @@
       color: #10233A;
       margin-bottom: 4px;
     }
+
     .card-content p {
       font-size: 12.5px;
       line-height: 1.45;
@@ -170,6 +238,7 @@
       color: #1E293B;
       margin-bottom: 10px;
     }
+
     .card-link {
       display: inline-flex;
       align-items: center;
@@ -182,7 +251,10 @@
       color: var(--antaq-azul-900);
       transition: gap 0.2s ease;
     }
-    .card:hover .card-link { gap: 13px; }
+
+    .card:hover .card-link {
+      gap: 13px;
+    }
 
     /* rodapé */
     .footer {
@@ -200,7 +272,13 @@
       position: relative;
       z-index: 2;
     }
-    .footer-channels { display: flex; flex-direction: column; gap: 6px; }
+
+    .footer-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
     .footer-channels .channels-title {
       font-family: 'Montserrat', sans-serif;
       font-size: 11px;
@@ -209,7 +287,14 @@
       letter-spacing: 1.5px;
       color: #CBD5E1;
     }
-    .footer-channels .channels-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+
+    .footer-channels .channels-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 16px;
+    }
+
     .footer-channels .channels-links a {
       display: inline-flex;
       align-items: center;
@@ -221,8 +306,17 @@
       text-decoration: none;
       transition: color .2s ease;
     }
-    .footer-channels .channels-links a:hover { color: #FFFFFF; }
-    .footer-channels .channels-links a:focus-visible { outline: 3px solid var(--dourado); outline-offset: 2px; border-radius: 4px; }
+
+    .footer-channels .channels-links a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-channels .channels-links a:focus-visible {
+      outline: 3px solid var(--dourado);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
     .footer-credit .anchor-icon {
       width: 32px;
       height: 32px;
@@ -237,28 +331,81 @@
 
     /* tablet */
     @media (max-width: 768px) {
-      .org-bar { padding: 14px 20px 0; }
-      .org-bar-logo--ouvidoria { height: 64px; }
-      .org-bar-logo--antaq { height: 56px; }
-      .main { gap: 32px; padding: 32px 20px 44px; }
+      .org-bar {
+        padding: 14px 20px 0;
+      }
+
+      .org-bar-logo--ouvidoria {
+        height: 64px;
+      }
+
+      .org-bar-logo--antaq {
+        height: 56px;
+      }
+
+      .main {
+        gap: 32px;
+        padding: 32px 20px 44px;
+      }
     }
 
     /* celular */
     @media (max-width: 520px) {
-      .org-bar { justify-content: center; gap: 12px; }
-      .org-bar-logo--ouvidoria { height: 52px; }
-      .org-bar-logo--antaq { height: 44px; }
-      .org-bar-divider { padding-left: 12px; }
-      .main { justify-content: flex-start; gap: 28px; padding: 32px 16px 40px; }
-      .header-section { gap: 14px; }
-      .header-section p { font-size: 13px; }
-      .footer { flex-direction: column; align-items: center; text-align: center; padding: 16px; }
-      .footer-channels { align-items: center; }
-      .footer-channels .channels-links { justify-content: center; }
+      .org-bar {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .org-bar-logo--ouvidoria {
+        height: 52px;
+      }
+
+      .org-bar-logo--antaq {
+        height: 44px;
+      }
+
+      .org-bar-divider {
+        padding-left: 12px;
+      }
+
+      .main {
+        justify-content: flex-start;
+        gap: 28px;
+        padding: 32px 16px 40px;
+      }
+
+      .header-section {
+        gap: 14px;
+      }
+
+      .header-section p {
+        font-size: 13px;
+      }
+
+      .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 16px;
+      }
+
+      .footer-channels {
+        align-items: center;
+      }
+
+      .footer-channels .channels-links {
+        justify-content: center;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     }
 
     .sr-only {
@@ -294,17 +441,15 @@
     </div>
 
     <div class="cards">
-    <a class="card" href="guia/index.html" target="_blank" rel="noopener noreferrer">
-      <div class="card-icon">
-        <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
-      </div>
-      <div class="card-content">
-        <h2>Guia Prático · versão 2.0</h2>
-        <p>33 telas em 6 capítulos, com as normas conferidas no texto oficial.</p>
-        <span class="card-link">Abrir a versão 2.0 <i class="fa-solid fa-arrow-right" aria-hidden="true"></i><span
-            class="sr-only"> (abre em nova aba)</span></span>
-      </div>
-    </a>
+      <a class="card" data-agua href="guia/index.html" target="_blank" rel="noopener noreferrer">
+        <div class="card-content">
+          <h2 data-agua-titulo>Guia de Orientação da Carta de Serviços</h2>
+          <p>Orienta as unidades da ANTAQ na manutenção da Carta de Serviços no gov.br: responsabilidades, prazos e
+            informações obrigatórias.</p>
+          <span class="card-link">Abrir o Guia <i class="fa-solid fa-arrow-right" aria-hidden="true"></i><span
+              class="sr-only"> (abre em nova aba)</span></span>
+        </div>
+      </a>
     </div>
   </main>
 
@@ -312,11 +457,16 @@
     <div class="footer-channels">
       <span class="channels-title">Canais oficiais ANTAQ</span>
       <div class="channels-links">
-        <a href="https://www.facebook.com/ANTAQ.oficial" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="fa-brands fa-facebook"></i><span>Facebook</span></a>
-        <a href="https://www.instagram.com/antaq_oficial/" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="fa-brands fa-instagram"></i><span>Instagram</span></a>
-        <a href="https://www.youtube.com/c/CanalANTAQ/" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="fa-brands fa-youtube"></i><span>YouTube</span></a>
-        <a href="https://www.linkedin.com/company/antaq" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
-        <a href="https://x.com/ANTAQ_oficial" target="_blank" rel="noopener noreferrer"><i aria-hidden="true" class="fa-brands fa-twitter"></i><span>Twitter</span></a>
+        <a href="https://www.facebook.com/ANTAQ.oficial" target="_blank" rel="noopener noreferrer"><i aria-hidden="true"
+            class="fa-brands fa-facebook"></i><span>Facebook</span></a>
+        <a href="https://www.instagram.com/antaq_oficial/" target="_blank" rel="noopener noreferrer"><i
+            aria-hidden="true" class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+        <a href="https://www.youtube.com/c/CanalANTAQ/" target="_blank" rel="noopener noreferrer"><i aria-hidden="true"
+            class="fa-brands fa-youtube"></i><span>YouTube</span></a>
+        <a href="https://www.linkedin.com/company/antaq" target="_blank" rel="noopener noreferrer"><i aria-hidden="true"
+            class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+        <a href="https://x.com/ANTAQ_oficial" target="_blank" rel="noopener noreferrer"><i aria-hidden="true"
+            class="fa-brands fa-twitter"></i><span>Twitter</span></a>
       </div>
     </div>
     <div class="footer-credit">
@@ -324,7 +474,7 @@
     </div>
   </div>
 
-
+  <script src="agua.js"></script>
 </body>
 
 </html>

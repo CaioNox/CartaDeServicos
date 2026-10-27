@@ -432,6 +432,28 @@
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
       font-family: 'Open Sans', sans-serif;
       color: white;
+      overflow: hidden;
+      isolation: isolate;
+      /* água bem leve (../agua.js): fundo transparente, só um reflexo fraco de luz */
+      --agua-fundo: #0a2040;
+      --agua-luz: #7FC8E8;
+      --agua-opacidade: 0;
+      --agua-intensidade: 0.3;
+    }
+
+    .agua-tela {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity .7s ease-out;
+    }
+
+    .agua-ativa .agua-tela {
+      opacity: 1;
     }
 
     .nav-hints-panel h2 {
@@ -716,7 +738,7 @@
       class="fa-solid fa-expand" id="fsIcon" aria-hidden="true"></i></button>
 
   <div class="nav-hints-overlay" id="navHints">
-    <div class="nav-hints-panel" role="dialog" aria-modal="true" aria-labelledby="hintsTitulo">
+    <div class="nav-hints-panel" data-agua role="dialog" aria-modal="true" aria-labelledby="hintsTitulo">
 
       <button class="hints-close" id="hintsClose" type="button" onclick="toggleHints()"
         aria-label="Fechar ajuda de navegação" title="Fechar (Esc)">
@@ -1142,6 +1164,7 @@
     frames.forEach(function (f) { f.addEventListener('load', armarAtalhoNoSlide); });
   </script>
   <script src="a11y.js" defer></script>
+  <script src="../agua.js" defer></script>
 </body>
 
 </html>
