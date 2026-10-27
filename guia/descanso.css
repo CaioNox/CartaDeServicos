@@ -1,0 +1,46 @@
+/* =====================================================================
+   descanso.css — teste de leitura mais descansada (experimento).
+
+   Mais espaço entre blocos, linhas de texto mais arejadas, texto de
+   apoio um pouco mais suave e pílulas de base legal mais discretas.
+   Carregado depois de guia.css nas telas em teste; para desfazer,
+   tire o <link rel="stylesheet" href="descanso.css"> da tela.
+   ===================================================================== */
+
+/* respiro entre os blocos da página */
+.pagina-conteudo { gap: 30px; }
+.grade { gap: 28px; }
+.coluna { gap: 24px; }
+
+/* texto corrido: entrelinha maior e cor um pouco mais suave */
+.cartao p,
+.aviso p,
+.pagina-resumo {
+  line-height: 1.62;
+  letter-spacing: .005em;
+}
+.cartao p, .aviso p { color: #4A5A6E; }
+
+/* cartões e avisos: mais espaço interno, filete mais fino */
+.cartao { padding: 28px 30px 28px 32px; border-left-width: 5px; }
+.aviso { padding: 26px 32px; border-left-width: 5px; }
+.aviso h3 { margin-bottom: 10px; }
+
+/* base legal e página: discretas, para não competir com o texto */
+.base-legal,
+.rotulo {
+  border-width: 1px;
+  font-weight: 500;
+  opacity: .85;
+}
+
+/* tabelas: linhas mais altas e separação mais leve */
+.tabela td { padding-top: 14px; padding-bottom: 14px; line-height: 1.5; }
+.tabela td.referencia { color: #7A8798; }
+
+/* faixa escura: menos peso visual */
+.destaque { padding: 28px 40px; }
+.destaque p { line-height: 1.6; }
+
+/* fluxo: pílulas com mais espaço entre si */
+.fluxo { gap: 14px 18px; }

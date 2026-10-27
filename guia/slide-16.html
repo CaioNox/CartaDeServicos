@@ -11,11 +11,18 @@
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
+  <link rel="stylesheet" href="descanso.css">
   <style>
     .colunas { grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
     .deveres col.col-1 { width: 56%; }
     .deveres td { font-size: 22px; padding-top: 16px; padding-bottom: 16px; }
     .deveres td.referencia { font-size: 18px; }
+    /* pílula de base legal ou de página dentro do aviso */
+    .aviso .base-legal, .aviso .rotulo { margin-top: 12px; }
+    /* tela mais cheia do guia: menos respiro na coluna do setor */
+    .colunas > .coluna { gap: 16px; }
+    .colunas .aviso { padding: 18px 28px; }
+    .colunas .destaque { padding: 20px 34px; }
   </style>
 </head>
 
@@ -49,18 +56,31 @@
           </tbody>
         </table>
 
-        <table class="tabela tabela--azul deveres">
-          <colgroup><col class="col-1"><col></colgroup>
-          <thead>
-            <tr><th scope="col">Setor gestor</th><th scope="col">Base</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Manter os serviços atualizados no gov.br</td><td class="referencia">Portaria SGD/MGI 1.083/2025, art. 6º, II<br>Regimento Interno da ANTAQ, art. 18, III</td></tr>
-            <tr><td>Publicar antes de exigir um requisito novo</td><td class="referencia">Decreto 9.094/2017, art. 18-A, § 2º</td></tr>
-            <tr><td>Responder à consulta anual, mesmo "sem alteração"</td><td class="referencia">Portaria CGU 116/2024, art. 65, § 2º</td></tr>
-            <tr><td>Responder à Ouvidoria em até 20 dias</td><td class="referencia">Lei 13.460/2017, art. 16, parágrafo único</td></tr>
-          </tbody>
-        </table>
+        <div class="coluna">
+          <table class="tabela tabela--azul deveres">
+            <colgroup><col class="col-1"><col></colgroup>
+            <thead>
+              <tr><th scope="col">Setor gestor</th><th scope="col">Base</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Manter os serviços atualizados no gov.br</td><td class="referencia">Portaria SGD/MGI 1.083/2025, art. 6º, II<br>Regimento Interno da ANTAQ, art. 18, III</td></tr>
+              <tr><td>Publicar antes de exigir um requisito novo</td><td class="referencia">Decreto 9.094/2017, art. 18-A, § 2º</td></tr>
+              <tr><td>Responder à consulta anual, mesmo "sem alteração"</td><td class="referencia">Portaria CGU 116/2024, art. 65, § 2º</td></tr>
+              <tr><td>Responder à Ouvidoria em até 20 dias</td><td class="referencia">Lei 13.460/2017, art. 16, parágrafo único</td></tr>
+            </tbody>
+          </table>
+
+          <section class="aviso tom-azul" data-ir="slide-23.html">
+            <h3><i class="fas fa-file-pen" aria-hidden="true"></i>Como o setor registra</h3>
+            <p>Toda proposta do setor entra por um único formulário eletrônico e é registrada no processo SEI do ciclo.</p>
+            <span class="rotulo">Formulário · pág. 20</span>
+          </section>
+
+          <div class="destaque">
+            <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
+            <p><b>Toda inclusão, alteração ou exclusão</b> deve ser comunicada formalmente à Ouvidoria, no processo SEI nº 50300.012299/2024-14.</p>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
+  <link rel="stylesheet" href="descanso.css">
   <style>
     .colunas {
       grid-template-columns: 1.1fr 1fr;
@@ -81,6 +82,9 @@
     .mensagens .cartao p {
       font-size: 23px;
     }
+    /* atalhos para as telas que tratam cada qualidade */
+    .qualidades .cartao { padding: 18px 22px 18px 26px; gap: 6px; }
+    .qualidades .cartao p { font-size: 21px; }
   </style>
 </head>
 
@@ -133,6 +137,30 @@
             </section>
           </div>
         </div>
+      </div>
+
+      <h2 class="subtitulo">Onde o guia trata cada qualidade</h2>
+      <div class="grade grade-4 qualidades">
+        <section class="cartao tom-azul" data-ir="slide-10.html">
+          <h3>Completas</h3>
+          <p>Conteúdo obrigatório</p>
+          <span class="rotulo">pág. 10</span>
+        </section>
+        <section class="cartao tom-amarelo" data-ir="slide-22.html">
+          <h3>Precisas</h3>
+          <p>Ficha padrão do serviço</p>
+          <span class="rotulo">pág. 19</span>
+        </section>
+        <section class="cartao tom-roxo" data-ir="slide-27.html">
+          <h3>Acessíveis</h3>
+          <p>Linguagem simples</p>
+          <span class="rotulo">pág. 24</span>
+        </section>
+        <section class="cartao tom-amarelo" data-ir="slide-21.html">
+          <h3>Atualizadas</h3>
+          <p>Calendário do ciclo anual</p>
+          <span class="rotulo">pág. 18</span>
+        </section>
       </div>
     </div>
 
