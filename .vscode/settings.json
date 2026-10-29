@@ -1,0 +1,20 @@
+{
+  "files.watcherExclude": {
+    "**/leis/**": true,
+    "**/node_modules/**": true,
+    "**/saida-testes/**": true
+  },
+  "search.exclude": {
+    "**/leis": true,
+    "**/saida-testes": true
+  },
+  "files.exclude": {
+    "**/leis": true
+  },
+  "liveServer.settings.ignoreFiles": [
+    "leis/**",
+    "node_modules/**",
+    "saida-testes/**",
+    ".git/**"
+  ]
+}

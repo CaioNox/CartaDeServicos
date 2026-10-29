@@ -546,3 +546,16 @@ body {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+
+/* ---------- 10. Marcações à mão (marcador.js) ---------- */
+
+/* A frase marcada não muda de aparência por si: o traço vem do SVG. */
+.marca { background: transparent; color: inherit; text-decoration: none; }
+/* O bloco da frase vira contexto de empilhamento: o marca-texto fica
+   atrás das letras e na frente do fundo do cartão. */
+.marca-raiz { isolation: isolate; }
+.marca-raiz--relativa { position: relative; }
+.marca-camada { position: absolute; top: 0; left: 0; overflow: visible; pointer-events: none; }
+.marca-camada--atras { z-index: -1; }
+.marca-camada--frente { z-index: 1; }
