@@ -64,8 +64,7 @@ a { color: var(--brand-secondary); }
      .capitulo-2         02 Papéis                        verde
      .capitulo-3         03 Passo a passo                 amarelo
      .capitulo-4         04 Qualidade                     roxo
-     .capitulo-5         05 Monitoramento                 laranja
-     .capitulo-6         06 Apêndice                      marinho      */
+     .capitulo-5         05 Apêndice                      marinho      */
 
 body {
   --capitulo-cor: var(--cor-marinho);
@@ -82,7 +81,6 @@ body {
   --capitulo-fundo: #FEF7E8;
 }
 .capitulo-4 { --capitulo-cor: var(--cor-roxo); --capitulo-fundo: #F3EFF9; }
-.capitulo-5 { --capitulo-cor: var(--cor-laranja); --capitulo-fundo: #FCEFEB; }
 
 /* Tom de um componente, independente do capítulo:
    --tom (borda e ícone), --tom-fundo e --tom-texto (texto sobre o fundo claro). */
@@ -439,7 +437,7 @@ body {
   position: relative;
 }
 .capitulo-3 .capa-numero { color: rgba(16, 48, 80, .25); }
-.capitulo-6 .capa-numero, .capitulo-abertura .capa-numero { color: rgba(255, 255, 255, .25); }
+.capitulo-5 .capa-numero, .capitulo-abertura .capa-numero { color: rgba(255, 255, 255, .25); }
 .capa-titulo {
   margin: 20px 0 46px;
   font-weight: 900;

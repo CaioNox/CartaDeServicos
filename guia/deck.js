@@ -48,11 +48,7 @@ window.RELATORIO = {
       files: ['slide-25.html', 'slide-26.html', 'slide-27.html'],
     },
     {
-      block: '05 · Monitoramento', short: 'Monitoramento', tint: 0.45,
-      files: ['slide-28.html', 'slide-29.html', 'slide-30.html', 'slide-31.html'],
-    },
-    {
-      block: '06 · Apêndice', short: 'Apêndice', tint: 0.3,
+      block: '05 · Apêndice', short: 'Apêndice', tint: 0.3,
       files: ['slide-32.html', 'slide-33.html', 'slide-34.html', 'slide-35.html', 'slide-36.html'],
     },
   ],
