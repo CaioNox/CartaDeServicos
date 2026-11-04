@@ -11,52 +11,196 @@
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
+  <link rel="stylesheet" href="vidro.css">
   <style>
-    .capa { justify-content: flex-start; padding: 0 160px; }
-    .capa .circulo { background: none; }
-    .circulo-azul { width: 900px; height: 900px; right: -120px; top: -470px; background: #0B5A9A !important; opacity: .95; }
-    .circulo-verde { width: 640px; height: 640px; right: 380px; top: 300px; background: #0F9D8A !important; opacity: .55; }
-    .circulo-amarelo { width: 480px; height: 480px; left: -250px; bottom: -230px; background: #DB9D0A !important; }
-    .capa-logo-topo { position: relative; height: 104px; width: auto; margin-top: 90px; }
-    .capa-chamada { margin: 120px 0 20px; font-weight: 800; font-size: 26px; letter-spacing: .3em; color: var(--cor-amarelo); position: relative; }
-    .capa-titulo-principal { margin: 0; font-weight: 900; font-size: 96px; line-height: 1.04; color: #fff; position: relative; }
-    .capa-subtitulo { margin: 26px 0 34px; font-family: 'Open Sans', sans-serif; font-size: 34px; color: rgba(255, 255, 255, .92); position: relative; }
-    .capa-botao {
-      align-self: flex-start; position: relative;
-      padding: 18px 44px; border-radius: 999px; background: var(--cor-amarelo);
-      font-weight: 800; font-size: 30px; color: var(--cor-marinho);
+    /* texto a "um dedo" da borda esquerda: 40px, a margem do grid do DS
+       gov.br para telas grandes. Fonte: Rawline, a família do DS. */
+    .capa {
+      justify-content: flex-start;
+      padding: 0 160px 0 40px;
+      font-family: 'Rawline', 'Montserrat', sans-serif;
     }
-    .capa-data { position: absolute; left: 160px; bottom: 64px; margin: 0; font-family: 'Open Sans', sans-serif; font-size: 26px; color: rgba(255, 255, 255, .9); }
-    .tarja { position: absolute; left: 0; right: 0; bottom: 0; height: 28px; display: flex; }
-    .tarja span { display: block; height: 100%; }
+
+    /* caixa de vidro em volta da chamada, do título e do subtítulo, com a
+       mesma folga nos quatro lados (32px, escala de espaçamento do DS);
+       ilustracao.js mede o texto e ajusta. Os valores abaixo são reserva.
+       Cantos de 16px: --surface-rounder-lg do DS. */
+    .capa-vidro {
+      position: absolute;
+      left: 8px;
+      top: 282px;
+      width: 912px;
+      height: 488px;
+      border-radius: 16px;
+      pointer-events: none;
+      /* borda dourada da marca (--dourado), 2px: --surface-width-md do DS */
+      border: 2px solid var(--dourado);
+    }
+
+    /* ilustração gerada por ilustracao.js (padrão gov.br de ilustração):
+       ocupa a tela inteira, atrás do texto, e desvia do que está em data-desviar */
+    .capa-ilustracao {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .capa-ilustracao svg {
+      display: block;
+    }
+
+    /* chamada, título e subtítulo: um bloco da largura da linha mais
+       longa, no centro da página, com o texto centralizado dentro da
+       caixa de vidro */
+    .capa-bloco {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* o espaçamento entre letras deixa uma sobra depois da última letra;
+       a margem negativa a compensa, para a chamada ficar no centro exato */
+    .capa-bloco .capa-chamada {
+      margin: 0 -.3em 20px 0;
+    }
+
+    /* no centro, sem as margens de fora do bloco: a caixa fica simétrica */
+    .capa-bloco .capa-subtitulo {
+      margin-bottom: 0;
+    }
+
+    .capa-logo-topo {
+      position: relative;
+      height: 104px;
+      width: auto;
+      margin-top: 90px;
+    }
+
+    .capa-chamada {
+      margin: 120px 0 20px;
+      font-weight: 800;
+      font-size: 26px;
+      letter-spacing: .3em;
+      color: var(--cor-amarelo);
+      position: relative;
+    }
+
+    .capa-titulo-principal {
+      margin: 0;
+      font-weight: 900;
+      font-size: 96px;
+      line-height: 1.04;
+      color: #fff;
+      position: relative;
+    }
+
+    .capa-subtitulo {
+      margin: 26px 0 34px;
+      font-family: 'Rawline', 'Open Sans', sans-serif;
+      font-size: 34px;
+      color: rgba(255, 255, 255, .92);
+      position: relative;
+    }
+
+    .capa-botao {
+      align-self: flex-start;
+      position: relative;
+      padding: 18px 44px;
+      border-radius: 999px;
+      background: var(--cor-amarelo);
+      font-weight: 800;
+      font-size: 30px;
+      color: var(--cor-marinho);
+    }
+
+    .capa-data {
+      position: absolute;
+      left: 40px;
+      bottom: 64px;
+      margin: 0;
+      font-family: 'Rawline', 'Open Sans', sans-serif;
+      font-size: 26px;
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .tarja {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 28px;
+      display: flex;
+    }
+
+    .tarja span {
+      display: block;
+      height: 100%;
+    }
+
+    /* texto entra em sequência; ilustracao.js repete ao voltar à tela.
+       Tokens de movimento do DS gov.br: --duration-moderate (0,5 s) e
+       --animation-ease-out, cubic-bezier(0, 0, .58, 1) */
+    [data-entra] {
+      animation: capaEntra .5s cubic-bezier(0, 0, .58, 1) backwards;
+      animation-delay: calc(var(--ordem, 0) * 100ms + 100ms);
+    }
+
+    @keyframes capaEntra {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .vida-parado [data-entra] {
+      animation: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-entra] {
+        animation: none;
+      }
+    }
   </style>
 </head>
 
 <body class="capitulo-abertura">
   <main class="capa">
-    <div class="circulo circulo-azul" aria-hidden="true"></div>
-    <div class="circulo circulo-verde" aria-hidden="true"></div>
-    <div class="circulo circulo-amarelo" aria-hidden="true"></div>
+    <div class="capa-ilustracao" data-ilustracao="capa" aria-hidden="true"></div>
+    <div class="capa-vidro vidro"
+      data-vidro-cobre=".capa-chamada, .capa-titulo-principal, .capa-subtitulo" data-vidro-margem="32"
+      aria-hidden="true"></div>
 
-    <img class="capa-logo-topo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ — Agência Nacional de Transportes Aquaviários" style="align-self:flex-start">
-    <p class="capa-chamada">OUVIDORIA DA ANTAQ</p>
-    <h1 class="capa-titulo-principal">Guia Prático<br>da Carta de<br>Serviços</h1>
-    <p class="capa-subtitulo">Revisão e atualização da Carta de Serviços ao Usuário</p>
-    <p class="capa-botao">Passo a passo para as áreas</p>
-    <p class="capa-data">Brasília · outubro de 2026 · Versão 2.0</p>
+    <img class="capa-logo-topo" data-entra style="--ordem:0;align-self:flex-start" src="Imagens/logo-antaq-branca.png"
+      alt="ANTAQ — Agência Nacional de Transportes Aquaviários">
+    <div class="capa-bloco">
+      <p class="capa-chamada" data-entra style="--ordem:1">OUVIDORIA DA ANTAQ</p>
+      <h1 class="capa-titulo-principal" data-entra style="--ordem:2">Guia Prático<br>da Carta de<br>Serviços</h1>
+      <p class="capa-subtitulo" data-entra style="--ordem:3">Revisão e atualização da Carta de Serviços ao Usuário</p>
+    </div>
+    <p class="capa-data" data-entra style="--ordem:5">Brasília · outubro de 2026 · Versão 2.0</p>
 
     <div class="tarja" aria-hidden="true">
-      <span style="width:25%;background:#0070C0"></span>
-      <span style="width:20%;background:#0F9D8A"></span>
-      <span style="width:20%;background:#F2A900"></span>
-      <span style="width:17%;background:#7B4FB8"></span>
-      <span style="width:18%;background:#E4572E"></span>
+      <span style="width:60%;background:#0070C0"></span>
+      <span style="width:30%;background:#0090C0"></span>
+      <span style="width:10%;background:#F2A900"></span>
     </div>
   </main>
 
   <script src="guia.js" defer></script>
   <script src="a11y.js" defer></script>
   <script src="vida.js" defer></script>
+  <script src="ilustracao.js" defer></script>
 </body>
 
 </html>

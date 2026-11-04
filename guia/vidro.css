@@ -1,0 +1,63 @@
+/* =====================================================================
+   vidro.css — efeito de vidro com as mesmas opções do GlassView do
+   pacote expo-glass-effect (Expo, licença MIT).
+
+   Por que não o pacote em si: o GlassView só desenha vidro no iOS
+   (Liquid Glass, nativo da Apple). Na web ele é um <View> comum, sem
+   efeito nenhum, e depende de React Native — este site é HTML puro.
+   Aqui o efeito é feito em CSS, seguindo as propriedades do componente:
+
+     GlassView                      vidro.css
+     glassEffectStyle="regular"     .vidro               (padrão)
+     glassEffectStyle="clear"       .vidro.vidro--clear  (mais transparente)
+     tintColor="…"                  --vidro-tinta: …     (cor do vidro)
+     colorScheme="dark"             padrão deste site (fundo escuro)
+
+   Cor padrão: cinza-escuro da marca (#1D2939, --cor-texto-forte de base.css).
+   Sem suporte a backdrop-filter, a tinta fica mais densa e o texto
+   continua legível.
+   ===================================================================== */
+
+.vidro {
+  --vidro-tinta: rgba(29, 41, 57, 0.55);   /* tintColor: cinza-escuro #1D2939 */
+  --vidro-desfoque: 24px;
+  --vidro-saturacao: 160%;
+  /* sem "position": quem usa o vidro define a sua (absolute, fixed…);
+     o reflexo (::before) precisa só de um elemento já posicionado */
+  isolation: isolate;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 45%, rgba(255, 255, 255, 0.06) 100%),
+    var(--vidro-tinta);
+  -webkit-backdrop-filter: blur(var(--vidro-desfoque)) saturate(var(--vidro-saturacao));
+  backdrop-filter: blur(var(--vidro-desfoque)) saturate(var(--vidro-saturacao));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 1px 0 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25),
+    0 8px 32px rgba(0, 0, 0, 0.32);
+}
+
+/* glassEffectStyle="clear": menos desfoque e tinta mais rala */
+.vidro--clear {
+  --vidro-tinta: rgba(29, 41, 57, 0.28);
+  --vidro-desfoque: 10px;
+  --vidro-saturacao: 140%;
+}
+
+/* reflexo: luz no canto de cima e uma faixa na diagonal */
+.vidro::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(120% 60% at 0% 0%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 55%),
+    linear-gradient(115deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.07) 42%, rgba(255, 255, 255, 0) 54%);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .vidro { --vidro-tinta: rgba(29, 41, 57, 0.88); }
+}

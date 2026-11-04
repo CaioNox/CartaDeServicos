@@ -10,3 +10,12 @@
 @font-face{font-family:'Open Sans';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/open-sans-latin-600-normal.woff2') format('woff2')}
 @font-face{font-family:'Open Sans';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/open-sans-latin-700-normal.woff2') format('woff2')}
 @font-face{font-family:'Open Sans';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/open-sans-latin-400-italic.woff2') format('woff2')}
+/* Rawline: a família tipográfica do Padrão Digital de Governo (DS gov.br,
+   Fundamentos › Tipografia), baixada de www.gov.br/ds. Derivada da Raleway;
+   licença SIL OFL 1.1 (declarada no próprio arquivo da fonte). */
+@font-face{font-family:'Rawline';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/rawline-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Rawline';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/rawline-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:'Rawline';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/rawline-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:'Rawline';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/rawline-latin-700-normal.woff2') format('woff2')}
+@font-face{font-family:'Rawline';font-style:normal;font-weight:800;font-display:swap;src:url('fonts/rawline-latin-800-normal.woff2') format('woff2')}
+@font-face{font-family:'Rawline';font-style:normal;font-weight:900;font-display:swap;src:url('fonts/rawline-latin-900-normal.woff2') format('woff2')}

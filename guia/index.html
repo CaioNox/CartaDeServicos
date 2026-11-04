@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../vendor/fontes.css" />
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css" />
   <link rel="stylesheet" href="a11y.css" />
+  <link rel="stylesheet" href="vidro.css" />
   <style>
     * {
       box-sizing: border-box;
@@ -77,8 +78,8 @@
     .quadro {
       position: absolute;
       inset: 0;
-      transition: opacity .42s cubic-bezier(.22, 1.15, .36, 1),
-        transform .42s cubic-bezier(.22, 1.15, .36, 1);
+      transition: opacity .22s cubic-bezier(.22, 1.15, .36, 1),
+        transform .22s cubic-bezier(.22, 1.15, .36, 1);
     }
 
     /* fora de cena: sem pintura, sem clique, sem foco */
@@ -199,13 +200,10 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      background: rgba(13, 40, 66, 0.38);
-      backdrop-filter: blur(20px) saturate(170%);
-      -webkit-backdrop-filter: blur(20px) saturate(170%);
+      /* fundo, desfoque, borda e sombra vêm de .vidro (vidro.css) */
+      position: fixed;
       padding: 8px 16px;
       border-radius: 50px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.22);
       z-index: 1000;
       font-family: 'Open Sans', sans-serif;
       pointer-events: auto;
@@ -715,7 +713,7 @@
   <div class="nav-dock" role="navigation" aria-label="Navegação de slides">
     <div class="nav-trigger"></div>
     <div class="nav-wave"></div>
-    <div class="nav-bar">
+    <div class="nav-bar vidro">
       <button onclick="goHome()" class="home-btn" title="Ir para o slide inicial"
         aria-label="Ir para o slide inicial"><i class="fa-solid fa-house" aria-hidden="true"></i></button>
       <button onclick="prev()" id="btnPrev" title="Anterior" aria-label="Slide anterior"><i
@@ -884,7 +882,7 @@
         saindo.classList.remove('sai-frente', 'sai-tras');
         saindo.querySelector('iframe').removeAttribute('title');
       };
-      limpeza = { id: window.setTimeout(fazerLimpeza, 440), exec: esconder };
+      limpeza = { id: window.setTimeout(fazerLimpeza, 240), exec: esconder };
     }
 
     function render() {

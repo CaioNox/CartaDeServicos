@@ -419,12 +419,29 @@ body {
   overflow: hidden;
   background: var(--capitulo-cor);
   color: var(--capitulo-texto);
-  font-family: 'Montserrat', sans-serif;
+  /* Rawline: a família tipográfica do DS gov.br (vendor/fontes.css) */
+  font-family: 'Rawline', 'Montserrat', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 150px 110px;
 }
+
+/* Fundo desenhado por ilustracao.js: as formas do DS gov.br na página
+   inteira, nos tons da cor do capítulo. */
+.capa-ilustracao { position: absolute; inset: 0; pointer-events: none; }
+.capa-ilustracao svg { display: block; }
+
+/* Entrada do texto com os tokens de movimento do DS gov.br:
+   --duration-moderate (0,5 s) e --animation-ease-out. ilustracao.js
+   repete a entrada quando a tela volta a ficar em cena. */
+.capa [data-entra] {
+  animation: capaEntra .5s cubic-bezier(0, 0, .58, 1) backwards;
+  animation-delay: calc(var(--ordem, 0) * 100ms + 100ms);
+}
+@keyframes capaEntra { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.vida-parado .capa [data-entra] { animation: none; }
+@media (prefers-reduced-motion: reduce) { .capa [data-entra] { animation: none; } }
 /* círculos decorativos; tamanho e posição ficam no style de cada capa */
 .capa .circulo { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, .13); pointer-events: none; }
 .capa-numero {
@@ -460,7 +477,7 @@ body {
   background: none;
   border: 0;
   text-align: left;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Rawline', 'Open Sans', sans-serif;
   font-size: 30px;
   color: var(--capitulo-texto);
   cursor: pointer;
