@@ -29,26 +29,22 @@
       max-width: 7.5em;
     }
 
-    .certificado {
+    .superintendencias { display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+    .superintendencias h2 { margin: 0; font-size: 20px; font-weight: 700; color: var(--cor-marinho); }
+    .superintendencias .grade { gap: 14px; }
+
+    /* uma caixa por superintendência, na cor do projeto (--sup-*) */
+    .sup-mini {
       display: flex;
       align-items: center;
-      gap: 24px;
-      margin: 0;
-      padding: 22px 34px;
-      border-radius: 18px;
-      border-left: 6px solid var(--tom);
-      background: var(--tom-fundo);
-      font-size: 21px;
-      line-height: 1.45;
-      color: var(--cor-texto);
-      text-wrap: balance;
+      gap: 14px;
+      padding: 12px 22px;
+      border-radius: 16px;
+      background: var(--tom);
+      color: #fff;
     }
-
-    .selo {
-      flex-shrink: 0;
-      font-size: 44px;
-      color: var(--cor-amarelo);
-    }
+    .sup-mini b { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 44px; line-height: 1; }
+    .sup-mini span { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: .04em; }
   </style>
 </head>
 
@@ -72,10 +68,9 @@
           <span class="icone"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
           <h2>O que é?</h2>
           <p>Catálogo dos serviços da ANTAQ, publicado no portal gov.br, com os compromissos de atendimento.</p>
-          T
           <span class="base-legal">Lei 13.460/2017, art. 7º</span>
         </section>
-        <section class="cartao tom-verde">
+        <section class="cartao tom-marinho">
           <span class="icone"><i class="fas fa-users" aria-hidden="true"></i></span>
           <h2>Quem faz?</h2>
           <p>Cada superintendência escreve e atualiza seus serviços. A Ouvidoria zela pela adequação, atualização e
@@ -88,7 +83,7 @@
           <p>Sempre que algo mudar e, no mínimo, uma revisão completa por ano.</p>
           <span class="base-legal">Portaria CGU 116/2024, art. 65, § 2º</span>
         </section>
-        <section class="cartao tom-roxo">
+        <section class="cartao tom-azul">
           <span class="icone"><i class="fas fa-folder-open" aria-hidden="true"></i></span>
           <h2>Onde registrar?</h2>
           <p>O registro é realizado no SEI e no gov.br.</p>
@@ -110,8 +105,15 @@
         <div class="indicador tom-azul"><span class="indicador-valor">33</span><span class="indicador-legenda">serviços
             na Carta hoje</span>
         </div>
-        <p class="certificado tom-amarelo"><i class="fas fa-award selo" aria-hidden="true"></i><span>Serviços publicados
-            de cada superintendência SOG-18 SRG-8 SAF-4 SFC-3 </span></p>
+        <div class="superintendencias">
+          <h2>Serviços publicados de cada superintendência</h2>
+          <div class="grade grade-4">
+            <div class="sup-mini sup-sog"><b>18</b><span>SOG</span></div>
+            <div class="sup-mini sup-srg"><b>8</b><span>SRG</span></div>
+            <div class="sup-mini sup-saf"><b>4</b><span>SAF</span></div>
+            <div class="sup-mini sup-sfc"><b>3</b><span>SFC</span></div>
+          </div>
+        </div>
       </div>
     </div>
 
