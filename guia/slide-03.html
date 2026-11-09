@@ -45,6 +45,15 @@
     }
     .sup-mini b { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 44px; line-height: 1; }
     .sup-mini span { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 24px; letter-spacing: .04em; }
+
+    /* Atenção em fundo claro, com tracejado azul-escuro; o ícone segue amarelo */
+    .destaque-claro {
+      background: #E8F2F9;
+      border: 2px dashed var(--cor-marinho);
+    }
+    .destaque-claro p { color: var(--cor-texto-forte); }
+    .destaque-claro p b, .destaque-claro p strong { color: var(--cor-marinho); }
+    .destaque-claro .destaque-base { color: var(--cor-texto); }
   </style>
 </head>
 
@@ -91,7 +100,7 @@
         </section>
       </div>
 
-      <div class="destaque">
+      <div class="destaque destaque-claro">
         <i class="fas fa-scale-balanced" aria-hidden="true"></i>
         <div>
           <p><b>Atenção.</b> A ANTAQ não pode exigir do usuário nenhum documento, requisito ou procedimento
