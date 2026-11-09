@@ -24,7 +24,7 @@ window.RELATORIO = {
   blocos: [
     {
       block: 'Abertura', short: 'Abertura', tint: 0.35,
-      files: ['slide-01.html', 'slide-02.html', 'slide-03.html', 'slide-04.html', 'slide-05.html'],
+      files: ['slide-01.html', 'slide-01-introducao.html', 'slide-02.html', 'slide-03.html', 'slide-04.html', 'slide-05.html'],
     },
     {
       block: 'Antes de começar', short: 'Antes de começar', tint: 0.4,
@@ -32,7 +32,7 @@ window.RELATORIO = {
     },
     {
       block: '01 · Entendendo a Carta', short: 'Entendendo a Carta', tint: 1,
-      files: ['slide-07.html', 'slide-08.html', 'slide-09.html', 'slide-10.html', 'slide-11.html'],
+      files: ['slide-07.html', 'slide-08.html', 'slide-09.html', 'slide-10.html', 'slide-10-caracteristicas.html', 'slide-11.html'],
     },
     {
       block: '02 · Papéis e responsabilidades', short: 'Papéis', tint: 0.85,

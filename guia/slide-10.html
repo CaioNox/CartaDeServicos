@@ -12,54 +12,17 @@
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
   <style>
-    .campos .cartao {
-      padding: 26px 22px 26px 26px;
-      gap: 10px;
-      min-height: 210px;
-    }
-
-    .campos .cartao h3 {
-      font-size: 26px;
-    }
-
-    .campos .cartao p {
-      font-size: 23px;
-    }
-
-    .pagina-conteudo {
-      gap: 22px;
-    }
-
-    .subtitulo .base-legal {
-      font-family: 'Open Sans', sans-serif;
-      margin-left: 4px;
-    }
-
-    .servico-teste {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .servico-teste-texto {
-      margin: 0;
-      font-size: 22px;
-      line-height: 1.45;
-      color: var(--cor-texto);
-    }
-
-    .caracteristicas .cartao {
-      padding: 24px 22px 24px 26px;
-      gap: 8px;
-    }
-
-    .caracteristicas .cartao h3 {
-      font-size: 26px;
-    }
-
-    .caracteristicas .cartao p {
-      font-size: 22px;
-    }
+    .pagina-conteudo { gap: 22px; }
+    .subtitulo .base-legal { font-family: 'Open Sans', sans-serif; margin-left: 4px; }
+    .campos .cartao { padding: 20px 28px; gap: 10px; }
+    .campos .cartao h3 { font-size: 26px; }
+    .campos .cartao p { font-size: 22px; line-height: 1.5; }
+    .outras { flex: none; display: flex; flex-direction: column; gap: 14px; }
+    .outras h3 { margin: 0; font-size: 26px; color: var(--cor-marinho); }
+    .outras-lista { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+    .outras-lista > div { padding: 16px 20px; border-left: 7px solid var(--cor-marinho); border-radius: 12px; background: var(--tom-fundo); }
+    .outras-lista dt { font-size: 19px; font-weight: 700; line-height: 1.25; color: var(--cor-marinho); }
+    .outras-lista dd { margin: 6px 0 0; font-size: 18px; line-height: 1.4; color: var(--cor-texto); }
   </style>
 </head>
 
@@ -80,72 +43,60 @@
       <h2 class="subtitulo subtitulo--tom tom-azul"><i class="fas fa-list-check" aria-hidden="true"></i>Sobre o serviço
         <span class="base-legal">Lei 13.460, art. 7º, § 2º · Decreto 9.094, art. 11, § 2º</span>
       </h2>
-      <div class="grade grade-6 campos">
+      <div class="grade grade-3 campos">
         <section class="cartao tom-azul">
           <h3>O que é?</h3>
-          <p>Para que serve e o que o usuário recebe.</p>
+          <p>Explique, em poucas palavras, para que serve o serviço e o que o usuário recebe ao final.</p>
         </section>
         <section class="cartao tom-azul">
-          <h3>O que apresentar</h3>
-          <p>Requisitos, documentos e informações.</p>
+          <h3>Quem pode utilizar este serviço?</h3>
+          <p>Indique quem tem direito ao serviço e quais requisitos, documentos e informações a pessoa precisa apresentar.</p>
         </section>
         <section class="cartao tom-azul">
-          <h3>Etapas</h3>
-          <p>Do pedido à resposta final.</p>
-        </section>
-        <section class="cartao tom-azul">
-          <h3>Prazo máximo</h3>
-          <p>Não sendo permitido tempo medio. somente Tempo Exato
-            <i>("Sera Disponilizado em 3 dias")</i>
-          </p>
-        </section>
-        <section class="cartao tom-azul">
-          <h3>Como é prestado</h3>
-          <p>O serviço pode ser prestado tanto de forma DIGITAL, quanto PRESENCIAL.</p>
-        </section>
-        <section class="cartao tom-azul">
-          <h3>Onde reclamar</h3>
-          <p>Ouvidoria e Fala.BR.</p>
+          <h3>Etapas para a realização deste serviço</h3>
+          <p>Descreva, em ordem, cada passo do pedido à resposta final, dizendo o que o usuário faz e o que a ANTAQ faz.</p>
         </section>
       </div>
+
+      <section class="outras tom-azul">
+        <h3>Outras Informações</h3>
+        <dl class="outras-lista">
+          <div>
+            <dt>Quanto tempo leva?</dt>
+            <dd>Informe o tempo que o usuário deve esperar para concluir o serviço.</dd>
+          </div>
+          <div>
+            <dt>Informações adicionais ao tempo estimado</dt>
+            <dd>Explique o que pode alterar esse tempo e quando ele começa a contar.</dd>
+          </div>
+          <div>
+            <dt>Validade do Documento</dt>
+            <dd>Informe por quanto tempo o documento emitido continua válido, quando houver.</dd>
+          </div>
+          <div>
+            <dt>Informações adicionais ao tempo de validade</dt>
+            <dd>Explique o que pode alterar a validade e o que fazer quando ela terminar.</dd>
+          </div>
+          <div>
+            <dt>Legislação</dt>
+            <dd>Liste as normas que fundamentam o serviço, com o número de cada uma.</dd>
+          </div>
+          <div>
+            <dt>Tratamento a ser dispensado ao usuário no atendimento</dt>
+            <dd>Descreva como o usuário deve ser recebido e atendido pela equipe.</dd>
+          </div>
+          <div>
+            <dt>Informações sobre as condições de acessibilidade, sinalização, limpeza e conforto dos locais de atendimento</dt>
+            <dd>Descreva como são os locais de atendimento e os recursos disponíveis.</dd>
+          </div>
+          <div>
+            <dt>Informação sobre quem tem direito a tratamento prioritário</dt>
+            <dd>Informe quem tem direito a atendimento prioritário e como solicitá-lo.</dd>
+          </div>
+        </dl>
+      </section>
       <p class="nota">O Decreto 9.094/2017, art. 11, § 2º, VI e VII, pede também a forma de comunicação com o
         solicitante e os locais e as formas de acessar o serviço.</p>
-
-      <div class="servico-teste">
-        <h2 class="subtitulo subtitulo--tom tom-roxo"><i class="fas fa-circle-question"
-            aria-hidden="true"></i>Características para elaboração de um serviço <span class="base-legal">Portaria
-            SGD/MGI
-            1.083/2025, art. 3º · Portaria CGU 116/2024, art. 65, § 1º, I · Guia CGU, p. 9</span></h2>
-        <p class="servico-teste-texto"><span class="marca" data-marca="sublinhado">Só entra na Carta a atividade que tem as cinco características abaixo. Faltou
-          uma, fica fora.</span></p>
-      </div>
-      <div class="grade grade-5 caracteristicas">
-        <section class="cartao tom-roxo">
-          <span class="icone"><i class="fas fa-comments" aria-hidden="true"></i></span>
-          <h3>Interação</h3>
-          <p>Há contato entre a área e o usuário.</p>
-        </section>
-        <section class="cartao tom-roxo">
-          <span class="icone"><i class="fas fa-flag-checkered" aria-hidden="true"></i></span>
-          <h3>Suficiência</h3>
-          <p>Vai do pedido à resposta final.</p>
-        </section>
-        <section class="cartao tom-roxo">
-          <span class="icone"><i class="fas fa-user" aria-hidden="true"></i></span>
-          <h3>Individual</h3>
-          <p>Atende cada usuário.</p>
-        </section>
-        <section class="cartao tom-roxo">
-          <span class="icone"><i class="fas fa-diagram-next" aria-hidden="true"></i></span>
-          <h3>Padrão</h3>
-          <p>Segue etapas definidas.</p>
-        </section>
-        <section class="cartao tom-roxo">
-          <span class="icone"><i class="fas fa-door-open" aria-hidden="true"></i></span>
-          <h3>Externo</h3>
-          <p>É para quem está fora da ANTAQ.</p>
-        </section>
-      </div>
     </div>
 
     <footer class="pagina-rodape">
@@ -157,7 +108,6 @@
   <script src="guia.js" defer></script>
   <script src="a11y.js" defer></script>
   <script src="vida.js" defer></script>
-  <script src="marcador.js" defer></script>
 </body>
 
 </html>

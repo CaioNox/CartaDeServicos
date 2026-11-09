@@ -558,13 +558,15 @@
     const L = contexto.largura, A = contexto.altura;
     /* a multidão ocupa a parte de baixo; as fileiras de trás sobem até 72%
        da altura, em degraus, como a arquibancada de um estádio */
-    const TOPO = Math.round(A * 0.72);
+    /* a multidão fica só no canto de baixo à direita, atrás de uma
+       diagonal: começa em X_DIAG no pé da tela e sobe até TOPO na borda
+       direita */
+    const TOPO = Math.round(A * 0.46), X_DIAG = Math.round(L * 0.48);
     const obstaculos = contexto.obstaculos;
-    const contorno = calcularContorno(obstaculos, L, A, {
-      /* folgas na escala de espaçamento do DS (múltiplos de 8px) */
-      folgaX: 24, folgaY: 32, alargar: 16, suavizar: 16,
-      topo: TOPO, junto: TOPO, rampa: 1, ondulacao: 5,
-    });
+    const contorno = (x) => {
+      const y = A + 40 - (x - X_DIAG) * (A + 40 - TOPO) / (L - X_DIAG);
+      return Math.max(TOPO, y);
+    };
 
     /* Desempenho: cada camada é um <svg> próprio, do tamanho do que
        contém: o hover e a entrada redesenham só a fileira que muda, nunca
@@ -601,15 +603,20 @@
           .setAttribute('clip-path', 'inset(0 0 0 0 round 0 ' + raio + 'px ' + raio + 'px 0)');
       }
     }
-    placa(-40, -80, 300, 560, 56, cor.apoio, true);
-    placa(1034, 176, 204, 400, 40, cor.apoio, true);
-    placa(170, 680, 540, 150, 75, cor.secundaria, false);
-    placa(1250, 610, 580, 170, 85, marinhoClaro, false);
-    no('circle', { cx: 830, cy: 330, r: 150, fill: cor.secundaria }, cFundo.svg);
-    no('path', { d: 'M980 330A150 150 0 0 1 680 330Z', fill: sombreado(cor.secundaria, 0.2) }, cFundo.svg);
-    [[40, 360, 560, 280], [1004, 64, 420, 336], [1290, 560, 560, 260], [560, 40, 280, 140]].forEach((r) => {
-      no('rect', { x: r[0], y: r[1], width: r[2], height: r[3], fill: 'url(#' + id('pontos') + ')', opacity: 0.22 }, cFundo.svg);
-    });
+    placa(-60, -90, 320, 420, 56, marinhoClaro, false);
+    placa(1060, 140, 220, 440, 48, marinhoClaro, false);
+    /* textura da página inteira, como nas capas de capítulo: pontos
+       espaçados por igual sob um degradê leve */
+    const degrade = no('linearGradient', { id: id('degrade'), x1: 1, y1: 0, x2: 0, y2: 1 }, cFundo.defs);
+    no('stop', { offset: 0, 'stop-color': '#FFFFFF', 'stop-opacity': 1 }, degrade);
+    no('stop', { offset: 1, 'stop-color': '#FFFFFF', 'stop-opacity': 0.35 }, degrade);
+    const mascara = no('mask', { id: id('mascara'), maskUnits: 'userSpaceOnUse', x: 0, y: 0, width: L, height: A }, cFundo.defs);
+    no('rect', { width: L, height: A, fill: 'url(#' + id('degrade') + ')' }, mascara);
+    const grao0 = no('pattern', { id: id('grao0'), width: 200, height: 200, patternUnits: 'userSpaceOnUse' }, cFundo.defs);
+    if (textura) no('image', { href: textura, width: 200, height: 200 }, grao0);
+    const texturas = no('g', { mask: 'url(#' + id('mascara') + ')' }, cFundo.svg);
+    no('rect', { width: L, height: A, fill: 'url(#' + id('pontos') + ')', opacity: 0.12 }, texturas);
+    if (textura) no('rect', { width: L, height: A, fill: 'url(#' + id('grao0') + ')', opacity: 0.45 }, texturas);
 
     const cBolha = camada(0.2, { x: 1180, y: -170, w: 840, h: 840 });
     const grao = no('pattern', { id: id('grao'), width: 200, height: 200, patternUnits: 'userSpaceOnUse' }, cBolha.defs);
@@ -633,45 +640,9 @@
     /* na frente da bolha: círculo listrado, linha curva com pontas
        redondas, uma bolha menor e pequenos ícones geométricos (estilo
        abstrato da Ilustração do DS) */
-    const rndDetalhes = aleatorio(SEMENTE + 1);
+    /* capa menos poluída: sem os detalhes geométricos (listras, ícones,
+       linhas curvas, bolhas menores); a camada fica vazia */
     const cDetalhes = camada(0.35, TELA);
-    const listras = no('pattern', {
-      id: id('listras'), width: 18, height: 18, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)',
-    }, cDetalhes.defs);
-    no('rect', { width: 6, height: 18, fill: cor.papel }, listras);
-    [[1262, 214, 92], [560, 130, 80], [1770, 760, 70], [960, 560, 56]].forEach((c, k) => {
-      no('circle', { cx: c[0], cy: c[1], r: c[2] }, no('clipPath', { id: id('listrado-' + k) }, cDetalhes.defs));
-      no('rect', {
-        x: c[0] - c[2], y: c[1] - c[2], width: 2 * c[2], height: 2 * c[2], fill: 'url(#' + id('listras') + ')',
-        opacity: 0.85, 'clip-path': 'url(#' + id('listrado-' + k) + ')',
-      }, cDetalhes.svg);
-    });
-    const bolhaMenor = criarBolha(rndDetalhes, 6, 0.12, 0);
-    no('path', { d: bolhaMenor(1872, 412, 64, 0), fill: cor.apoio }, cDetalhes.svg);
-    no('path', { d: bolhaMenor(96, 640, 52, 0), fill: cor.apoio }, cDetalhes.svg);
-    const traco = { fill: 'none', stroke: cor.apoio, 'stroke-width': 3, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' };
-    [['M1012 548C1062 452 984 358 1072 284S1146 150 1214 120', [1012, 548], [1214, 120]],
-      ['M40 860C260 760 300 610 520 570S860 470 960 390', [40, 860], [960, 390]],
-      ['M1380 860C1460 780 1600 840 1680 760S1820 640 1900 660', [1380, 860], [1900, 660]]].forEach((l) => {
-      no('path', Object.assign({ d: l[0] }, traco), cDetalhes.svg);
-      no('circle', { cx: l[1][0], cy: l[1][1], r: 6, fill: cor.apoio }, cDetalhes.svg);
-      no('circle', { cx: l[2][0], cy: l[2][1], r: 6, fill: cor.apoio }, cDetalhes.svg);
-    });
-    const icone = Object.assign({}, traco, { stroke: cor.papel, opacity: 0.6 });
-    const asterisco = (x, y) => no('path', Object.assign({ d: 'M' + x + ' ' + (y - 14) + 'L' + x + ' ' + (y + 14) + 'M' + (x - 12) + ' ' + (y - 7) + 'L' + (x + 12) + ' ' + (y + 7) + 'M' + (x - 12) + ' ' + (y + 7) + 'L' + (x + 12) + ' ' + (y - 7) }, icone), cDetalhes.svg);
-    const hexagono = (x, y) => {
-      const v = [0, 1, 2, 3, 4, 5].map((k) => { const a = Math.PI / 6 + k * Math.PI / 3; return r1(x + 15 * Math.cos(a)) + ' ' + r1(y + 15 * Math.sin(a)); });
-      no('path', Object.assign({ d: 'M' + v.join('L') + 'Z' }, icone), cDetalhes.svg);
-    };
-    const mira = (x, y) => {
-      no('circle', Object.assign({ cx: x, cy: y, r: 10 }, icone), cDetalhes.svg);
-      no('path', Object.assign({ d: 'M' + x + ' ' + (y - 16) + 'L' + x + ' ' + (y + 16) + 'M' + (x - 16) + ' ' + y + 'L' + (x + 16) + ' ' + y }, icone), cDetalhes.svg);
-    };
-    const cruz = (x, y) => no('path', Object.assign({ d: 'M' + x + ' ' + (y - 14) + 'L' + x + ' ' + (y + 14) + 'M' + (x - 14) + ' ' + y + 'L' + (x + 14) + ' ' + y }, traco, { stroke: cor.destaque, 'stroke-width': 4 }), cDetalhes.svg);
-    asterisco(1076, 94); asterisco(910, 92); asterisco(1540, 540);
-    hexagono(1446, 392); hexagono(690, 640);
-    mira(1660, 330); mira(130, 300); mira(1200, 780);
-    cruz(1882, 210); cruz(330, 560); cruz(1110, 650);
 
     /* a multidão: fileiras de trás (pequenas, no alto) para a frente
        (grandes, embaixo); só entra quem cabe abaixo do contorno */

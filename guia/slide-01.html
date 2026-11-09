@@ -49,27 +49,24 @@
       display: block;
     }
 
-    /* chamada, título e subtítulo: um bloco da largura da linha mais
-       longa, no centro da página, com o texto centralizado dentro da
-       caixa de vidro */
+    /* chamada, título e subtítulo alinhados à esquerda, como nas capas
+       de capítulo; a multidão fica no canto de baixo à direita */
     .capa-bloco {
       position: absolute;
-      left: 50%;
+      left: 150px;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateY(-50%);
+      max-width: 900px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: flex-start;
+      text-align: left;
     }
 
-    /* o espaçamento entre letras deixa uma sobra depois da última letra;
-       a margem negativa a compensa, para a chamada ficar no centro exato */
     .capa-bloco .capa-chamada {
-      margin: 0 -.3em 20px 0;
+      margin: 0 0 20px;
     }
 
-    /* no centro, sem as margens de fora do bloco: a caixa fica simétrica */
     .capa-bloco .capa-subtitulo {
       margin-bottom: 0;
     }
@@ -79,6 +76,7 @@
       height: 104px;
       width: auto;
       margin-top: 90px;
+      margin-left: 110px;
     }
 
     .capa-chamada {
@@ -120,7 +118,7 @@
 
     .capa-data {
       position: absolute;
-      left: 40px;
+      left: 150px;
       bottom: 64px;
       margin: 0;
       font-family: 'Rawline', 'Open Sans', sans-serif;
@@ -177,9 +175,6 @@
 <body class="capitulo-abertura">
   <main class="capa">
     <div class="capa-ilustracao" data-ilustracao="capa" aria-hidden="true"></div>
-    <div class="capa-vidro vidro"
-      data-vidro-cobre=".capa-chamada, .capa-titulo-principal, .capa-subtitulo" data-vidro-margem="32"
-      aria-hidden="true"></div>
 
     <img class="capa-logo-topo" data-entra style="--ordem:0;align-self:flex-start" src="Imagens/logo-antaq-branca.png"
       alt="ANTAQ — Agência Nacional de Transportes Aquaviários">
