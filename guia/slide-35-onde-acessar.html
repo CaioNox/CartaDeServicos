@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onde acessar a Carta — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
+  <link rel="stylesheet" href="../vendor/fontes.css">
+  <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="a11y.css">
+  <link rel="stylesheet" href="guia.css">
+  <style>
+    .acesso .cartao p { font-size: 24px; color: var(--cor-texto-forte); }
+    .endereco { margin-top: 6px; font-size: 22px; color: var(--cor-texto-forte); }
+    /* espaço reservado para o QR code de cada canal */
+    .qr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 190px;
+      height: 190px;
+      margin-top: 10px;
+      border: 3px dashed var(--cor-marinho);
+      border-radius: 16px;
+      background: #fff;
+      text-align: center;
+      font-size: 20px;
+      color: var(--cor-marinho);
+    }
+  </style>
+</head>
+
+<body class="capitulo-5">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">05 · APÊNDICE</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
+    </header>
+
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Onde acessar a Carta</h1>
+        <p class="pagina-resumo">A Carta precisa estar em três lugares.</p>
+      </div>
+
+      <div class="grade grade-3 acesso">
+        <section class="cartao tom-azul">
+          <span class="icone"><i class="fas fa-globe" aria-hidden="true"></i></span>
+          <h2>Portal gov.br</h2>
+          <p>Cada serviço cadastrado pelos editores habilitados.</p>
+          <span class="base-legal">Decreto 9.094, art. 18, I</span>
+          <p class="endereco"><b>Endereço:</b> <span class="a-validar">a preencher</span><!-- TODO: preencher --></p>
+          <div class="qr" role="img" aria-label="Espaço reservado para o QR code do Portal gov.br"><span class="a-validar">QR code</span><!-- TODO: preencher --></div>
+        </section>
+        <section class="cartao tom-azul">
+          <span class="icone"><i class="fas fa-house-flag" aria-hidden="true"></i></span>
+          <h2>Site da ANTAQ</h2>
+          <p>Link para a página da Agência no gov.br.</p>
+          <span class="base-legal">Lei 13.460, art. 7º, § 4º</span>
+          <p class="endereco"><b>Endereço:</b> <span class="a-validar">a preencher</span><!-- TODO: preencher --></p>
+          <div class="qr" role="img" aria-label="Espaço reservado para o QR code do site da ANTAQ"><span class="a-validar">QR code</span><!-- TODO: preencher --></div>
+        </section>
+        <section class="cartao tom-azul">
+          <span class="icone"><i class="fas fa-print" aria-hidden="true"></i></span>
+          <h2>Atendimento presencial</h2>
+          <p>Versão impressa, extraída do gov.br.</p>
+          <span class="base-legal">Decreto 9.094, art. 18, II</span>
+          <p class="endereco"><b>Onde:</b> <span class="a-validar">a preencher</span><!-- TODO: preencher --></p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="pagina-rodape">
+      <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
+      <span class="pagina-numero">30</span>
+    </footer>
+  </main>
+
+  <script src="guia.js" defer></script>
+  <script src="a11y.js" defer></script>
+  <script src="vida.js" defer></script>
+</body>
+
+</html>

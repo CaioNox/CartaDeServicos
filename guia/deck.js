@@ -49,7 +49,7 @@ window.RELATORIO = {
     },
     {
       block: '05 · Apêndice', short: 'Apêndice', tint: 0.3,
-      files: ['slide-32.html', 'slide-33.html', 'slide-34.html', 'slide-35.html', 'slide-36.html'],
+      files: ['slide-32.html', 'slide-33.html', 'slide-34.html', 'slide-35.html', 'slide-35-onde-acessar.html', 'slide-36.html'],
     },
   ],
 
