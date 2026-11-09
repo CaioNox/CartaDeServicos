@@ -21,6 +21,9 @@
     .campos-e-fluxo { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
     .fluxo.tom-amarelo { --tom-contraste: var(--cor-marinho); }
     .fluxo.tom-amarelo i { color: var(--cor-amarelo); }
+
+    /* ocupa o espaço livre abaixo do conteúdo: tudo abaixo do título cresce junto */
+    .pagina-conteudo > :not(.pagina-topo) { zoom: 1.12; }
   </style>
 </head>
 

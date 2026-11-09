@@ -23,6 +23,24 @@
     .outras-lista > div { padding: 16px 20px; border-left: 7px solid var(--cor-marinho); border-radius: 12px; background: var(--tom-fundo); }
     .outras-lista dt { font-size: 19px; font-weight: 700; line-height: 1.25; color: var(--cor-marinho); }
     .outras-lista dd { margin: 6px 0 0; font-size: 18px; line-height: 1.4; color: var(--cor-texto); }
+
+    /* ocupa o espaço livre abaixo do conteúdo: tudo abaixo do título cresce junto */
+    .pagina-conteudo > :not(.pagina-topo) { zoom: 1.08; }
+
+    /* cada card cresce 10% ao passar o mouse, com transição suave */
+    .campos .cartao, .outras-lista > div {
+      position: relative;
+      transition: transform .4s cubic-bezier(.25, .1, .25, 1), box-shadow .4s cubic-bezier(.25, .1, .25, 1);
+    }
+    .campos .cartao:hover, .outras-lista > div:hover {
+      transform: scale(1.1);
+      z-index: 2;
+      box-shadow: 0 14px 30px rgba(16, 48, 80, .18);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .campos .cartao, .outras-lista > div { transition: none; }
+      .campos .cartao:hover, .outras-lista > div:hover { transform: none; }
+    }
   </style>
 </head>
 
