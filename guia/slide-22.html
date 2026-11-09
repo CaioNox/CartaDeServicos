@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ficha padrão do serviço — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Formulário: as quatro respostas — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
@@ -12,10 +12,15 @@
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
   <style>
-    .ficha col.col-1 { width: 17%; }
-    .ficha col.col-2 { width: 53%; }
-    .ficha td, .ficha th[scope="row"] { font-size: 20px; padding-top: 6px; padding-bottom: 6px; line-height: 1.35; }
-    .ficha td.referencia { font-size: 17px; }
+    .respostas .cartao { padding-top: 20px; padding-bottom: 20px; gap: 8px; }
+    .respostas .cartao p { font-size: 22px; }
+    .pagina-conteudo { gap: 34px; }
+    .comuns { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+    .comuns ul { margin: 0; padding-left: 26px; }
+    .comuns li { font-size: 23px; line-height: 1.55; color: var(--cor-texto-forte); }
+    .campos-e-fluxo { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .fluxo.tom-amarelo { --tom-contraste: var(--cor-marinho); }
+    .fluxo.tom-amarelo i { color: var(--cor-amarelo); }
   </style>
 </head>
 
@@ -28,44 +33,69 @@
 
     <div class="pagina-conteudo">
       <div class="pagina-topo">
-        <h1 class="pagina-titulo">Ficha padrão do serviço</h1>
-        <p class="pagina-resumo">Preencha antes de ir ao gov.br. A Ouvidoria confere cada regra.</p>
+        <h1 class="pagina-titulo">Formulário: as quatro respostas</h1>
+        <p class="pagina-introducao">Toda proposta do setor entra por <b>um </b><span class="marca" data-marca="sublinhado"><b>único formulário eletrônico</b> e é registrada no processo SEI do ciclo</span>. Assim, cada mudança tem autor, data e fundamento. Para cada serviço, o setor escolhe uma resposta.</p>
       </div>
 
-      <table class="tabela ficha">
-        <colgroup><col class="col-1"><col class="col-2"><col></colgroup>
-        <thead>
-          <tr><th scope="col">Campo</th><th scope="col">Regra</th><th scope="col">Base</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Nome</th><td>Verbo no infinitivo. Sem sigla solta. "Antaq" sempre igual.</td><td class="referencia">Lei 15.263/2025, art. 5º, VIII · Guia de Edição do gov.br</td></tr>
-          <tr><th scope="row">O que é?</th><td>Até três frases (boa prática): para que serve e o que o usuário recebe.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, I</td></tr>
-          <tr><th scope="row">Quem pode usar</th><td>Público e pré-requisitos.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, II</td></tr>
-          <tr><th scope="row">Etapas</th><td>Uma ação por etapa, começando por verbo.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, III · Portaria SGD/MGI 1.083/2025, art. 2º, IV · Guia de Edição do gov.br</td></tr>
-          <tr><th scope="row">Documentos</th><td>Lista completa. O que não estiver aqui não pode ser exigido.</td><td class="referencia">Decreto 9.094, art. 18-A</td></tr>
-          <tr><th scope="row">Custos</th><td>Valor e forma de pagamento, ou "é gratuito".</td><td class="referencia">Lei 13.460, art. 6º, VI, "e"</td></tr>
-          <tr><th scope="row">Canais</th><td>Link HTTPS (boa prática) testado, e-mail ou endereço.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, caput e V · Decreto 9.094, art. 11, § 2º, VII</td></tr>
-          <tr><th scope="row">Prazo</th><td>"Até N dias úteis/corridos". Média só como extra.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, IV</td></tr>
-          <tr><th scope="row">Mais informações</th><td>Sempre indicar Ouvidoria e Fala.BR.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, VI</td></tr>
-          <tr><th scope="row">Legislação</th><td>Normas com link oficial.</td><td class="referencia">Guia CGU, item 3.6</td></tr>
-          <tr><th scope="row">Compromissos</th><td>Prioridades, acompanhamento, sistema fora do ar.</td><td class="referencia">Lei 13.460, art. 7º, § 3º</td></tr>
-          <tr><th scope="row">Comunicação</th><td>Forma de comunicação com quem pediu o serviço.</td><td class="referencia">Decreto 9.094, art. 11, § 2º, VI</td></tr>
-          <tr><th scope="row">Atendimento a surdos</th><td>Formas de atendimento a pessoas surdas ou com deficiência auditiva.</td><td class="referencia">Decreto 5.626/2005, art. 27, § 1º</td></tr>
-          <tr><th scope="row">Assinatura eletrônica</th><td>Nível de assinatura eletrônica exigido no serviço.</td><td class="referencia">Decreto 10.543/2020, art. 13, II</td></tr>
-          <tr><th scope="row">Ato público de liberação</th><td>Se for ato de liberação (autorização, registro etc.), informar também: exigências, normas, códigos CNAE, fluxo, efeitos do nível de risco, aprovação tácita e tempo médio.</td><td class="referencia">Decreto 9.094, art. 11, § 4º · Lei 13.874/2019, art. 1º, § 6º</td></tr>
-        </tbody>
-      </table>
+      <div class="grade grade-4 respostas">
+        <section class="cartao tom-azul">
+          <span class="icone"><i class="fas fa-pen" aria-hidden="true"></i></span>
+          <h2>Atualizar</h2>
+          <p>Mudou alguma informação. Indique os tópicos alterados e envie o texto novo: descrição, público, etapas, documentos, canais, custos, prazo e legislação com link.</p>
+        </section>
+        <section class="cartao tom-verde">
+          <span class="icone"><i class="fas fa-plus" aria-hidden="true"></i></span>
+          <h2>Incluir</h2>
+          <p>Serviço novo. Preencha antes a Descrição Padrão do Serviço no SEI. Só segue se tiver as 5 características (pág. 11). Atividade interna não entra.</p>
+        </section>
+        <section class="cartao tom-laranja">
+          <span class="icone"><i class="fas fa-minus" aria-hidden="true"></i></span>
+          <h2>Excluir</h2>
+          <p>Informe o motivo e anexe a norma ou decisão. O serviço fica "privado" no gov.br e pode ser reativado. A Ouvidoria confere antes se há manifestações abertas sobre ele.</p>
+        </section>
+        <section class="cartao tom-marinho">
+          <span class="icone"><i class="fas fa-check" aria-hidden="true"></i></span>
+          <h2>Sem alteração</h2>
+          <p>Declare que as informações continuam corretas. Esse registro comprova a revisão anual exigida pela CGU.</p>
+        </section>
+      </div>
+
+      <div class="campos-e-fluxo">
+        <div class="coluna" style="gap:10px">
+          <h2 class="subtitulo">Campos comuns a todas as respostas</h2>
+          <div class="comuns">
+            <ul>
+              <li>Superintendência e setor responsáveis</li>
+              <li>Nome do serviço igual ao do gov.br</li>
+              <li>Tipo de resposta</li>
+            </ul>
+            <ul>
+              <li>E-mails do ponto focal e envolvidos</li>
+              <li>Pedido de reunião, se quiser</li>
+              <li>Observações (o registro é nominal)</li>
+            </ul>
+          </div>
+        </div>
+        <ol class="fluxo tom-amarelo" aria-label="Fluxo da proposta">
+          <li><span class="fluxo-passo">Formulário</span><i class="fas fa-arrow-right" aria-hidden="true"></i></li>
+          <li><span class="fluxo-passo">Análise da SAC</span><i class="fas fa-arrow-right" aria-hidden="true"></i></li>
+          <li><span class="fluxo-passo">Validação do setor</span><i class="fas fa-arrow-right" aria-hidden="true"></i></li>
+          <li><span class="fluxo-passo">Publicação no gov.br</span><i class="fas fa-arrow-right" aria-hidden="true"></i></li>
+          <li><span class="fluxo-passo">Registro no SEI</span></li>
+        </ol>
+      </div>
     </div>
 
     <footer class="pagina-rodape">
       <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
-      <span class="pagina-numero">20</span>
+      <span class="pagina-numero">21</span>
     </footer>
   </main>
 
   <script src="guia.js" defer></script>
   <script src="a11y.js" defer></script>
   <script src="vida.js" defer></script>
+  <script src="marcador.js" defer></script>
 </body>
 
 </html>

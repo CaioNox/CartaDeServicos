@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entra ou sai da Carta? — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Conteúdo obrigatório — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
@@ -12,71 +12,17 @@
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
   <style>
-    /* Duas colunas: o que entra (serviços reais da Carta) e o que sai (atividade
-       que não tem uma das cinco características da Portaria SGD/MGI 1.083/2025). */
-    .entra-sai { align-items: stretch; }
-
-    .lado {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      padding: 20px 22px 22px;
-      border-radius: 22px;
-      background: var(--tom-fundo);
-    }
-
-    .lado h2 {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 30px;
-      color: var(--tom-texto);
-    }
-
-    .lado h2 .icone { margin: 0; width: 46px; height: 46px; font-size: 22px; }
-
-    .lado ul {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .lado li {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding: 12px 18px;
-      border-radius: 14px;
-      background: #fff;
-    }
-
-    .lado li b {
-      font-size: 19px;
-      line-height: 1.35;
-      color: var(--cor-marinho);
-    }
-
-    .lado li span {
-      font-size: 17px;
-      line-height: 1.35;
-      color: var(--cor-texto);
-    }
-
-    .lado .falta {
-      align-self: flex-start;
-      padding: 1px 12px;
-      border-radius: 999px;
-      background: var(--tom-fundo);
-      color: var(--tom-texto);
-      font-weight: 700;
-      font-size: 15px;
-    }
+    .pagina-conteudo { gap: 22px; }
+    .subtitulo .base-legal { font-family: 'Open Sans', sans-serif; margin-left: 4px; }
+    .campos .cartao { padding: 20px 28px; gap: 10px; }
+    .campos .cartao h3 { font-size: 26px; }
+    .campos .cartao p { font-size: 22px; line-height: 1.5; }
+    .outras { flex: none; display: flex; flex-direction: column; gap: 14px; }
+    .outras h3 { margin: 0; font-size: 26px; color: var(--cor-marinho); }
+    .outras-lista { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+    .outras-lista > div { padding: 16px 20px; border-left: 7px solid var(--cor-marinho); border-radius: 12px; background: var(--tom-fundo); }
+    .outras-lista dt { font-size: 19px; font-weight: 700; line-height: 1.25; color: var(--cor-marinho); }
+    .outras-lista dd { margin: 6px 0 0; font-size: 18px; line-height: 1.4; color: var(--cor-texto); }
   </style>
 </head>
 
@@ -89,41 +35,73 @@
 
     <div class="pagina-conteudo">
       <div class="pagina-topo">
-        <h1 class="pagina-titulo">Entra ou sai da Carta?</h1>
-        <p class="pagina-resumo">Exemplos concretos das cinco características na prática. Faltou uma, fica fora.</p>
+        <h1 class="pagina-titulo">Conteúdo obrigatório</h1>
+        <p class="pagina-resumo">Todo serviço precisa responder a estas perguntas. O formulário do gov.br tem um campo
+          para cada uma.</p>
       </div>
 
-      <div class="grade grade-2 entra-sai">
-        <section class="lado tom-azul">
-          <h2><span class="icone"><i class="fas fa-check" aria-hidden="true"></i></span>Entra</h2>
-          <ul>
-            <li><b>"Obter parcelamento de multas emitidas pela Antaq"</b><span>A empresa pede, a área analisa e responde ao pedido dela.</span></li>
-            <li><b>"Obter declaração da Antaq para fins de credenciamento, validação ou outros atestados"</b><span>Pedido individual, com etapas definidas e uma resposta final: a declaração.</span></li>
-            <li><b>"Obter autorização da Antaq para transporte de passageiros, veículos e cargas na navegação interior de travessia"</b><span>A empresa de fora da ANTAQ faz o pedido e recebe a decisão.</span></li>
-            <li><b>"Solicitar autorização e registro na Antaq para afretamento de embarcação estrangeira"</b><span>Segue etapas padrão, do requerimento ao registro.</span></li>
-          </ul>
+      <h2 class="subtitulo subtitulo--tom tom-azul"><i class="fas fa-list-check" aria-hidden="true"></i>Sobre o serviço
+        <span class="base-legal">Lei 13.460, art. 7º, § 2º · Decreto 9.094, art. 11, § 2º</span>
+      </h2>
+      <div class="grade grade-3 campos">
+        <section class="cartao tom-azul">
+          <h3>O que é?</h3>
+          <p>Diga para que serve e o que o usuário recebe.</p>
         </section>
-        <section class="lado tom-erro">
-          <h2><span class="icone"><i class="fas fa-xmark" aria-hidden="true"></i></span>Sai</h2>
-          <ul>
-            <li><b>Edição de resolução que regula o setor</b><span>Ato geral, vale para todos ao mesmo tempo.</span><span class="falta">Falta: Individual</span></li>
-            <li><b>Gestão de pessoas e demandas entre áreas da ANTAQ</b><span>Atividade interna, sem usuário de fora.</span><span class="falta">Falta: Externo</span></li>
-            <li><b>Fiscalização feita por iniciativa da ANTAQ</b><span>Não parte de um pedido do usuário, então não há resposta a uma demanda dele.</span><span class="falta">Falta: Suficiência</span></li>
-            <li><b>Notícias e comunicados publicados no site</b><span>Não há contato nem atendimento a cada pessoa.</span><span class="falta">Falta: Interação e Individual</span></li>
-          </ul>
+        <section class="cartao tom-azul">
+          <h3>Quem pode utilizar este serviço?</h3>
+          <p>Diga quem tem direito e o que precisa apresentar.</p>
+        </section>
+        <section class="cartao tom-azul">
+          <h3>Etapas para a realização deste serviço</h3>
+          <p>Descreva cada passo, do pedido à resposta: o que o usuário faz e o que a ANTAQ faz.</p>
         </section>
       </div>
-      <p class="nota">Base: Portaria SGD/MGI nº 1.083/2025, art. 3º · Portaria Normativa CGU nº 116/2024, art. 65, § 1º, I · Guia CGU, p. 9 · Guia de Edição do gov.br, checklist "É ou não é serviço?". Os exemplos de "Entra" estão publicados na Carta de Serviços da ANTAQ no portal gov.br (conferida em 19/10/2026).</p>
 
-      <div class="destaque">
-        <span class="icone-duvida"><i class="fas fa-question" aria-hidden="true"></i></span>
-        <p><b>Na dúvida?</b> Consulte a Ouvidoria antes de incluir ou excluir um serviço.</p>
-      </div>
+      <section class="outras tom-azul">
+        <h3>Outras Informações</h3>
+        <dl class="outras-lista">
+          <div>
+            <dt>Quanto tempo leva?</dt>
+            <dd>Informe quanto o usuário espera.</dd>
+          </div>
+          <div>
+            <dt>Informações adicionais ao tempo estimado</dt>
+            <dd>O que pode alterar o prazo e quando ele começa.</dd>
+          </div>
+          <div>
+            <dt>Validade do Documento</dt>
+            <dd>Por quanto tempo o documento vale, se houver.</dd>
+          </div>
+          <div>
+            <dt>Informações adicionais ao tempo de validade</dt>
+            <dd>O que pode alterar a validade e o que fazer quando acabar.</dd>
+          </div>
+          <div>
+            <dt>Legislação</dt>
+            <dd>Normas que fundamentam o serviço, com número.</dd>
+          </div>
+          <div>
+            <dt>Tratamento a ser dispensado ao usuário no atendimento</dt>
+            <dd>Como o usuário deve ser recebido.</dd>
+          </div>
+          <div>
+            <dt>Informações sobre as condições de acessibilidade, sinalização, limpeza e conforto dos locais de atendimento</dt>
+            <dd>Como são os locais e os recursos disponíveis.</dd>
+          </div>
+          <div>
+            <dt>Informação sobre quem tem direito a tratamento prioritário</dt>
+            <dd>Quem tem prioridade e como pedir.</dd>
+          </div>
+        </dl>
+      </section>
+      <p class="nota">O Decreto 9.094/2017, art. 11, § 2º, VI e VII, pede também a forma de comunicação com o
+        solicitante e os locais e as formas de acessar o serviço.</p>
     </div>
 
     <footer class="pagina-rodape">
       <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
-      <span class="pagina-numero">12</span>
+      <span class="pagina-numero">10</span>
     </footer>
   </main>
 

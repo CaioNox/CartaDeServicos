@@ -5,7 +5,7 @@
  * Os nomes estão exatamente como aparecem no Portal (inclusive "Antaq"/"ANTAQ" e pontos finais),
  * porque a padronização desses nomes é um dos achados do diagnóstico.
  *
- * Referência dos números da Carta citados nas telas (ex.: slide-02, 33 serviços; slide-04, serviços
+ * Referência dos números da Carta citados nas telas (ex.: slide-03, 33 serviços; slide-05, serviços
  * por superintendência). As telas não carregam este arquivo: o número escrito na tela é conferido
  * contra ele. tipoPrazo, siglas e resumo ficam como apoio para conferências.
  * Para atualizar: gere um novo PDF no Portal, confira serviço a serviço e troque `coleta`.

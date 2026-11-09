@@ -4,32 +4,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendário do ciclo anual — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Ficha padrão do serviço — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
-  <link rel="stylesheet" href="descanso.css">
-  <link rel="stylesheet" href="piloto.css">
   <style>
-    .fluxo.tom-amarelo {
-      --tom-contraste: var(--cor-marinho);
-    }
-
-    .respostas .fluxo-passo {
-      font-size: 22px;
-      padding: 10px 26px;
-    }
-
-    .aviso .base-legal {
-      margin-top: 12px;
-    }
+    .ficha col.col-1 { width: 17%; }
+    .ficha col.col-2 { width: 53%; }
+    .ficha td, .ficha th[scope="row"] { font-size: 20px; padding-top: 6px; padding-bottom: 6px; line-height: 1.35; }
+    .ficha td.referencia { font-size: 17px; }
   </style>
 </head>
 
-<body class="capitulo-3 piloto">
+<body class="capitulo-3">
   <main class="pagina">
     <header class="pagina-cabecalho">
       <p class="pagina-secao">03 · PASSO A PASSO</p>
@@ -38,59 +28,38 @@
 
     <div class="pagina-conteudo">
       <div class="pagina-topo">
-        <h1 class="pagina-titulo">Calendário do ciclo anual</h1>
-        <p class="pagina-resumo">A norma fixa a revisão anual e a data do relatório de gestão.</p>
+        <h1 class="pagina-titulo">Ficha padrão do serviço</h1>
+        <p class="pagina-resumo">Preencha antes de ir ao gov.br. A Ouvidoria confere cada regra.</p>
       </div>
 
-
-      <div class="grade grade-3">
-        <section class="cartao tom-amarelo">
-          <span class="icone"><i class="fas fa-rotate" aria-hidden="true"></i></span>
-          <h2>Uma vez por ano</h2>
-          <p>Revisão anual, com consulta da Ouvidoria aos setores gestores.</p>
-          <span class="base-legal">Portaria CGU 116, art. 65, § 2º</span>
-        </section>
-        <section class="cartao tom-amarelo">
-          <span class="icone"><i class="fas fa-file-circle-check" aria-hidden="true"></i></span>
-          <h2>"Sem alteração"</h2>
-          <p>Também precisa ser informado.</p>
-          <span class="base-legal">Portaria CGU 116, art. 65, § 2º</span>
-        </section>
-        <section class="cartao tom-amarelo">
-          <span class="icone"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
-          <h2>1º de abril</h2>
-          <p>Relatório Anual da Ouvidoria, traz as atualizações da Carta da Serviços.</p>
-          <span class="base-legal">Portaria CGU 116, art. 60, caput e § 1º, VII</span>
-        </section>
-      </div>
-
-      <h2 class="subtitulo">Na revisão, cada serviço recebe uma das quatro respostas</h2>
-      <ol class="fluxo tom-amarelo respostas" aria-label="As quatro respostas do formulário" data-ir="slide-23.html">
-        <li><span class="fluxo-passo">Atualizar</span></li>
-        <li><span class="fluxo-passo">Incluir</span></li>
-        <li><span class="fluxo-passo">Excluir</span></li>
-        <li><span class="fluxo-passo">Sem alteração</span></li>
-        <li><span class="rotulo">Formulário · pág. 21</span></li>
-      </ol>
-
-      <h2 class="subtitulo">Fora do ciclo: não espere a revisão anual</h2>
-      <div class="grade grade-2" data-ir="slide-24.html">
-        <section class="aviso tom-laranja">
-          <h3><i class="fas fa-file-shield" aria-hidden="true"></i>Novo documento, requisito ou procedimento</h3>
-          <p><b>Publique no gov.br antes de exigir.</b> Sem publicação, a exigência não vale.</p>
-          <span class="base-legal">Decreto 9.094, art. 18-A, § 2º</span>
-        </section>
-        <section class="aviso tom-azul">
-          <h3><i class="fas fa-rotate" aria-hidden="true"></i>Outras mudanças</h3>
-          <p>Prazo, canal, link, contato ou texto: atualize sempre que necessário.</p>
-          <span class="base-legal">Portaria CGU 116/2024, art. 65, § 1º, VII</span>
-        </section>
-      </div>
+      <table class="tabela ficha">
+        <colgroup><col class="col-1"><col class="col-2"><col></colgroup>
+        <thead>
+          <tr><th scope="col">Campo</th><th scope="col">Regra</th><th scope="col">Base</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Nome</th><td>Verbo no infinitivo. Sem sigla solta. "Antaq" sempre igual.</td><td class="referencia">Lei 15.263/2025, art. 5º, VIII · Guia de Edição do gov.br</td></tr>
+          <tr><th scope="row">O que é?</th><td>Até três frases (boa prática): para que serve e o que o usuário recebe.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, I</td></tr>
+          <tr><th scope="row">Quem pode usar</th><td>Público e pré-requisitos.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, II</td></tr>
+          <tr><th scope="row">Etapas</th><td>Uma ação por etapa, começando por verbo.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, III · Portaria SGD/MGI 1.083/2025, art. 2º, IV · Guia de Edição do gov.br</td></tr>
+          <tr><th scope="row">Documentos</th><td>Lista completa. O que não estiver aqui não pode ser exigido.</td><td class="referencia">Decreto 9.094, art. 18-A</td></tr>
+          <tr><th scope="row">Custos</th><td>Valor e forma de pagamento, ou "é gratuito".</td><td class="referencia">Lei 13.460, art. 6º, VI, "e"</td></tr>
+          <tr><th scope="row">Canais</th><td>Link HTTPS (boa prática) testado, e-mail ou endereço.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, caput e V · Decreto 9.094, art. 11, § 2º, VII</td></tr>
+          <tr><th scope="row">Prazo</th><td>"Até N dias úteis/corridos". Média só como extra.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, IV</td></tr>
+          <tr><th scope="row">Mais informações</th><td>Sempre indicar Ouvidoria e Fala.BR.</td><td class="referencia">Lei 13.460, art. 7º, § 2º, VI</td></tr>
+          <tr><th scope="row">Legislação</th><td>Normas com link oficial.</td><td class="referencia">Guia CGU, item 3.6</td></tr>
+          <tr><th scope="row">Compromissos</th><td>Prioridades, acompanhamento, sistema fora do ar.</td><td class="referencia">Lei 13.460, art. 7º, § 3º</td></tr>
+          <tr><th scope="row">Comunicação</th><td>Forma de comunicação com quem pediu o serviço.</td><td class="referencia">Decreto 9.094, art. 11, § 2º, VI</td></tr>
+          <tr><th scope="row">Atendimento a surdos</th><td>Formas de atendimento a pessoas surdas ou com deficiência auditiva.</td><td class="referencia">Decreto 5.626/2005, art. 27, § 1º</td></tr>
+          <tr><th scope="row">Assinatura eletrônica</th><td>Nível de assinatura eletrônica exigido no serviço.</td><td class="referencia">Decreto 10.543/2020, art. 13, II</td></tr>
+          <tr><th scope="row">Ato público de liberação</th><td>Se for ato de liberação (autorização, registro etc.), informar também: exigências, normas, códigos CNAE, fluxo, efeitos do nível de risco, aprovação tácita e tempo médio.</td><td class="referencia">Decreto 9.094, art. 11, § 4º · Lei 13.874/2019, art. 1º, § 6º</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <footer class="pagina-rodape">
       <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
-      <span class="pagina-numero">19</span>
+      <span class="pagina-numero">20</span>
     </footer>
   </main>
 

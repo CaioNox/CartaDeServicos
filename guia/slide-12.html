@@ -4,35 +4,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>02 · Papéis e responsabilidades — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Características para elaboração de um serviço — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
+  <style>
+    .pagina-conteudo { gap: 26px; }
+    .fonte-legal { align-self: flex-start; }
+    .servico-teste-texto { margin: 0; font-size: 28px; line-height: 1.45; color: var(--cor-texto); }
+    .caracteristicas { flex: none; margin-top: 30px; }
+    .caracteristicas .cartao { padding: 44px 28px; gap: 20px; justify-content: flex-start; min-height: 400px; }
+    .caracteristicas .cartao h3 { font-size: 32px; }
+    .caracteristicas .cartao p { font-size: 26px; line-height: 1.45; }
+  </style>
 </head>
 
-<body class="capitulo-2">
-  <main class="capa">
-    <div class="capa-ilustracao" data-ilustracao="capitulo" aria-hidden="true"></div>
+<body class="capitulo-1">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">01 · ENTENDENDO A CARTA</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
+    </header>
 
-    <p class="capa-numero" data-entra style="--ordem:0">02</p>
-    <h1 class="capa-titulo" data-entra style="--ordem:1">Papéis e<br>responsabilidades</h1>
-    <ul class="capa-topicos" data-entra style="--ordem:2" aria-label="Tópicos do capítulo">
-      <li><button type="button" data-ir="slide-13.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Quem faz o quê</button></li>
-      <li><button type="button" data-ir="slide-14.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Atores na ANTAQ</button></li>
-      <li><button type="button" data-ir="slide-15.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Prazos de resposta</button></li>
-      <li><button type="button" data-ir="slide-16.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Deveres de cada um</button></li>
-    </ul>
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Características para elaboração de um serviço</h1>
+      </div>
+      <span class="base-legal fonte-legal">Portaria SGD/MGI 1.083/2025, art. 3º · Portaria CGU 116/2024, art. 65, § 1º, I · Guia CGU, p. 9</span>
+      <p class="servico-teste-texto"><span class="marca" data-marca="sublinhado">Só entra na Carta a atividade que tem as cinco características abaixo. Faltou uma, fica fora.</span></p>
+      <div class="grade grade-5 caracteristicas">
+        <section class="cartao tom-roxo">
+          <span class="icone"><i class="fas fa-comments" aria-hidden="true"></i></span>
+          <h3>Interação</h3>
+          <p>Há contato entre a área e o usuário.</p>
+        </section>
+        <section class="cartao tom-roxo">
+          <span class="icone"><i class="fas fa-flag-checkered" aria-hidden="true"></i></span>
+          <h3>Suficiência</h3>
+          <p>Vai do pedido à resposta final.</p>
+        </section>
+        <section class="cartao tom-roxo">
+          <span class="icone"><i class="fas fa-user" aria-hidden="true"></i></span>
+          <h3>Individual</h3>
+          <p>Atende cada usuário.</p>
+        </section>
+        <section class="cartao tom-roxo">
+          <span class="icone"><i class="fas fa-diagram-next" aria-hidden="true"></i></span>
+          <h3>Padrão</h3>
+          <p>Segue etapas definidas.</p>
+        </section>
+        <section class="cartao tom-roxo">
+          <span class="icone"><i class="fas fa-door-open" aria-hidden="true"></i></span>
+          <h3>Externo</h3>
+          <p>É para quem está fora da ANTAQ.</p>
+        </section>
+      </div>
+    </div>
 
-    <img class="capa-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ — Agência Nacional de Transportes Aquaviários">
+    <footer class="pagina-rodape">
+      <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
+      <span class="pagina-numero">11</span>
+    </footer>
   </main>
 
   <script src="guia.js" defer></script>
   <script src="a11y.js" defer></script>
   <script src="vida.js" defer></script>
-  <script src="ilustracao.js" defer></script>
+  <script src="marcador.js" defer></script>
 </body>
 
 </html>

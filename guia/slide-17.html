@@ -4,34 +4,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>03 · Passo a passo — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
+  <title>Prazos de resposta — Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</title>
   <link rel="icon" type="image/png" href="Imagens/logomarca_Ouvidoria.png">
   <link rel="stylesheet" href="../vendor/fontes.css">
   <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="a11y.css">
   <link rel="stylesheet" href="guia.css">
+  <link rel="stylesheet" href="descanso.css">
+  <style>
+    .prazos .cartao { padding-top: 26px; padding-bottom: 26px; gap: 8px; }
+    .prazos .cartao h2 { font-size: 40px; }
+    /* pílula de base legal ou de página dentro do aviso */
+    .aviso .base-legal, .aviso .rotulo { margin-top: 12px; }
+  </style>
 </head>
 
-<body class="capitulo-3">
-  <main class="capa">
-    <div class="capa-ilustracao" data-ilustracao="capitulo" aria-hidden="true"></div>
+<body class="capitulo-2">
+  <main class="pagina">
+    <header class="pagina-cabecalho">
+      <p class="pagina-secao">02 · PAPÉIS</p>
+      <img class="pagina-logo" src="Imagens/logo-antaq-branca.png" alt="ANTAQ">
+    </header>
 
-    <p class="capa-numero" data-entra style="--ordem:0">03</p>
-    <h1 class="capa-titulo" data-entra style="--ordem:1">Passo<br>a passo</h1>
-    <ul class="capa-topicos" data-entra style="--ordem:2" aria-label="Tópicos do capítulo">
-      <li><button type="button" data-ir="slide-21.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Calendário do ciclo</button></li>
-      <li><button type="button" data-ir="slide-22.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Ficha padrão do serviço</button></li>
-      <li><button type="button" data-ir="slide-24.html"><i class="fas fa-circle-check" aria-hidden="true"></i>Mudou algo fora do ciclo?</button></li>
-    </ul>
+    <div class="pagina-conteudo">
+      <div class="pagina-topo">
+        <h1 class="pagina-titulo">Prazos de resposta</h1>
+      </div>
 
-    <img class="capa-logo" src="Imagens/logo-antaq-azul.png" alt="ANTAQ">
+      <div class="grade grade-3 prazos">
+          <section class="cartao tom-verde">
+            <span class="icone"><i class="fas fa-share-from-square" aria-hidden="true"></i></span>
+            <h2>2 dias úteis</h2>
+            <p>Para a Ouvidoria encaminhar a demanda ao setor.</p>
+            <span class="base-legal">Portaria nº 3/2025/OUV, art. 21</span>
+          </section>
+          <section class="cartao tom-verde">
+            <span class="icone"><i class="fas fa-reply" aria-hidden="true"></i></span>
+            <h2>20 dias</h2>
+            <p>Para o setor responder à Ouvidoria, prorrogáveis uma vez.</p>
+            <span class="base-legal">Lei 13.460/2017, art. 16, par. único · Portaria nº 3/2025/OUV, art. 21, II</span>
+          </section>
+          <section class="cartao tom-verde">
+            <span class="icone"><i class="fas fa-hourglass-half" aria-hidden="true"></i></span>
+            <h2>30 dias</h2>
+            <p>Para a Ouvidoria dar a decisão final ao usuário, prorrogáveis uma vez.</p>
+            <span class="base-legal">Lei 13.460/2017, art. 16</span>
+          </section>
+      </div>
+
+      <h2 class="subtitulo">O caminho de uma manifestação</h2>
+      <ol class="fluxo tom-verde" aria-label="Caminho de uma manifestação">
+        <li><span class="fluxo-passo">Fala.BR</span><i class="fas fa-arrow-right" aria-hidden="true"></i></li>
+        <li><span class="fluxo-passo">Ouvidoria encaminha · 2 dias úteis</span><i class="fas fa-arrow-right" aria-hidden="true"></i></li>
+        <li><span class="fluxo-passo">Setor responde · 20 dias</span><i class="fas fa-arrow-right" aria-hidden="true"></i></li>
+        <li><span class="fluxo-passo">Decisão final ao usuário · 30 dias</span></li>
+      </ol>
+
+      <div class="grade grade-2">
+        <section class="aviso tom-verde">
+          <h3><i class="fas fa-reply" aria-hidden="true"></i>Dever do setor gestor</h3>
+          <p>Responder à Ouvidoria em até 20 dias.</p>
+          <span class="base-legal">Lei 13.460/2017, art. 16, parágrafo único</span>
+        </section>
+        <section class="aviso tom-azul">
+          <h3><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>Quando a resposta muda o serviço</h3>
+          <p>Quando a simplificação é adotada, o setor atualiza a Carta pelo formulário.</p>
+        </section>
+      </div>
+    </div>
+
+    <footer class="pagina-rodape">
+      <span>Guia Prático da Carta de Serviços · Ouvidoria ANTAQ</span>
+      <span class="pagina-numero">16</span>
+    </footer>
   </main>
 
   <script src="guia.js" defer></script>
   <script src="a11y.js" defer></script>
   <script src="vida.js" defer></script>
-  <script src="ilustracao.js" defer></script>
 </body>
 
 </html>
