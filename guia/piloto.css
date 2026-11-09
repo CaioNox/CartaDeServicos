@@ -1,0 +1,135 @@
+/* =====================================================================
+   piloto.css — redesign em teste (telas 5 e 19). Só aparência.
+   Ativo quando <body class="piloto">. Para desfazer: tire a classe
+   "piloto" do <body> e o <link> desta folha da tela.
+
+   Direção: fundo branco, uma cor (marinho), dourado só como detalhe.
+   Sem cartões coloridos, sem pílulas, sem círculos de ícone, sem
+   marca-texto. Hierarquia por tamanho, peso e filetes finos.
+   ===================================================================== */
+
+/* faixa do topo: fina, branca e igual em todas as telas */
+.piloto .pagina-cabecalho {
+  height: 76px;
+  background: #fff;
+  border-bottom: 1.5px solid var(--cor-borda);
+}
+.piloto .pagina-secao {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 15px;
+  letter-spacing: .2em;
+  color: var(--cor-marinho);
+}
+.piloto .pagina-secao::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: var(--cor-amarelo);
+}
+.piloto .pagina-logo { height: 40px; }
+.piloto .pagina-conteudo { padding-top: 40px; }
+.piloto .pagina-numero,
+.piloto.capitulo-3 .pagina-numero { color: var(--cor-marinho); }
+
+/* título */
+.piloto .pagina-titulo { font-size: 60px; letter-spacing: -.02em; }
+.piloto .pagina-resumo { font-size: 24px; color: var(--cor-texto); }
+
+/* subtítulos viram rótulos de seção */
+.piloto .subtitulo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--cor-marinho);
+}
+
+/* cartões e avisos: sem fundo, sem faixa lateral, sem canto arredondado */
+.piloto .cartao,
+.piloto .aviso {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  gap: 10px;
+}
+.piloto .cartao h2, .piloto .cartao h3,
+.piloto .aviso h3 {
+  font-size: 27px;
+  color: var(--cor-marinho);
+}
+.piloto .cartao h3 > i,
+.piloto .aviso h3 > i { color: var(--cor-marinho); font-size: .8em; }
+.piloto .cartao p, .piloto .aviso p {
+  font-size: 22px;
+  line-height: 1.55;
+  color: var(--cor-texto);
+}
+
+/* ícone: só o desenho, sem círculo */
+.piloto .icone {
+  width: auto;
+  height: auto;
+  background: none;
+  color: var(--cor-marinho);
+  font-size: 34px;
+  margin: 0 0 6px;
+  justify-content: flex-start;
+}
+
+/* citação de norma e rótulo de página: texto pequeno, sem pílula */
+.piloto .base-legal,
+.piloto .rotulo {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  opacity: 1;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: #6B7A8D;
+}
+
+/* tira os marca-textos desenhados à mão */
+.piloto .marca-camada { display: none; }
+
+/* lista numerada: número simples, sem círculo */
+.piloto .objetivos li {
+  gap: 26px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+.piloto .objetivos li:first-child { border-top: 1px solid var(--cor-borda); }
+.piloto .objetivos b {
+  width: 36px;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  justify-content: flex-start;
+  font-size: 30px;
+  color: var(--cor-amarelo);
+}
+
+/* blocos de duas colunas ou mais: filete marinho no topo de cada um */
+.piloto .grade > .cartao,
+.piloto .grade > .aviso,
+.piloto .mensagens > .cartao {
+  padding-top: 22px;
+  border-top: 3px solid var(--cor-marinho);
+}
+.piloto .qualidades > .cartao { padding: 18px 0 0; border-top-width: 2px; }
+.piloto .qualidades > .cartao p { font-size: 20px; }
+
+/* respostas do formulário: caixas de contorno, sem pílula cheia */
+.piloto .fluxo-passo {
+  padding: 8px 24px;
+  border: 1.5px solid var(--cor-marinho);
+  border-radius: 4px;
+  background: none;
+  color: var(--cor-marinho);
+  font-size: 20px;
+}
