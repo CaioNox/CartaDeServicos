@@ -78,8 +78,8 @@
     .quadro {
       position: absolute;
       inset: 0;
-      transition: opacity .22s cubic-bezier(.22, 1.15, .36, 1),
-        transform .22s cubic-bezier(.22, 1.15, .36, 1);
+      transition: opacity .42s cubic-bezier(.22, 1.15, .36, 1),
+        transform .42s cubic-bezier(.22, 1.15, .36, 1);
     }
 
     /* fora de cena: sem pintura, sem clique, sem foco */
@@ -882,7 +882,7 @@
         saindo.classList.remove('sai-frente', 'sai-tras');
         saindo.querySelector('iframe').removeAttribute('title');
       };
-      limpeza = { id: window.setTimeout(fazerLimpeza, 240), exec: esconder };
+      limpeza = { id: window.setTimeout(fazerLimpeza, 440), exec: esconder };
     }
 
     function render() {
@@ -1026,7 +1026,7 @@
     document.getElementById('clickLeft').addEventListener('click', () => cliqueLateral('ArrowLeft', prev));
     document.getElementById('clickRight').addEventListener('click', () => cliqueLateral('ArrowRight', next));
 
-    /* link direto para uma tela: index.html?tela=slide-24
+    /* link direto para uma tela: index.html?tela=slide-23
        (o endereço acompanha a navegação, para dar para compartilhar) */
     const pedido = new URLSearchParams(window.location.search).get('tela');
     if (pedido) {

@@ -314,31 +314,6 @@ body {
 .aviso h3 > i { color: var(--tom); margin-right: 8px; }
 .aviso p { margin: 0; font-size: 21px; line-height: 1.5; color: var(--cor-texto); }
 
-/* Caixa de destaque com rótulo ("SAIBA MAIS", "ATENÇÃO"), separada do texto
-   corrido. A cor vem do tom da caixa: tom-azul (saiba mais), tom-amarelo (atenção). */
-.caixa {
-  display: flex;
-  align-items: flex-start;
-  gap: 22px;
-  padding: 18px 28px;
-  border-radius: 18px;
-  background: var(--tom-fundo);
-  border-left: 7px solid var(--tom);
-}
-.caixa-rotulo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-  margin: 2px 0 0;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 17px;
-  letter-spacing: .12em;
-  color: var(--tom-texto);
-}
-.caixa p:not(.caixa-rotulo) { margin: 0; font-size: 20px; line-height: 1.45; color: var(--cor-texto); }
-
 /* Número em destaque com legenda. O valor é animado por vida.js. */
 .indicador {
   display: flex;

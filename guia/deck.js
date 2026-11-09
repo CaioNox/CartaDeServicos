@@ -24,32 +24,32 @@ window.RELATORIO = {
   blocos: [
     {
       block: 'Abertura', short: 'Abertura', tint: 0.35,
-      files: ['slide-01.html', 'slide-01-introducao.html', 'slide-02.html', 'slide-03.html', 'slide-04.html', 'slide-05.html'],
+      files: ['slide-01.html', 'slide-02.html', 'slide-03.html', 'slide-04.html', 'slide-05.html', 'slide-06.html'],
     },
     {
       block: 'Antes de começar', short: 'Antes de começar', tint: 0.4,
-      files: ['slide-06.html'],
+      files: ['slide-07.html'],
     },
     {
       block: '01 · Entendendo a Carta', short: 'Entendendo a Carta', tint: 1,
-      files: ['slide-07.html', 'slide-08.html', 'slide-09.html', 'slide-10.html', 'slide-10-caracteristicas.html', 'slide-11.html'],
+      files: ['slide-08.html', 'slide-09.html', 'slide-10.html', 'slide-11.html', 'slide-12.html', 'slide-13.html'],
     },
     {
       block: '02 · Papéis e responsabilidades', short: 'Papéis', tint: 0.85,
-      files: ['slide-12.html', 'slide-13.html', 'slide-14.html', 'slide-15.html', 'slide-16.html'],
+      files: ['slide-14.html', 'slide-15.html', 'slide-16.html', 'slide-17.html', 'slide-18.html'],
     },
     {
       block: '03 · Passo a passo', short: 'Passo a passo', tint: 0.7,
-      files: ['slide-17.html', 'slide-21.html',
-        'slide-22.html', 'slide-23.html', 'slide-24.html'],
+      files: ['slide-19.html', 'slide-20.html',
+        'slide-21.html', 'slide-22.html', 'slide-23.html'],
     },
     {
       block: '04 · Qualidade da informação', short: 'Qualidade', tint: 0.55,
-      files: ['slide-25.html', 'slide-26.html', 'slide-27.html'],
+      files: ['slide-24.html', 'slide-25.html', 'slide-26.html'],
     },
     {
       block: '05 · Apêndice', short: 'Apêndice', tint: 0.3,
-      files: ['slide-32.html', 'slide-33.html', 'slide-34.html', 'slide-35.html', 'slide-35-onde-acessar.html', 'slide-36.html'],
+      files: ['slide-27.html', 'slide-28.html', 'slide-29.html', 'slide-30.html', 'slide-31.html', 'slide-32.html'],
     },
   ],
 
